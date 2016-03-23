@@ -219,7 +219,7 @@ export VIRTUAL_HOST
 virtual-host:
 	echo "$$VIRTUAL_HOST" | sudo bash -c 'cat > /etc/apache2/sites-available/$(WWW_SITE).conf'
 	sudo a2ensite $(WWW_SITE)
-	sudo a2dissite www.$(WWW_SITE)
+	-sudo a2dissite www.$(WWW_SITE)
 	sudo a2enmod rewrite
 	sudo apachectl configtest
 	sudo service apache2 reload
