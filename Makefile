@@ -300,19 +300,7 @@ ServerAdmin $(SERVER_ADMIN)
 	SSLCertificateChainFile $(SSL_PEM_BASE)/chain.pem
 
 	ServerName www.$${site}
-	#Redirect "/" "https://$${site}/"
-	DocumentRoot $(HTDOCS_BASE)/$${site}/htdocs
-
-	<Directory />
-		Options Indexes FollowSymLinks
-		AllowOverride All
-		Require all granted
-		Order allow,deny
-		Allow from all
-	</Directory>
-
-	ErrorLog  $(HTDOCS_BASE)/$${site}/error.log
-	CustomLog $(HTDOCS_BASE)/$${site}/access.log combined
+	Redirect "/" "https://$${site}/"
 </VirtualHost>
 endef
 export VIRTUAL_HOST_443_WWW
