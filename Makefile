@@ -37,7 +37,7 @@ update: codebase-update site-build local-publish-clear
 # target: production-publish - Publish latest to the production server.
 .PHONY: production-publish
 production-publish:
-	ssh mos@$(WWW_SITE) -t "cd $(GIT_BASE) && make update"
+	ssh mos@$(WWW_SITE) -t "cd $(GIT_BASE) && git pull && make update"
 
 
 
