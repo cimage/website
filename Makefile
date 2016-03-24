@@ -220,7 +220,7 @@ ServerAdmin $(SERVER_ADMIN)
 
 <VirtualHost *:80>
 	ServerName www.$${site}
-	Redirect "/" "https://$${site}/"
+	Redirect "/" "http://$${site}/"
 </VirtualHost>
 endef
 export VIRTUAL_HOST_80_WWW
