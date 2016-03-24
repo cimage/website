@@ -8,6 +8,7 @@ WWW_SITE	 = cimage.se
 WWW_LOCAL	 = local.$(WWW_SITE)
 SERVER_ADMIN = mos@dbwebb.se # mos@$(WWW_SITE)
 
+GIT_BASE 	= git/cimage.se
 HTDOCS_BASE = $(HOME)/htdocs
 LOCAL_HTDOCS = $(HTDOCS_BASE)/$(WWW_SITE)
 ROBOTSTXT	 = robots.txt
@@ -35,8 +36,9 @@ update: codebase-update site-build local-publish-clear
 
 
 # target: production-publish - Publish latest to the production server.
+.PHONY: production-publish
 production-publish:
-	ssh mos@$(WWW_SITE) -t "cd git/website && make update"
+	ssh mos@$(WWW_SITE) -t "cd $(GIT_BASE) && make update"
 
 
 
@@ -133,9 +135,7 @@ lint: less
 
 
 
-#
-# Build site from codebase
-#
+# target: site-build - Build site structure from codebase.
 .PHONY: site-build
 site-build:
 	# Copy Anax images
@@ -160,9 +160,7 @@ site-build:
 
 
 
-#
-# Create a entry in the /etc/hosts
-#
+# target: etc-hosts - Create a entry in the /etc/hosts for local access.
 .PHONY: etc-hosts
 etc-hosts:
 	echo "127.0.0.1 $(WWW_LOCAL)" | sudo bash -c 'cat >> /etc/hosts'
@@ -191,7 +189,7 @@ install-fresh: create-local-structure etc-hosts virtual-host update
 # target: virtual-host - Create entries for the virtual host http/https.
 .PHONY: virtual-host
 
-define VIRTUAL_HOST
+define VIRTUAL_HOST_80
 Define site $(WWW_SITE)
 ServerAdmin $(SERVER_ADMIN)
 
@@ -214,12 +212,23 @@ ServerAdmin $(SERVER_ADMIN)
 	CustomLog $(HTDOCS_BASE)/$${site}/access.log combined
 </VirtualHost>
 endef
-export VIRTUAL_HOST
+export VIRTUAL_HOST_80
+
+define VIRTUAL_HOST_80_WWW
+Define site $(WWW_SITE)
+ServerAdmin $(SERVER_ADMIN)
+
+<VirtualHost *:80>
+	ServerName www.$${site}
+	Redirect "/" "https://$${site}/"
+</VirtualHost>
+endef
+export VIRTUAL_HOST_80_WWW
 
 virtual-host:
-	echo "$$VIRTUAL_HOST" | sudo bash -c 'cat > /etc/apache2/sites-available/$(WWW_SITE).conf'
-	sudo a2ensite $(WWW_SITE)
-	-sudo a2dissite www.$(WWW_SITE)
+	echo "$$VIRTUAL_HOST_80" | sudo bash -c 'cat > /etc/apache2/sites-available/$(WWW_SITE).conf'
+	echo "$$VIRTUAL_HOST_80_WWW" | sudo bash -c 'cat > /etc/apache2/sites-available/www.$(WWW_SITE).conf'
+	sudo a2ensite $(WWW_SITE) www.$(WWW_SITE)
 	sudo a2enmod rewrite
 	sudo apachectl configtest
 	sudo service apache2 reload
