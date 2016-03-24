@@ -18,7 +18,7 @@ return [
             "lang"          => "en",
             "charset"       => "utf-8",
             "title_append"  => " | CImage and img.php",
-            "favicon"       => "favicon.ico",
+            "favicon"       => "img/favicon/favicon_128x128.png",
 
             // Style and stylesheets
             //"stylesheets" => ["css/anax-base.min.css"],
@@ -47,13 +47,23 @@ return [
                 "siteTitle"     => null, //"Anax PHP framework",
                 "siteSlogan"    => null, //"Reusable modules for web development"
             ],
+            "sort" => 2
+        ],
+        [
+            "region" => "header",
+            "template" => "default/image",
+            "data" => [
+                "class" => "logo-1",
+                "src" => "img/favicon/favicon_128x128.png",
+                "alt" => "Logo",
+            ],
             "sort" => -1
         ],
         [
             "region" => "navbar2",
             "template" => "default/navbar",
             "data" => [],
-            "sort" => -1
+            "sort" => 1
         ],
         [
             "region" => "footer",

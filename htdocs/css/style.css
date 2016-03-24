@@ -4461,6 +4461,10 @@ fieldset {
 /** --------------------------------------------------------------
  * Blog
  */
+.blog-list header h1,
+.blog-post header h1 {
+  margin-bottom: 11px;
+}
 .blog-list .meta-header,
 .blog-post .meta-header,
 .blog-list .meta-footer,
@@ -4572,6 +4576,9 @@ body {
 .outer-wrap-header a {
   color: #ffffff;
 }
+.inner-wrap-header {
+  position: relative;
+}
 .site-logo {
   display: inline;
   float: left;
@@ -4593,6 +4600,11 @@ body {
   margin: 0 5px;
   padding-top: 0.5em;
   text-align: right;
+}
+.logo-1 {
+  position: absolute;
+  top: 70px;
+  left: -150px;
 }
 /** ==============================================================
  * Logo
