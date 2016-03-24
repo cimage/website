@@ -13,10 +13,9 @@ HTDOCS_BASE = $(HOME)/htdocs
 LOCAL_HTDOCS = $(HTDOCS_BASE)/$(WWW_SITE)
 ROBOTSTXT	 = robots.txt
 
-SSL_INCLUDE_PATH 	= /etc/apache2/sites-available/$(WWW_SITE).ssl.include
-REDIRECT_INCLUDE_PATH = /etc/apache2/sites-available/www.$(WWW_SITE).redirect
-SSL_APACHE_CONF 	= /etc/letsencrypt/options-ssl-apache.conf
-SSL_PEM_BASE 		= /etc/letsencrypt/live/$(WWW_SITE)
+# Certificates for https
+SSL_APACHE_CONF = /etc/letsencrypt/options-ssl-apache.conf
+SSL_PEM_BASE 	= /etc/letsencrypt/live/$(WWW_SITE)
 
 
 
@@ -175,8 +174,19 @@ create-local-structure:
 
 
 
-# target: virtual-host - Create entries for the virtual host http/https.
-.PHONY: ssl-cert-update
+# target: ssl-cert-create - One way to create the certificates.
+.PHONY: ssl-cert-create
+ssl-cert-create:
+	cd $(HOME)/git/letsencrypt
+	./letsencrypt-auto certonly --standalone -d $(WWW_SITE) -d www.$(WWW_SITE)
+
+
+
+# target: ssl-cert-update - Update certificates with new expiray date.
+.PHONY: ssl-cert-renew
+ssl-cert-update:
+	cd $(HOME)/git/letsencrypt
+	./letsencrypt-auto renew
 
 
 
@@ -238,14 +248,6 @@ virtual-host:
 # target: virtual-host-https - Create entries for the virtual host https.
 .PHONY: virtual-host-https
 
-define SSL_INCLUDE
-Include $(SSL_APACHE_CONF)
-SSLCertificateFile 		$(SSL_PEM_BASE)/cert.pem
-SSLCertificateKeyFile 	$(SSL_PEM_BASE)/privkey.pem
-SSLCertificateChainFile $(SSL_PEM_BASE)/chain.pem
-endef
-export SSL_INCLUDE
-
 define VIRTUAL_HOST_443
 Define site $(WWW_SITE)
 ServerAdmin $(SERVER_ADMIN)
@@ -258,10 +260,12 @@ ServerAdmin $(SERVER_ADMIN)
 </VirtualHost>
 
 <VirtualHost *:443>
-	Include $(SSL_INCLUDE_PATH)
+	Include $(SSL_APACHE_CONF)
+	SSLCertificateFile 		$(SSL_PEM_BASE)/cert.pem
+	SSLCertificateKeyFile 	$(SSL_PEM_BASE)/privkey.pem
+	SSLCertificateChainFile $(SSL_PEM_BASE)/chain.pem
 
 	ServerName $${site}
-	ServerAlias local.$${site}
 	ServerAlias do1.$${site}
 	ServerAlias do2.$${site}
 	DocumentRoot $(HTDOCS_BASE)/$${site}/htdocs
@@ -280,34 +284,42 @@ ServerAdmin $(SERVER_ADMIN)
 endef
 export VIRTUAL_HOST_443
 
-define REDIRECT_INCLUDE
+define VIRTUAL_HOST_443_WWW
 Define site $(WWW_SITE)
 ServerAdmin $(SERVER_ADMIN)
-ServerName www.$${site}
-ServerAlias do1.$${site}
-#ServerAlias do2.$${site}
-Redirect "/" "https://$${site}/"
-endef
-export REDIRECT_INCLUDE
 
-define VIRTUAL_HOST_WWW
 <VirtualHost *:80>
-	Include $(REDIRECT_INCLUDE_PATH)
+	ServerName www.$${site}
+	Redirect "/" "https://www.$${site}/"
 </VirtualHost>
 
 <VirtualHost *:443>
-	Include $(SSL_INCLUDE_PATH)
-	Include $(REDIRECT_INCLUDE_PATH)
+	Include $(SSL_APACHE_CONF)
+	SSLCertificateFile 		$(SSL_PEM_BASE)/cert.pem
+	SSLCertificateKeyFile 	$(SSL_PEM_BASE)/privkey.pem
+	SSLCertificateChainFile $(SSL_PEM_BASE)/chain.pem
+
+	ServerName www.$${site}
+	#Redirect "/" "https://$${site}/"
+	DocumentRoot $(HTDOCS_BASE)/$${site}/htdocs
+
+	<Directory />
+		Options Indexes FollowSymLinks
+		AllowOverride All
+		Require all granted
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	ErrorLog  $(HTDOCS_BASE)/$${site}/error.log
+	CustomLog $(HTDOCS_BASE)/$${site}/access.log combined
 </VirtualHost>
 endef
-export VIRTUAL_HOST_WWW
+export VIRTUAL_HOST_443_WWW
 
 virtual-host-https:
-	echo "$$SSL_INCLUDE" | sudo bash -c 'cat > $(SSL_INCLUDE_PATH)'
-	echo "$$REDIRECT_INCLUDE" | sudo bash -c 'cat > $(REDIRECT_INCLUDE_PATH)'
 	echo "$$VIRTUAL_HOST_443" | sudo bash -c 'cat > /etc/apache2/sites-available/$(WWW_SITE).conf'
-	echo "$$VIRTUAL_HOST_WWW" | sudo bash -c 'cat > /etc/apache2/sites-available/www.$(WWW_SITE).conf'
-	sudo a2ensite www.$(WWW_SITE)
+	echo "$$VIRTUAL_HOST_443_WWW" | sudo bash -c 'cat > /etc/apache2/sites-available/www.$(WWW_SITE).conf'
 	sudo a2enmod ssl
 	sudo apachectl configtest
 	sudo service apache2 reload
