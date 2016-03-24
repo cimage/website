@@ -25,14 +25,6 @@ views:
                 type: toc
                 items: 4
 
-    block-more:
-        region: sidebar-right
-        template: default/block
-        sort: 3
-        data:
-            meta: 
-                type: single
-                route: blog/block-more
 ---
 Development blog
 ===========================
