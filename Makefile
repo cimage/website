@@ -196,7 +196,7 @@ install-fresh: create-local-structure etc-hosts virtual-host update
 
 
 
-# target: virtual-host - Create entries for the virtual host http/https.
+# target: virtual-host - Create entries for the virtual host http.
 .PHONY: virtual-host
 
 define VIRTUAL_HOST_80
