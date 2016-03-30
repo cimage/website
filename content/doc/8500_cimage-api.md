@@ -1,4 +1,4 @@
-How it works
+How it all works
 ==================================
 
 The script `img.php` uses the class `CImage` which carries out all the image processing, caching and delivery of the resulting image. `img.php` takes the incoming query string and prepares all the parameters and then uses the public API of CImage.

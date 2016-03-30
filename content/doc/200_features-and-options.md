@@ -1,4 +1,4 @@
-Features and Options
+Overview of options
 =============================================
 
 This is an overview of all features/options of CImage by using img.php. 

@@ -99,11 +99,16 @@ prepare-build:
 
 
 
-#
-# less
-#
+# target: less-update - Build less and update site.
 .PHONY: less-update
 less-update: less local-publish
+
+
+
+# target: less-update-clear - Build less and update site and clear cache.
+.PHONY: less-update-clear
+less-update-clear: less local-publish-clear
+
 
 
 .PHONY: less
