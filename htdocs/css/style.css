@@ -3028,6 +3028,23 @@ ul.nb-dbwebb a:hover {
   text-decoration: underline;
 }
 /** --------------------------------------------------------------
+ * Anchor for headers with id
+ */
+h2:hover .header-anchor {
+  display: block;
+}
+.header-anchor {
+  display: none;
+  position: relative;
+  float: right;
+  color: #ccc;
+  margin-left: -1em;
+  text-decoration: none;
+}
+.header-anchor:hover {
+  text-decoration: underline;
+}
+/** --------------------------------------------------------------
  * Breadcrumb
  */
 .breadcrumb {
@@ -3101,15 +3118,10 @@ ul.nb-dbwebb a:hover {
   margin-top: 22px;
   margin-bottom: 11px;
 }
-/*
-.level-1 {
-    padding-left: 0.5em;
+.toc .selected {
+  background-color: #eee;
+  font-style: italic;
 }
-
-.level-2 {
-    padding-left: 0.5em;
-}
-*/
 /** 
  * Structure for regions in theme template file and main view files.
  *
@@ -3415,7 +3427,9 @@ a.rm-button.rm-clicked {
  * Menu layout for the desktop variant, usually full width of browser.
  */
 .rm-desktop li.rm-selected-parent,
-.rm-desktop li.rm-selected {
+.rm-desktop li.rm-selected,
+.rm-desktop li.selected-parent,
+.rm-desktop li.selected {
   color: #00cc00;
   background-color: #666;
   border-color: #00cc00;

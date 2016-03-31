@@ -14,8 +14,9 @@ return [
 
         "docs" => [
             "text"  =>"Docs",
-            "url"   => $this->di->get("url")->create("doc/"),
-            "title" => "Documentation on CImage and img.php"
+            "url"   => $this->di->get("url")->create("doc"),
+            "title" => "Documentation on CImage and img.php",
+            "mark-if-parent" => true,
         ],
 /*
         "article" => [
@@ -27,7 +28,8 @@ return [
         "blog" => [
             "text"  =>"Blog",
             "url"   => $this->di->get("url")->create("blog"),
-            "title" => "Developer blog"
+            "title" => "Developer blog",
+            "mark-if-parent" => true,
         ],
 /*
         "tools" => [
@@ -57,21 +59,20 @@ return [
      *
      */
     "callback" => function ($url) {
-        if ($url == $this->di->get("request")->getCurrentUrl(false)) {
-            return true;
-        }
+        return !strcmp($url, $this->di->get("request")->getCurrentUrl(false));
     },
 
 
 
     /**
-     * Callback to check if current page is a decendant of the menuitem, this check applies for those
-     * menuitems that has the setting "mark-if-parent" set to true.
+     * Callback to check if current page is a decendant of the menuitem,
+     * this check applies for those menuitems that has the setting
+     * "mark-if-parent" set to true.
      *
      */
     "is_parent" => function ($parent) {
-        $route = $this->di->get("request")->getRoute();
-        return !substr_compare($parent, $route, 0, strlen($parent));
+        $url = $this->di->get("request")->getCurrentUrl(false);
+        return !substr_compare($parent, $url, 0, strlen($parent));
     },
 
 
