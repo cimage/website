@@ -14,10 +14,10 @@ CImage can save the image as JPEG, PNG or GIF.
 Optional requirements
 ---------------------------------------
 
-You need the [EXIF extension](http://php.net/manual/en/book.exif.php) to support [auto-rotation of JPEG-images](doc/auto-rotate). 
+You need the [EXIF extension](http://php.net/manual/en/book.exif.php) to support [auto-rotation of JPEG-images](features-and-options#option-rotate). 
 
-You need the [CURL extension](http://php.net/manual/en/book.curl.php) to support [downloading of remote image](doc/download-remote-image).
+You need the [CURL extension](http://php.net/manual/en/book.curl.php) to support [downloading of remote image](features-and-options#option-src).
 
-You need to install command line tools like `optipng`, `pngout`, `jpegtran` or `pngquant` to support [lossless and lossy post processing](doc/post-processing) of the created image.
+You need to install command line tools like `optipng`, `pngout`, `jpegtran` or `pngquant` to support [lossless and lossy post processing](post-processing) of the created image.
 
-The PHP extension imagick needs to be installed to support [conversion of any color space to sRGB color space](doc/convert-to-srgb). 
+The PHP extension imagick needs to be installed to support [conversion of any color space to sRGB color space](features-and-options#option-srgb). 

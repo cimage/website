@@ -1,33 +1,30 @@
----
-baseurlq: doc2/
----
 Overview of options
 =============================================
 
-This is an overview of all features/options of CImage by using img.php. 
+This is an overview of all features by using options of CImage and img.php. 
 
-`img.php` supports a lot of options through url parameters. Combine the parameters to get the desired behavior and resulting image.
+The script img.php supports options through the querystring part of the url. Combine the options to get the desired behavior and resulting image.
 
-[FIGURE src=/image/example/kodim13.png?w=600&aspect-ratio=4&crop-to-fit&sharpen&save-as=jpg&q=30 caption="Example of combining options"]
+[FIGURE src=/image/example/kodim13.png?w=600&aspect-ratio=4&crop-to-fit&sharpen&save-as=jpg&q=70 caption="Example of combining options"]
 
-For example, take the original image, resize it using width, aspect-ratio and crop-to-fit, apply a sharpen effect, save the image as JPEG using quality 30.
+For example, take the original image, resize it using width, aspect-ratio and crop-to-fit, apply a sharpen effect, save the image as JPEG using quality 70.
 
-> `img.php?src=kodim13.png&w=600&aspect-ratio=4&crop-to-fit&sharpen&save-as=jpg&q=30`
+> `img.php?src=kodim13.png&w=600&aspect-ratio=4&crop-to-fit&sharpen&save-as=jpg&q=70`
 
-Here is a list of all parameters that you can use together with `img.php`, grouped by its basic intent of usage. 
+Here is a list of all parameters that you can use together with img.php, grouped by its basic intent of usage. 
+
 
 
 Source image {#option-src}
 --------------------------------------------
 
-Option `src` is the only mandatory option and it selects the source image.
+Option `src` is the only mandatory option and it selects the source image. You can download remote images through `src` but this is default disabled by configuration.
 
 | Parameter      | Explained                                    | 
 |----------------|----------------------------------------------|
-| `src`          | Source image to use, mandatory. `src=img.png` or with subdirectory `src=dir/img.png`. |
-| `src=dummy`    | A dummy source useful as a image placeholder. |
-
-If you [allow download of remote images](config-file#remote), then you can set the source to be `src=http://somewhere/someimage.png`.
+| `src`          | Source image to use, mandatory. Use as `src=img.png`, `src=dir/img.png` or as remote download `src=http://somewhere/some-image.png`. |
+| `src=dummy`    | A dummy source useful as an image placeholder. |
+| `src-alt`      | An alternate image source if the primary is missing on disk. Same usage as `src` but no remote images. |
 
 There are examples on how to use these options in "[Select the source](select-the-source)".
 
@@ -36,7 +33,7 @@ There are examples on how to use these options in "[Select the source](select-th
 Width and height {#option-size}
 --------------------------------------------
 
-These options are all affecting the final dimensions, width and height, of the resulting image.
+These options affects the final dimensions, width and height, of the resulting image.
 
 | Parameter      | Explained                                    | 
 |----------------|----------------------------------------------|
@@ -86,7 +83,7 @@ Set the default background color to use when suitable.
 
 | Parameter      | Explained                                    | 
 |----------------|----------------------------------------------|
-| `bg-color, bgc` | Set the background color to use (if its needed). Use six hex digits as `bgc=00ff00` and 8 digits when using the alpha channel, as this `bgc=00ff007f`. The alpha value can be between 00 and 7f. |
+| `bg-color, bgc` | Set the background color to use (if its needed). Use six hex digits as `bgc=00ff00` and 8 digits when using the alpha channel, as this `bgc=00ff007f`. The alpha value can be between `00` and `7f`. |
 
 There are examples on how to use this option in "[Rotate images](rotate#perpendicular)".
 
@@ -121,7 +118,7 @@ These options are executed *after* the image is resized.
 |----------------|----------------------------------------------|
 | `rotate-after, ra`<br>`rotate, r` | Rotate the image after its processed, send the angle as parameter `ra=45`. |
 
-You need the [EXIF extension](http://php.net/manual/en/book.exif.php) to support [auto-rotation of JPEG-images](auto-rotate). 
+You need the [EXIF extension](http://php.net/manual/en/book.exif.php) to support  auto-rotation of JPEG-images. 
 
 There are examples on how to use these options in "[Rotate images](rotate)".
 
@@ -164,6 +161,32 @@ There are examples on how to use these options in "[Quality and file size](quali
 
 
 
+Convert to colorspace sRGB {#option-srgb}
+--------------------------------------------
+
+You can convert images to colorspace sRGB.
+
+| Parameter      | Explained                                    |
+|----------------|----------------------------------------------|
+| `srgb`         | Convert the image to color space sRGB.       |
+
+This option is further described in "[Convert to sRGB color space](convert-to-srgb)".
+
+
+
+Create ASCII art {#option-ascii}
+--------------------------------------------
+
+You can create a ASCII version of your image.
+
+| Parameter      | Explained                                    |
+|----------------|----------------------------------------------|
+| `ascii`        | Convert the image to ASCII.                  |
+
+This option is further described in "[ASCII art](ascii-art)".
+
+
+
 Caching {#option-cache}
 --------------------------------------------
 
@@ -191,13 +214,17 @@ There are a couple of options that provides verbose output which is useful when 
 
 The options `verbose` and `status` is only available in [development mode](config-file#mode).
 
+There are examples on how to use these options in "[Troubleshoot image processing](troubleshoot)" and in "[Check environment](check-environment)".
+
 
 
 Password protection {#option-pwd}
 --------------------------------------------
 
-Passwords are used to protect potential harmful options such as remote download of images and storing images with a new name through an alias. The [password is configured in the config file](config-file#password) and is disabled by default.
+Passwords are used to protect potential harmful options such as remote download of images and storing images with a new name through an alias. The [password is configured in the configuration file](config-file#password) and is disabled by default.
 
 | Parameter       | Explained                                    | 
 |-----------------|----------------------------------------------|
 | `pwd, password` | Use password to protect unauthorized usage.  |
+
+It could be valid to use passwords together with options for `alias` and when supporting remote download of images.

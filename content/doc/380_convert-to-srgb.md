@@ -1,4 +1,4 @@
-Convert to sRGB color space.
+Convert to sRGB color space
 ==============================
 
 This is how you can deal with images not being saved as pure sRGB images.

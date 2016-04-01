@@ -8,7 +8,7 @@ Lets review some use cases to see when and how CImage might be useful.
 Make a thumbnail {#thumbnail}
 -------------------------------
 
-[FIGURE class="right" src="/image/example/kodim04.png&w=80&h=80&cf" caption="A thumbnail of 80x80 pixels." nolink]
+[FIGURE class="right" src="/image/example/kodim04.png&w=80&h=80&cf" caption="A thumbnail of 80x80 pixels."]
 
 You have a larger image and you want to make a smaller thumbnail of it with a size of 80x80 pixels. You simply take the image and add constraints on `width`, `height` and you use the resize strategy `crop-to-fit` to crop out the parts of the image that does not fit.
 
@@ -21,9 +21,9 @@ To produce such a thumbnail, create a link like this:
 Slightly complexer use case {#usecase-complex}
 -------------------------------
 
-Perhaps you got an image from a friend. The image was taken with the iPhone and thus rotated. 
+Perhaps you got an image from a friend. The image was taken with the iPhone and looks rotated. 
 
-[FIGURE class="right" src="/image/example/issue36/me-270.jpg&w=250" caption="Me from the iPhone." nolink]
+[FIGURE class="right" src="/image/example/issue36/me-270.jpg&w=250" caption="Me from the iPhone."]
 
 The original image is looking like this one, scaled down to a width of 250 pixels. 
 
@@ -36,13 +36,13 @@ This is how the magic looks like.
 > `img.php?src=issue36/me-270.jpg&w=100&h=100&cf&aro`
 > `&rb=-25&a=8,30,30,38&f=grayscale&convolve=sharpen-alt`
 
-[FIGURE src="/image/example/issue36/me-270.jpg&w=100&h=100&cf&aro&rb=-25&a=8,30,30,38&f=grayscale&convolve=sharpen-alt" caption="Me as a thumbnail." nolink]
+[FIGURE src="/image/example/issue36/me-270.jpg&w=100&h=100&cf&aro&rb=-25&a=8,30,30,38&f=grayscale&convolve=sharpen-alt" caption="Me as a thumbnail."]
 
 For myself, I use `img.php` to put up all images on my website, it gives me the power of affecting the resulting images - without opening up a photo editing application.
 
 
 
-Strategy to use images for web publication
+Strategy to use images for web publication  {#strategy}
 -------------------------------
 
 I have a basic strategy when using images for web publication. I start with an original image which, is decent enough to show on its own. It has a image dimension of, lets say as an example, around 1200 x 1200 pixels. It has a good enough quality and a file size that is not to large to make the user annoyed when downloading and display it. This is my original image and all other images are based on this. They are rescaled and filtered, cropped and reduced in file size, and so on. One original image from which all the other images are descendants. 

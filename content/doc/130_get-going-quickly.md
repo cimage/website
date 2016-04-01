@@ -3,7 +3,7 @@ Get going quickly
 
 [FIGURE src=/image/example/kodim04.png?w=730&a=40,0,50,0&w=630 caption="This is how `img.php?source=kodim04.png&area=40,0,50,0&w=630` could look like."]
 
-Here are a few fast steps to get going with CImage and how to get a basic understanding of how it works.
+Here are a few quick steps to get going with CImage and to get a basic understanding of how it works.
 
 
 
@@ -21,7 +21,7 @@ Try it yourself by opening up an image in your browser. Start with selecting an 
 
 [FIGURE src=/image/example/kodim04.png?w=100&h=100&cf caption="A square thumbnail." class="right"]
 
-> `webroot/img.php?src=kodim04.png` 
+> `img.php?src=kodim04.png` 
 
 The try to resize the image to a thumbnail by adding the following options that define a width, height and crops the image to fit into the imaginary box, defined by the width and height options. 
 

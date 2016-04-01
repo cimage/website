@@ -1,7 +1,7 @@
 Check environment
 ======================================
 
-There are two helpers that aid in checking your environment. One is a script `webroot/check_environment.php` and one requires that you have Cimage installed.
+There are some helpers that aid in checking your environment. One is a script `webroot/check_environment.php` and one requires that you have CImage installed.
 
 This is mainly used for troubleshooting.
 
@@ -15,39 +15,34 @@ There is a script `webroot/check_environment.php` that you can use to check deta
 This is a sample output from the script.
 
 ```text
-Current PHP version: 5.5.11
+Current PHP version: 5.6.13-2
 
-Running on: Apache/2.4.9 (Unix) PHP/5.5.11 OpenSSL/1.0.1g mod_perl/2.0.8-dev Perl/v5.16.3
+Running on: Apache/2.4.16 (Debian)
 
-Extension gd is loaded.
-array(12) {
-  ["GD Version"]=>
-  string(26) "bundled (2.1.0 compatible)"
-  ["FreeType Support"]=>
-  bool(true)
-  ["FreeType Linkage"]=>
-  string(13) "with freetype"
-  ["T1Lib Support"]=>
-  bool(false)
-  ["GIF Read Support"]=>
-  bool(true)
-  ["GIF Create Support"]=>
-  bool(true)
-  ["JPEG Support"]=>
-  bool(true)
-  ["PNG Support"]=>
-  bool(true)
-  ["WBMP Support"]=>
-  bool(true)
-  ["XPM Support"]=>
-  bool(false)
-  ["XBM Support"]=>
-  bool(true)
-  ["JIS-mapped Japanese Font Support"]=>
-  bool(false)
-}
 Extension exif is loaded.
 Extension curl is loaded.
+Extension imagick is loaded.
+Extension gd is loaded.
+
+array (size=13)
+  'GD Version' => string '2.1.1' (length=5)
+  'FreeType Support' => boolean true
+  'FreeType Linkage' => string 'with freetype' (length=13)
+  'T1Lib Support' => boolean false
+  'GIF Read Support' => boolean true
+  'GIF Create Support' => boolean true
+  'JPEG Support' => boolean true
+  'PNG Support' => boolean true
+  'WBMP Support' => boolean true
+  'XPM Support' => boolean true
+  'XBM Support' => boolean true
+  'WebP Support' => boolean true
+  'JIS-mapped Japanese Font Support' => boolean false
+
+Checking path for postprocessing tools
+optipng: /usr/bin/optipng
+pngout:
+jpegtran: /usr/bin/jpegtran
 ```
 
 
@@ -58,21 +53,26 @@ Check using `&status`
 There is a option `&status` to make img.php check its environment. Use it like this.
 
 ```
-img.php?status
+img.php?src=dummy&status
 ```
+
+You need to supply a valid source image, but the dummy image will be enough.
 
 The output looks like this.
 
 ```
-img.php version = v0.7.6* (2015-10-18)
+img.php version = v0.7.9 (2015-12-07)
 PHP version = 5.6.13-2
 Running on: Apache/2.4.16 (Debian)
 Allow remote images = 
-Cache writable = 1
-Cache dummy writable = 1
+Cache exists, writable
+Cache remote does not exist
+Cache dummy exists, writable
+Cache srgb exists, writable
 Alias path writable = 
 Extension exif is  loaded.
 Extension curl is  loaded.
+Extension imagick is  loaded.
 Extension gd is  loaded.
 Array
 (

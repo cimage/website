@@ -33,7 +33,11 @@ chmod 777 cache
 
 Point your web browser to `webroot/test/test.php` to see some examples.
 
-Then try on your own by using the script `img.php`. Try the url `webroot/img.php?src=kodim04.png&w=200` which should display the same image as to the right.
+Then try on your own by using the script `img.php`. Try the following url:
+
+> `webroot/img.php?src=kodim04.png&w=200`
+
+It should display the same image as to above right.
 
 
 
@@ -61,11 +65,9 @@ There exists pre-configured variants of the all-included bundles of `img.php`. T
 | [`imgp.php`](https://github.com/mosbth/cimage/blob/master/webroot/imgp.php)     | Production mode | 
 | [`imgs.php`](https://github.com/mosbth/cimage/blob/master/webroot/imgs.php)     | Strict mode | 
 
-Read about the [different modes](doc/config-file#mode) in the section about the config file.
-
 Download the bundle of your choice from the links above or by using wget or curl like this.
 
-```bash
+```text
 wget https://raw.githubusercontent.com/mosbth/cimage/master/webroot/imgd.php
 curl -O https://raw.githubusercontent.com/mosbth/cimage/master/webroot/imgd.php
 ```

@@ -1,12 +1,13 @@
 To be website on CImage image processing
 ===============================
 
-Hi.
+Hi there.
 
-I am preparing this as a website for documentation and articles on image processing for the web programmer. It is mainly to supply documentation for CImage.
+Nice of you to stop by.
 
-I have also initiated a organisation on GitHub and I intend to move my source there.
+I am preparing this as a website for documentation and articles on image processing for the web programmer. The intention is to supply documentation and articles for using CImage.
 
-Cheers for now.
+I'll release this website officially when the documentation is complete for CImage version v0.7.\*. Until then you can check out the work in progress through the [documentation](doc) and the [blog](blog).
 
-/Mikael.
+Cheers & happy coding,  
+/Mikael
