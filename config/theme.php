@@ -21,8 +21,7 @@ return [
             "favicon"       => "img/favicon/favicon_128x128.png",
 
             // Style and stylesheets
-            //"stylesheets" => ["css/anax-base.min.css"],
-            "stylesheets" => ["css/style.css"],
+            "stylesheets" => ["css/style.min.css"],
             "styleInline" => null,
 
             // JavaScript

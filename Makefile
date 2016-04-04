@@ -49,9 +49,7 @@ local-publish:
 
 
 
-#
-# Clear the cache
-#
+# target: local-cache-clear - Clear the cache.
 .PHONY: local-cache-clear
 local-cache-clear:
 	-sudo rm -f $(LOCAL_HTDOCS)/cache/anax/*
@@ -59,8 +57,8 @@ local-cache-clear:
 
 
 #
-# Publish website to local host and clear the cache
-#
+# 
+# target: local-publish-clear - Publish website to local host and clear the cache.
 .PHONY: local-publish-clear
 local-publish-clear: local-cache-clear local-publish
 
@@ -118,10 +116,10 @@ LESS_OPTIONS 	:= --strict-imports --include-path=theme/mos-theme/style/
 FONT_AWESOME	:= theme/mos-theme/style/font-awesome/fonts/
 
 less: prepare-build
-	lessc $(LESS_OPTIONS) $(LESS) build/css/style.css
-	#lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
-	cp build/css/style.css htdocs/css/style.css
-	#cp build/css/style.min.css htdocs/css/style.min.css
+	#lessc $(LESS_OPTIONS) $(LESS) build/css/style.css
+	lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
+	#cp build/css/style.css htdocs/css/style.css
+	cp build/css/style.min.css htdocs/css/style.min.css
 
 	rsync -av $(FONT_AWESOME) htdocs/fonts/
 

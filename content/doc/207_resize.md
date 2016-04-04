@@ -8,19 +8,21 @@ This is how you can resize an image using `width`, `height` and different resize
 Resize using constraints on max dimensions {#resize}
 ------------------------------
 
-Create a thumbnail of the image by applying constraints on width and height, or one of them.
+Create a custom version of the image by applying constraints on width and height, or one of them.
 
-First lets look at a image with landscape orientation.
-
-| `&width=150`        | `&height=150`       | `&w=150&h=150`      |
-|---------------------|---------------------|---------------------|
-| <img src=/image/example/kodim13.png?w=150 alt=''> | <img src=/image/example/kodim13.png&h=150 alt=''> | <img src=/image/example/kodim13.png&w=150&h=150 alt=''> |
-
-Then using the same settings on a portrait orientation.
+First lets look at a image with landscape orientation, scaled to width and/or height matching 150px.
 
 | `&width=150`        | `&height=150`       | `&w=150&h=150`      |
 |---------------------|---------------------|---------------------|
-| <img src=/image/example/kodim04.png?w=150 alt=''> | <img src=/image/example/kodim04.png&h=150 alt=''> | <img src=/image/example/kodim04.png&w=150&h=150 alt=''> |
+| <img src=/image/example/kodim13.png?w=150 alt=''> | <img src=/image/example/kodim13.png?h=150 alt=''> | <img src=/image/example/kodim13.png?w=150&h=150 alt=''> |
+
+Then we use the same settings on an image with portrait orientation.
+
+| `&width=150`        | `&height=150`       | `&w=150&h=150`      |
+|---------------------|---------------------|---------------------|
+| <img src=/image/example/kodim04.png?w=150 alt=''> | <img src=/image/example/kodim04.png?h=150 alt=''> | <img src=/image/example/kodim04.png?w=150&h=150 alt=''> |
+
+Now, lets consider how it works.
 
 By setting `width`, `height` or both, the image gets resized to be *not larger* than the defined dimensions *and* keeping its original aspect ratio.
 
@@ -53,8 +55,15 @@ So, the important thing to remember is, when using both width and height constra
 Resize to fit a certain dimension (landscape) {#resize-fit-landscape}
 -----------------------------------
 
-Creating an image with a certain dimension of width and height, usually involves stretching or cropping the image to fit in the selected dimensions. Here is how you create a image that has the exact dimensions of 300x150 pixels, by either *stretching*, *cropping* or *fill to fit*.
+Creating an image with a certain dimension of width and height, usually involves stretching or cropping the image to fit in the selected dimensions. Here is how you create an image that has the exact dimensions of 300x150 pixels, by either *stretching*, *cropping* or *fill to fit*.
 
+First, here is the image resized using both width &amp; height but without any resizing strategy. The box has  a width and height of 300x150 pixels.
+
+<div class="square150" style="width:300px;"><img src=/image/example/kodim13.png?w=300&h=150 alt=''></div>
+
+The resized image fits in the box with a height of 150px and a width of less than 300px, just as we learned in the previous chapter.
+
+Now lets see the same example using the different resize strategies.
 
 | What                | The image           |
 |---------------------|---------------------|
@@ -73,6 +82,9 @@ Resize to fit a certain dimension (portrait) {#resize-fit-portrait}
 -----------------------------------
 
 Lets take the same example on the portrait image.
+
+<div class="square150" style="width:300px;"><img src=/image/example/kodim04.png&w=300&h=150 alt=''></div>
+
 
 | What                | The image           |
 |---------------------|---------------------|
