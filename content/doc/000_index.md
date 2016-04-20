@@ -1,6 +1,6 @@
 ---
 titleBreadcrumb: CImage Manual
----
+...
 Welcome
 ===================================
 

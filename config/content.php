@@ -13,26 +13,42 @@ return [
     // for production.
     //"ignoreCache" => true,
 
-    // Default options for textfilter
-    "textfilter" => [
+    // Default options for textfilter to parse frontmatter, step one
+    "textfilter-frontmatter" => [
         "jsonfrontmatter",
         "yamlfrontmatter",
+    ],
+
+    // Additional filters to get title
+    "textfilter-title" => [
+        "markdown",
+        "titlefromh1",
+    ],
+
+    // Default options for textfilter to parse second step
+    // Might update frontmatter
+    "textfilter" => [
         "shortcode",
         "markdown",
         "titlefromh1",
         "anchor4Header",
     ],
 
-    "metafilter" => [
-        "jsonfrontmatter",
-        "yamlfrontmatter",
-    ],
-
     // Default template
     "template" => "default/article",
+
+    // Wrapper for section of revision history
+    "revision-history" => [
+        "start" => "\n\n\n" . t("Revision history") . " {#revision}\n-------------\n\n<span class=\"revision-history\">\n",
+        "end"   => "</span>\n",
+        "class" => "revision-history",
+    ],
 
     // Filter to load content
     "pattern" => "*.md",
     "meta" => ".meta.md",
+    "author"    => "#author/([^\.]+)#",
+    "category"  => "#category/([^\.]+)#",
+    "pagination" => "page",
 
 ];

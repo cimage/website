@@ -1,7 +1,7 @@
 ---
-author: Mikael Roos
+author: mos
 published: 2016-03-24
----
+...
 A new website for CImage
 ======================================
 

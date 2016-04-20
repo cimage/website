@@ -1,6 +1,7 @@
 ---
 views:
     main:
+        template: default/article
         data:
             class: blog
 
@@ -12,9 +13,9 @@ views:
         template: default/blog-list
         sort: 2
         data:
+            dateFormat: F j, Y
             meta: 
                 type: toc
-                items: 4
 
     blog-toc:
         region: sidebar-right
@@ -22,10 +23,10 @@ views:
         sort: 2
         data:
             meta: 
-                type: toc
-                items: 4
+                type: copy
+                view: blog-list
 
----
+...
 Development blog
 ===========================
 
