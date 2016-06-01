@@ -122,6 +122,7 @@ less: prepare-build
 	#cp build/css/style.css htdocs/css/style.css
 	cp build/css/style.min.css htdocs/css/style.min.css
 
+	rsync -av theme/mos-theme/js/ htdocs/js/mos-theme/
 	rsync -av $(FONT_AWESOME) htdocs/fonts/
 
 

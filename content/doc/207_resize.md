@@ -100,14 +100,18 @@ As one can see - stretching an image is not always a good solution. Here its qui
 Do not upscale smaller images {#no-upscale}
 -----------------------------------
 
-The option `no-upscale` prevents smaller images from being upscaled.
+The option `no-upscale` prevents smaller images from being upscaled. Consider the following image.
 
-First the image with `fill-to-fit` using a background-color and without `no-upscale`.
+<img src=/image/example/car.png alt=''>
 
-<img src=/image/example/car.png&w=600&h=420&fill-to-fit=660000 alt=''>
+Lets use this image with `fill-to-fit` using a background-color and without `no-upscale`.
+
+<img src=/image/example/car.png&w=600&h=420&fill-to-fit=660000&srgb alt=''>
 
 Now the same image with `no-upscale`.
 
-<img src=/image/example/car.png&w=600&h=420&fill-to-fit=660000&no-upscale alt=''>
+<img src=/image/example/car.png&w=600&h=420&fill-to-fit=660000&srgb&no-upscale alt=''>
+
+The image is not upscaled and keeps it original size.
 
 This is good for images that you really do not want to be upscaled. You can set the proper background color, perhaps to match the background color of your website.

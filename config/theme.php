@@ -25,7 +25,10 @@ return [
             "styleInline" => null,
 
             // JavaScript
-            "javascripts" => [],
+            "javascripts" => [
+                "js/mos-theme/image-overlay.js",
+                "js/mos-theme/responsive-menu.js",
+            ],
         ],
     ],
 
