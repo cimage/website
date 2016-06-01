@@ -1,4 +1,4 @@
-Overview of options
+Options
 =============================================
 
 This is an overview of all features by using options of CImage and img.php. 
@@ -56,7 +56,7 @@ These options affect the strategy used when resizing an source image into a targ
 | `no-ratio, nr, stretch` | Do *not* keep aspect ratio when resizing and using both width & height constraints. Results in stretching the image, if needed, to fit in the resulting box. |
 | `crop-to-fit, cf`  | Set together with both `h` and `w` to make the image fit into dimensions, and crop out the rest of the image. |
 | `fill-to-fit, ff` | Set together with both `h` and `w` to make the image fit into dimensions, and fill the rest using a background color. You can optionally supply a background color as this `ff=00ff00`, or `ff=00ff007f` when using the alpha channel. |
-| `no-upscale, nu` | Avoid smaller images from being upscaled to larger ones. Combine with `stretch`, `crop-to-fit` or `fill-to-fit` to get the smaller image centered on a larger canvas. The requested dimension for the target image are thereby met. |
+| `no-upscale, nu` | Avoid smaller images from being upscaled to larger ones. Combine with `stretch`, `crop-to-fit` or `fill-to-fit` to get the smaller image centered on a larger canvas. The requested dimension for the target image are thereby met, but the original image will not be upscaled. |
 
 There are examples on how to use these options in "[Resize strategies](resize)".
 

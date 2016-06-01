@@ -57,7 +57,7 @@ Resize to fit a certain dimension (landscape) {#resize-fit-landscape}
 
 Creating an image with a certain dimension of width and height, usually involves stretching or cropping the image to fit in the selected dimensions. Here is how you create an image that has the exact dimensions of 300x150 pixels, by either *stretching*, *cropping* or *fill to fit*.
 
-First, here is the image resized using both width &amp; height but without any resizing strategy. The box has  a width and height of 300x150 pixels.
+First, here is the image resized using both width & height but without any resizing strategy. The box has  a width and height of 300x150 pixels.
 
 <div class="square150" style="width:300px;"><img src=/image/example/kodim13.png?w=300&h=150 alt=''></div>
 
@@ -94,3 +94,20 @@ Lets take the same example on the portrait image.
 | **Fill to fit.** Keep the aspect ratio and fit the whole image in the dimension, fill out the remaining parts with a background color.<br>`?w=300&h=150&fill-to-fit=66000` | <img src=/image/example/kodim04.png&w=300&h=150&fill-to-fit=660000 alt=''> |
 
 As one can see - stretching an image is not always a good solution. Here its quite obvious that the crop-to-fit option makes the "best" image. 
+
+
+
+Do not upscale smaller images {#no-upscale}
+-----------------------------------
+
+The option `no-upscale` prevents smaller images from being upscaled.
+
+First the image with `fill-to-fit` using a background-color and without `no-upscale`.
+
+<img src=/image/example/car.png&w=600&h=420&fill-to-fit=660000 alt=''>
+
+Now the same image with `no-upscale`.
+
+<img src=/image/example/car.png&w=600&h=420&fill-to-fit=660000&no-upscale alt=''>
+
+This is good for images that you really do not want to be upscaled. You can set the proper background color, perhaps to match the background color of your website.
