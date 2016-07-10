@@ -59,3 +59,5 @@ You can use the option `src-alt=image.jpg` to supply a backup image if the first
 > `img.php?src=not-exists.png&src-alt=dummy`
 
 You can configure to [always supply a backup image](config-file#src-alt) if the source is missing.
+
+Note that `src-alt` does not work together with remote images.
