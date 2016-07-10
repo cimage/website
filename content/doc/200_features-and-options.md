@@ -24,7 +24,7 @@ Option `src` is the only mandatory option and it selects the source image. You c
 |----------------|----------------------------------------------|
 | `src`          | Source image to use, mandatory. Use as `src=img.png`, `src=dir/img.png` or as remote download `src=http://somewhere/some-image.png`. |
 | `src=dummy`    | A dummy source useful as an image placeholder. |
-| `src-alt`      | An alternate image source if the primary is missing on disk. Same usage as `src` but no remote images. |
+| `src-alt`      | An alternate image source if the primary is missing on disk. Same usage as `src`, but it does not work with remote images. |
 
 There are examples on how to use these options in "[Select the source](select-the-source)".
 
