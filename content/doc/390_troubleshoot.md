@@ -5,7 +5,7 @@ Here are a few useful tools to troubleshoot the image processing and to control 
 
 
 
-A JSON representation of the image {#json}
+JSON representation of the image {#json}
 ----------------------------------
 
 You can get a JSON representation of the image by adding the option `json`. This can be useful if you need to know the actual dimension of the image, or just for troubleshooting.
@@ -25,9 +25,9 @@ Which gives the following result.
 ```javascript
 {
     "src": "example/kodim24.png",
-    "srcGmdate": "Sat, 12 Mar 2016 14:57:52",
+    "srcGmdate": "Thu, 24 Mar 2016 08:19:09",
     "cache": "example_kodim24.png_300_200_q60_co-1_jpg",
-    "cacheGmdate": "Sat, 12 Mar 2016 15:27:01",
+    "cacheGmdate": "Sun, 20 Nov 2016 15:48:06",
     "filename": "example_kodim24.png_300_200_q60_co-1_jpg",
     "mimeType": "image/jpeg",
     "width": 300,
@@ -35,11 +35,11 @@ Which gives the following result.
     "aspectRatio": 1.5,
     "size": 10998,
     "colors": 25590,
-    "includedFiles": 11,
-    "memoryPeek": "4.308 MB",
-    "memoryCurrent": "0.339 MB",
+    "includedFiles": 2,
+    "memoryPeek": "4.306 MB",
+    "memoryCurrent": "0.338 MB",
     "memoryLimit": "128M",
-    "loadTime": "0.057s"
+    "loadTime": "0.059s"
 }
 ```
 
@@ -65,12 +65,14 @@ Ignore the cache {#no-cache}
 
 The parameter `nc, no-cache` ignores the cached item and will always create a new cached item.
 
+This can be useful when having older items in the cache and one wants to ensure that the cached item is re-created.
+
 
 
 Skip the original image {#skip-original}
 ----------------------------------
 
-The parameter `so, skip-original` skips the original image, even it that is a best fit. As a result a cached image is created and displayed.
+The parameter `so, skip-original` skips the original image, even if the original image is the best fit. As a result a cached image is created and displayed.
 
 You can configure to always skip the original image. This is how the default configuration looks like.
 

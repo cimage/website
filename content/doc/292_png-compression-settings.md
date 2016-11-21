@@ -3,7 +3,7 @@ PNG compression levels
 
 [FIGURE src=/image/example/kodim23.png&w=c8 caption="A PNG-image looks the same, no matter what algorithm is used to compress it." class="right"]
 
-PNG has nine algorithms for compression, namely 0 (no compression) to 9. The default is to let the PHP GD implementation to choose the algorithm.
+PNG has a set of algorithms for compression, namely 0 (no compression) to 9. The default is to let the PHP GD implementation to choose the algorithm.
 
 The levels are a mix of file size and time to compress / uncompress. The PNG format is lossless so the resulting image is always exactly the same. 
 

@@ -12,7 +12,7 @@ This document provides you with additional information to navigate through the c
 Basic configuration {#basic}
 -----------------------------------
 
-You need to do some [basic configuration](configure) to get going with CImage.
+You need to do some [basic configuration](configure) to get going with CImage. It concerns configuration of autoloading, (development/production/strict) mode and paths to the image and cache directory.
 
 This will enable you to move around the files and store them where you want to match your specific system.
 
@@ -23,8 +23,14 @@ More settings in the configuration file {#more}
 
 The following sections have their own pages.
 
-* [Post processing](post-processing).
-* [Convert to sRGB color space](convert-to-srgb).
+* [Constants for size and aspect ratio](working-with-size)
+* [Filters and Convolution](filters)
+* [JPEG/PNG quality](quality-filesize)
+* [Create and use shortcuts](shortcut)
+* [Post processing](post-processing)
+* [Convert to sRGB color space](convert-to-srgb)
+* [Skip the original image](troubleshoot#skip-original)
+* [ASCII art](ascii-art)
 
 
 
@@ -96,6 +102,25 @@ This part relates to allow download of remote images.
 
 
 
+Path to alias directory {#alias}
+-----------------------------------
+
+You can download an external image, or another image you are processing, and save a copy of it locally in the alias directory.
+
+```php
+/**
+ * Path to aliases, useful when downloading external images and you
+ * want to create a local copy of the file, a alias file.
+ * End all paths with a slash.
+ *
+ * Default values:
+ *  alias_path: null
+ */
+//'alias_path'   =>  __DIR__ . '/img/alias/',
+```
+
+
+
 Alternative source as backup image {#src-alt}
 -----------------------------------
 
@@ -142,384 +167,222 @@ You can change the settings for the dummy image.
 
 
 
-
-
-
-
-
-
-<!-- need to be revised below -->
-
-
-Size constants {#size}
+Background color {#bgc}
 -----------------------------------
 
-```
+You can define your own default background-color on those images using it.
+
+```php
 /**
- * Predefined size constants.
- *
- * These can be used together with &width or &height to create a constant value
- * for a width or height where can be changed in one place.
- * Useful when your site changes its layout or if you have a grid to fit images into.
- *
- * Example:
- *  &width=w1  // results in width=613
- *  &width=c2  // results in spanning two columns with a gutter, 30*2+10=70
- *  &width=c24 // results in spanning whole grid 24*30+((24-1)*10)=950
+ * Set default background color for all images. Override it using
+ * option bgColor.
+ * Colorvalue is 6 digit hex string between 000000-FFFFFF
+ * or 8 digit hex string if using the alpha channel where
+ * the alpha value is between 00 (opaqe) and 7F (transparent),
+ * that is between 00000000-FFFFFF7F.
  *
  * Default values.
- *  size_constant: As specified by the function below.
+ *  background_color: As specified by CImage
  */
-/*
-'size_constant' => function () {
-    // Set sizes to map constant to value, easier to use with width or height
-    $sizes = array(
-      'w1' => 613,
-      'w2' => 630,
-    );
-    // Add grid column width, useful for use as predefined size for width (or height).
-    $gridColumnWidth = 30;
-    $gridGutterWidth = 10;
-    $gridColumns     = 24;
-    for ($i = 1; $i <= $gridColumns; $i++) {
-        $sizes['c' . $i] = ($gridColumnWidth + $gridGutterWidth) * $i - $gridGutterWidth;
-    }
-    return $sizes;
-},*/
+//'background_color' => "FFFFFF",
+//'background_color' => "FFFFFF7F",
 ```
 
 
 
-Aspect ratio constants {#aspect-ratio}
+Cache control {#cache}
 -----------------------------------
 
-```
+There are several ways to work with caching to improve performance.
+
+
+
+###HTTP headers for cache control {#cachecontrol}
+
+Set the headers you want to deliver with each image.
+
+```php
 /**
- * Predefined aspect ratios.
+ * Add header for cache control when outputting images.
  *
- * Default values.
- *  aspect_ratio_constant: As the function below.
+ * Default value:
+ *  cache_control: null, or set to string
  */
-/*'aspect_ratio_constant' => function () {
-    return array(
-        '3:1'   => 3/1,
-        '3:2'   => 3/2,
-        '4:3'   => 4/3,
-        '8:5'   => 8/5,
-        '16:10' => 16/10,
-        '16:9'  => 16/9,
-        'golden' => 1.618,
-    );
-},*/
+ //'cache_control' => "max-age=86400",
 ```
 
 
-Convolution expressions {#convolution}
------------------------------------
+
+###Fast track cache {#fasttrack}
+
+This is a cache of the cache, improving time to deliver a cached image.
 
 ```php
 /**
- * Custom convolution expressions, matrix 3x3, divisor and offset. 
- */
-private $convolves = array(
-    'lighten'       => '0,0,0, 0,12,0, 0,0,0, 9, 0',
-    'darken'        => '0,0,0, 0,6,0, 0,0,0, 9, 0',
-    'sharpen'       => '-1,-1,-1, -1,16,-1, -1,-1,-1, 8, 0',
-    'sharpen-alt'   => '0,-1,0, -1,5,-1, 0,-1,0, 1, 0',
-    'emboss'        => '1,1,-1, 1,3,-1, 1,-1,-1, 3, 0',
-    'emboss-alt'    => '-2,-1,0, -1,1,1, 0,1,2, 1, 0',
-    'blur'          => '1,1,1, 1,15,1, 1,1,1, 23, 0',
-    'gblur'         => '1,2,1, 2,4,2, 1,2,1, 16, 0',
-    'edge'          => '-1,-1,-1, -1,8,-1, -1,-1,-1, 9, 0',
-    'edge-alt'      => '0,1,0, 1,-4,1, 0,1,0, 1, 0',
-    'draw'          => '0,-1,0, -1,5,-1, 0,-1,0, 0, 0',
-    'mean'          => '1,1,1, 1,1,1, 1,1,1, 9, 0',
-    'motion'        => '1,0,0, 0,1,0, 0,0,1, 3, 0',
-);
-``` 
-
-Each expression is an eleven float value string, separated by commas. The string is converted like this.
-
-```php
-    // As defined
-    'sharpen'  => '-1,-1,-1, -1,16,-1, -1,-1,-1, 8, 0',
-
-    // Converted to ([] is short syntax for array())
-    $matrix = [
-        [-1, -1, -1],
-        [-1, 16, -1],
-        [-1, -1, -1],
-    ];
-
-    $divisor = 8;
-    $offset  = 0;
-
-    // Called by this
-    $img = imageconvolution($img, $matrix, $divisor, $offset)
-```
-
-So, above expressions are defined in `CImage`. But you can define your own in `img_config.php` and the default config-file contains an example like this. They are outcommented by default since they are only there as an example.
-
-```php
-/**
- * Create custom convolution expressions, matrix 3x3, divisor and 
- * offset.
- */
-'convolution_constant' => array(
-    //'sharpen'       => '-1,-1,-1, -1,16,-1, -1,-1,-1, 8, 0',
-    //'sharpen-alt'   => '0,-1,0, -1,5,-1, 0,-1,0, 1, 0',
-),
-```
-
-The convolution expressions defined in `img_config.php` will add to, or overwrite, those defined in `CImage`. Any convolution constant can then be used, no matter where its defined.
-
-
-
-
-/**
- * Path to aliases, useful when downloading external images and you
- * want to create a local copy of the file, a alias file.
- * End all paths with a slash.
+ * Fast track cache. Save a json representation of the image as a
+ * fast track to the cached version of the image. This avoids some
+ * processing and allows for quicker load times of cached images.
  *
  * Default values:
- *  alias_path: null
+ *  fast_track_allow: false
  */
-//'alias_path'   =>  __DIR__ . '/img/alias/',
-
-
-    /**
-     * A regexp for validating characters in the image or alias filename.
-     *
-     * Default value:
-     *  valid_filename:  '#^[a-z0-9A-Z-/_ \.:]+$#'
-     *  valid_aliasname: '#^[a-z0-9A-Z-_]+$#'
-     */
-     //'valid_filename'  => '#^[a-z0-9A-Z-/_ \.:]+$#',
-     //'valid_aliasname' => '#^[a-z0-9A-Z-_]+$#',
+//'fast_track_allow' => true,
+```
 
 
 
-     /**
-      * Change the default values for CImage quality and compression used
-      * when saving images.
-      *
-      * Default value:
-      *  jpg_quality:     null, integer between 0-100
-      *  png_compression: null, integer between 0-9
-      */
-      //'jpg_quality'  => 75,
-      //'png_compression' => 1,
+Enhancing security through constraints {#security}
+-----------------------------------
+
+The settings below are related to security and constraints you choose to set.
 
 
 
-      /**
-       * A function (hook) can be called after img.php has processed all
-       * configuration options and before processing the image using CImage.
-       * The function receives the $img variabel and an array with the
-       * majority of current settings.
-       *
-       * Default value:
-       *  hook_before_CImage:     null
-       */
-       /*'hook_before_CImage' => function (CImage $img, Array $allConfig) {
-           if ($allConfig['newWidth'] > 10) {
-               $allConfig['newWidth'] *= 2;
-           }
-           return $allConfig;
-       },*/
+###Validate characters in filename {#valchars}
+
+Decide what characters you allow in the image source filename.
+
+```php
+/**
+ * A regexp for validating characters in the image or alias filename.
+ *
+ * Default value:
+ *  valid_filename:  '#^[a-z0-9A-Z-/_ \.:]+$#'
+ *  valid_aliasname: '#^[a-z0-9A-Z-_]+$#'
+ */
+ //'valid_filename'  => '#^[a-z0-9A-Z-/_ \.:]+$#',
+ //'valid_aliasname' => '#^[a-z0-9A-Z-_]+$#',
+```
 
 
 
-       /**
-        * Add header for cache control when outputting images.
-        *
-        * Default value:
-        *  cache_control: null, or set to string
-        */
-        //'cache_control' => "max-age=86400",
+###Manage where the image directory is {#realpath}
+
+Ensure that the images accessed are below a certain directory.
+
+```php
+/**
+* Check that the imagefile is a file below 'image_path' using realpath().
+* Security constraint to avoid reaching images outside image_path.
+* This means that symbolic links to images outside the image_path will
+* fail.
+*
+* Default value:
+*  image_path_constraint: true
+*/
+//'image_path_constraint' => false,
+```
 
 
 
-     /**
-     * Check that the imagefile is a file below 'image_path' using realpath().
-     * Security constraint to avoid reaching images outside image_path.
-     * This means that symbolic links to images outside the image_path will
-     * fail.
-     *
-     * Default value:
-     *  image_path_constraint: true
-     */
-     //'image_path_constraint' => false,
+###Maxe dimensions {#maxdimension}
+
+Limit how large the images can be to decrease load on your system.
+
+```php
+/**
+ * Max image dimensions, larger dimensions results in 404.
+ * This is basically a security constraint to avoid using resources on creating
+ * large (unwanted) images.
+ *
+ * Default values.
+ *  max_width:  2000
+ *  max_height: 2000
+ */
+//'max_width'     => 2000,
+//'max_height'    => 2000,
+```
 
 
 
-     /**
-     * Set default timezone.
-     *
-     * Default values.
-     *  default_timezone: ini_get('default_timezone') or 'UTC'
-     */
-    //'default_timezone' => 'UTC',
+###Prevent leeching {#leeching}
+
+Avoid for others to leech you images.
+
+```php
+/**
+ * Prevent leeching of images by controlling the hostname of those who
+ * can access the images. Default is to allow hotlinking.
+ *
+ * Password apply when hotlinking is disallowed, use password to allow
+ * hotlinking.
+ *
+ * The whitelist is an array of regexpes for allowed hostnames that can
+ * hotlink images.
+ *
+ * Default values.
+ *  allow_hotlinking:     true
+ *  hotlinking_whitelist: array()
+ */
+ /*
+'allow_hotlinking' => false,
+'hotlinking_whitelist' => array(
+    '^dbwebb\.se$',
+),
+*/
+```
 
 
 
-    /**
-     * Max image dimensions, larger dimensions results in 404.
-     * This is basically a security constraint to avoid using resources on creating
-     * large (unwanted) images.
-     *
-     * Default values.
-     *  max_width:  2000
-     *  max_height: 2000
-     */
-    //'max_width'     => 2000,
-    //'max_height'    => 2000,
+Hook before CImage {#hook}
+-------------------------------------
+
+You can define and call a function after all options are compiled together with the settings from the configuration file, and before CImage is used to process the image.
+
+```php
+/**
+* A function (hook) can be called after img.php has processed all
+* configuration options and before processing the image using CImage.
+* The function receives the $img variabel and an array with the
+* majority of current settings.
+*
+* Default value:
+*  hook_before_CImage:     null
+*/
+/*'hook_before_CImage' => function (CImage $img, Array $allConfig) {
+   if ($allConfig['newWidth'] > 10) {
+       $allConfig['newWidth'] *= 2;
+   }
+   return $allConfig;
+},*/
+```
 
 
 
-    /**
-     * Set default background color for all images. Override it using
-     * option bgColor.
-     * Colorvalue is 6 digit hex string between 000000-FFFFFF
-     * or 8 digit hex string if using the alpha channel where
-     * the alpha value is between 00 (opaqe) and 7F (transparent),
-     * that is between 00000000-FFFFFF7F.
-     *
-     * Default values.
-     *  background_color: As specified by CImage
-     */
-    //'background_color' => "FFFFFF",
-    //'background_color' => "FFFFFF7F",
+Default timezone {#timezone}
+-------------------------------------
+
+Set the default timezone to use.
+
+```php
+ /**
+ * Set default timezone.
+ *
+ * Default values.
+ *  default_timezone: ini_get('default_timezone') or 'UTC'
+ */
+//'default_timezone' => 'UTC',
+```
 
 
 
-    /**
-     * Create custom convolution expressions, matrix 3x3, divisor and
-     * offset.
-     *
-     * Default values.
-     *  convolution_constant: array()
-     */
-    /*
-    'convolution_constant' => array(
-        //'sharpen'       => '-1,-1,-1, -1,16,-1, -1,-1,-1, 8, 0',
-        //'sharpen-alt'   => '0,-1,0, -1,5,-1, 0,-1,0, 1, 0',
-    ),
-    */
+Dependency injection {#di}
+-------------------------------------
 
+You can change the behaviour of CImage by deciding what classes to operate on. This is done by injecting classes to work on.
 
-
-    /**
-     * Prevent leeching of images by controlling the hostname of those who
-     * can access the images. Default is to allow hotlinking.
-     *
-     * Password apply when hotlinking is disallowed, use password to allow
-     * hotlinking.
-     *
-     * The whitelist is an array of regexpes for allowed hostnames that can
-     * hotlink images.
-     *
-     * Default values.
-     *  allow_hotlinking:     true
-     *  hotlinking_whitelist: array()
-     */
-     /*
-    'allow_hotlinking' => false,
-    'hotlinking_whitelist' => array(
-        '^dbwebb\.se$',
-    ),
-    */
-
-
-    /**
-     * Create custom shortcuts for more advanced expressions.
-     *
-     * Default values.
-     *  shortcut: array(
-     *      'sepia' => "&f=grayscale&f0=brightness,-10&f1=contrast,-20&f2=colorize,120,60,0,0&sharpen",
-     *  )
-     */
-     /*
-    'shortcut' => array(
-        'sepia' => "&f=grayscale&f0=brightness,-10&f1=contrast,-20&f2=colorize,120,60,0,0&sharpen",
-    ),*/
-
-
-
-    /**
-     * Predefined size constants.
-     *
-     * These can be used together with &width or &height to create a constant value
-     * for a width or height where can be changed in one place.
-     * Useful when your site changes its layout or if you have a grid to fit images into.
-     *
-     * Example:
-     *  &width=w1  // results in width=613
-     *  &width=c2  // results in spanning two columns with a gutter, 30*2+10=70
-     *  &width=c24 // results in spanning whole grid 24*30+((24-1)*10)=950
-     *
-     * Default values.
-     *  size_constant: As specified by the function below.
-     */
-    /*
-    'size_constant' => function () {
-
-        // Set sizes to map constant to value, easier to use with width or height
-        $sizes = array(
-          'w1' => 613,
-          'w2' => 630,
-        );
-
-        // Add grid column width, useful for use as predefined size for width (or height).
-        $gridColumnWidth = 30;
-        $gridGutterWidth = 10;
-        $gridColumns     = 24;
-
-        for ($i = 1; $i <= $gridColumns; $i++) {
-            $sizes['c' . $i] = ($gridColumnWidth + $gridGutterWidth) * $i - $gridGutterWidth;
-        }
-
-        return $sizes;
-    },*/
-
-
-
-    /**
-     * Predefined aspect ratios.
-     *
-     * Default values.
-     *  aspect_ratio_constant: As the function below.
-     */
-    /*'aspect_ratio_constant' => function () {
-        return array(
-            '3:1'   => 3/1,
-            '3:2'   => 3/2,
-            '4:3'   => 4/3,
-            '8:5'   => 8/5,
-            '16:10' => 16/10,
-            '16:9'  => 16/9,
-            'golden' => 1.618,
-        );
-    },*/
-
-
-
-    /**
-     * default options for ascii image.
-     *
-     * Default values as specified below in the array.
-     *  ascii-options:
-     *   characterSet:       Choose any character set available in CAsciiArt.
-     *   scale:              How many pixels should each character
-     *                       translate to.
-     *   luminanceStrategy:  Choose any strategy available in CAsciiArt.
-     *   customCharacterSet: Define your own character set.
-     */
-    /*'ascii-options' => array(
-            "characterSet" => 'two',
-            "scale" => 14,
-            "luminanceStrategy" => 3,
-            "customCharacterSet" => null,
-        );
-    },*/
-);
+```php
+/**
+ * Class names to use, to ease dependency injection. You can change Class
+ * name if you want to use your own class instead. This is a way to extend
+ * the codebase.
+ *
+ * Default values:
+ *  CImage: CImage
+ *  CCache: CCache
+ *  CFastTrackCache: CFastTrackCache
+ */
+ //'CImage' => 'CImage',
+ //'CCache' => 'CCache',
+ //'CFastTrackCache' => 'CFastTrackCache',
+```

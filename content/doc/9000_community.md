@@ -14,8 +14,8 @@ Chat and ask questions on [Gitter](https://gitter.im/mosbth/cimage).
 
 Or if you fancy irc.
 
-* `irc://irc.bsnet.se/#db-o-webb`
-* `irc://irc.freenode.net/#dbwebb`
+* irc://irc.bsnet.se/#db-o-webb
+* irc://irc.freenode.net/#dbwebb
 
 
 
@@ -27,7 +27,7 @@ Use GitHub to report [issues](https://github.com/mosbth/cimage/issues) and make 
 Always include enough information for anyone to repeat and test your issue.
 
 1. Describe very shortly: What are you trying to achieve, what happens, what did you expect.
-2. Option list used for `img.php`.
+2. Option list used for img.php.
 3. The image used.
 
 If you request a feature, describe its usage and argument for why you think it fits into CImage.

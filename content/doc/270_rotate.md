@@ -8,9 +8,11 @@ This is how you can rotate the image.
 Auto rotate based on EXIF {#exif}
 ------------------------------
 
-Some smartphones uses EXIF-information to let applications know how the image is rotated. This is in general handled by image processing tools. But if you, for example, take a image with your iPhone and email the image to yourself and then adds it to your website, then it will not adhere to the EXIF-information. Let us see how it works.
+Some smartphones uses EXIF-information to let applications know how the image is rotated. This is in general handled by image processing tools. But if you, for example, take a image with your iPhone and email the image to yourself and then adds it to your website, then it will not adhere to the EXIF-information. 
 
-You need the [EXIF extension](http://php.net/manual/en/book.exif.php) to support [auto-rotation of JPEG-images](doc/auto-rotate). 
+Let us see how it works.
+
+You need the [EXIF extension](http://php.net/manual/en/book.exif.php) to support auto-rotation of JPEG-images. 
 
 | Usage                  |   |
 |------------------------|--:|

@@ -19,7 +19,7 @@ SSL_PEM_BASE 	= /etc/letsencrypt/live/$(WWW_SITE)
 
 # Theme
 LESS 			:= theme/style_cimage.less
-LESS_OPTIONS 	:= --strict-imports --include-path=theme/mos-theme/style/
+LESS_OPTIONS 	:= --strict-imports --include-path=theme/modules:theme/modules/vertical-grid/less:theme/modules/typographic-grid/less:theme/modules/responsive-menu/src/less:theme/modules/figure/less:theme/mos-theme/style
 FONT_AWESOME	:= theme/mos-theme/style/font-awesome/fonts/
 
 
@@ -58,6 +58,15 @@ local-publish:
 .PHONY: local-cache-clear
 local-cache-clear:
 	-sudo rm -f $(LOCAL_HTDOCS)/cache/anax/*
+	-sudo rm -f $(LOCAL_HTDOCS)/cache/cimage/*
+
+
+
+# target: cache-clear     - Clear the cache.
+.PHONY: cache-clear
+cache-clear:
+	-sudo rm -f $(LOCAL_HTDOCS)/cache/anax/*
+	-sudo rm -rf $(LOCAL_HTDOCS)/cache/cimage/*
 
 
 
@@ -122,7 +131,19 @@ less: prepare-build
 	#cp build/css/style.css htdocs/css/style.css
 	cp build/css/style.min.css htdocs/css/style.min.css
 
-	rsync -av theme/mos-theme/js/ htdocs/js/mos-theme/
+	# Grid images§
+	install -d htdocs/img/theme/
+	rsync -av theme/modules/vertical-grid/img/ htdocs/img/theme/vertical-grid/
+	rsync -av theme/modules/typographic-grid/img/ htdocs/img/theme/typographic-grid/
+
+	# Theme js
+	install -d htdocs/js/theme/
+	rsync -av theme/js/ htdocs/js/theme/
+
+	# Responsive menu
+	rsync -av theme/modules/responsive-menu/htdocs/js/responsive-menu.min.js htdocs/js/theme
+
+	# Font awesome
 	rsync -av $(FONT_AWESOME) htdocs/fonts/
 
 
@@ -142,18 +163,16 @@ lint: less
 # target: site-build - Build site structure from codebase.
 .PHONY: site-build
 site-build:
-	# Copy Anax images
-	#rsync -av vendor/mos/anax/webroot/img/ htdocs/img/
-
 	# Copy from CImage
 	install -d htdocs/cimage
 	rsync -av vendor/mos/cimage/webroot/imgd.php htdocs/cimage/imgd.php
 	rsync -av vendor/mos/cimage/icc/ htdocs/cimage/icc/
 	rsync -av vendor/mos/cimage/webroot/img/ htdocs/img/example/
 
-	# Copy from mos-theme
-	#install -d htdocs/js/mos-theme
-	#rsync -av theme/mos-theme/js/ htdocs/js/mos-theme/
+	# Copy from CImage
+	install -d htdocs/cimage
+	bash -c "rsync -av vendor/mos/cimage/webroot/{img,imgd,imgf,imgp,imgs,check_system}.php vendor/mos/cimage/icc htdocs/cimage"
+	rsync -av vendor/mos/cimage/webroot/img/ htdocs/img/example/
 
 	# Make cache parts writable
 	install --directory --mode 777 cache/cimage cache/anax
@@ -169,13 +188,6 @@ site-build:
 etc-hosts:
 	echo "127.0.0.1 $(WWW_LOCAL)" | sudo bash -c 'cat >> /etc/hosts'
 	@tail -1 /etc/hosts
-
-
-
-# target: create-local-structure - Create needed local directory structure.
-.PHONY: create-local-structure
-create-local-structure:
-	install --directory $(HOME)/htdocs/$(WWW_SITE)/htdocs
 
 
 
@@ -197,7 +209,7 @@ ssl-cert-update:
 
 # target: install-fresh - Do a fresh installation of a new server.
 .PHONY: install-fresh
-install-fresh: create-local-structure etc-hosts virtual-host update
+install-fresh: etc-hosts virtual-host update
 
 
 
@@ -246,6 +258,7 @@ endef
 export VIRTUAL_HOST_80_WWW
 
 virtual-host:
+	install --directory $(HOME)/htdocs/$(WWW_SITE)/htdocs
 	echo "$$VIRTUAL_HOST_80" | sudo bash -c 'cat > /etc/apache2/sites-available/$(WWW_SITE).conf'
 	echo "$$VIRTUAL_HOST_80_WWW" | sudo bash -c 'cat > /etc/apache2/sites-available/www.$(WWW_SITE).conf'
 	sudo a2ensite $(WWW_SITE) www.$(WWW_SITE)

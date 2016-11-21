@@ -18,6 +18,6 @@ You need the [EXIF extension](http://php.net/manual/en/book.exif.php) to support
 
 You need the [CURL extension](http://php.net/manual/en/book.curl.php) to support [downloading of remote image](features-and-options#option-src).
 
-You need to install command line tools like `optipng`, `pngout`, `jpegtran` or `pngquant` to support [lossless and lossy post processing](post-processing) of the created image.
+The [extension imagick](http://php.net/manual/en/book.imagick.php) needs to be installed to support [conversion of any color space to sRGB color space](features-and-options#option-srgb). 
 
-The PHP extension imagick needs to be installed to support [conversion of any color space to sRGB color space](features-and-options#option-srgb). 
+You need to install command line tools like `optipng`, `pngout`, `jpegtran` and/or `pngquant` to support [lossless and lossy post processing](post-processing) of the created image.

@@ -42,3 +42,9 @@ Compare images {#compare}
 --------------------------------------
 
 The directory `webroot/compare` contains a compare tool you can use to visually compare images. Use this tool and overlay the images to find out how the processing options affect the image.
+
+You can try out the compare tool through `webroot/compare/compare-test.php`.
+
+It can look like this when you stack images over each other to make comparison easy.
+
+[FIGURE src=image/compare-tool.png?w=w2 caption="The compare tool in action with option checked for stacking images."]

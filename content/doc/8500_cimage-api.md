@@ -1,7 +1,7 @@
 How it all works
 ==================================
 
-The script `img.php` uses the class `CImage` which carries out all the image processing, caching and delivery of the resulting image. `img.php` takes the incoming query string and prepares all the parameters and then uses the public API of CImage.
+The script img.php uses the class CImage which carries out all the image processing, caching and delivery of the resulting image. img.php takes the incoming query string and prepares all the parameters and then uses the public API of CImage.
 
 
 
@@ -10,21 +10,23 @@ The programmatic flow  {#flow}
 
 This is how you can get an understanding on how CImage processes the image.
 
-Review the settings in `webroot/img_config.php` and check out `webroot/img.php` on how it uses `CImage`.
+Review the settings in `webroot/img_config.php` and check out `webroot/img.php` on how it uses CImage.
 
 The programmatic flow, just to get you oriented in the environment, is like this.
 
-1. Start in `img.php`.
-2. `img.php` reads configuration details from `img_config.php` (if the config-file is available).
-3. `img.php` reads and processes incoming `$_GET` arguments to use as options while prepare using `CImage`.
-4. `img.php` uses `CImage`.
-5. `CImage` processes, caches and outputs the image according to the options used.
+1. Start in img.php.
+2. img.php reads configuration details from `img_config.php` (if the config-file is available).
+3. img.php reads and processes incoming `$_GET` arguments to use as options while prepare using CImage.
+4. img.php uses CImage.
+5. CImage processes, caches and outputs the image according to the options used.
 
 
 
 
-How `img.php` uses the class `CImage` {#api}
+How img.php uses the class CImage {#api}
 --------------------------------------
+
+This is a simplified view on how img.php uses the class CImage.
 
 ```php
 /**
@@ -96,7 +98,7 @@ $img->log("Incoming arguments: " . print_r(verbose(), 1))
     ->output();
 ```
 
-`img.php` may also use `CImage` to set the default background color and add convolution expressions, but it depends on if the values are set in the config file `img_config.php`. It can look like this:
+THe script img.php may also use CImage to set the default background color and add convolution expressions, but it depends on if the values are set in the config file `img_config.php`. It can look like this:
 
 ```php
 $img->setDefaultBackgroundColor($config['background_color']);

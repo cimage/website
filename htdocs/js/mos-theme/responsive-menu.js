@@ -1,13 +1,17 @@
 /**
- * Setup the basis for the responsive menu.
+ * @preserve Setup the basis for the responsive menu.
+ * @author Mikael Roos <mos@dbwebb.se>
+ * @see {@link https://github.com/mosbth/responsive-menu}
  */
 (function() {
     "use strict";
 
     // Get the items needed for the menu to work.
+    var body = document.getElementsByTagName("body")[0];
     var menuButton = document.getElementById("rm-menu-button");
-    var menu = document.querySelector(".rm-default");
-    var submenus = document.getElementsByClassName("rm-submenu");
+    var menu = document.getElementById("rm-menu");
+    var menuMax = document.querySelector(".rm-max #rm-menu");
+    var submenus = document.getElementsByClassName("rm-submenu-button");
 
     // To support WordPress submenus
     var submenuswp = document.getElementsByClassName("sub-menu");
@@ -15,11 +19,25 @@
 
 
     /**
+     * Set the size of the max menu.
+     */
+    var setMaxMenuSize = function() {
+        if (menuMax === null) {
+            return;
+        }
+
+        menuMax.style.width  = window.innerWidth + "px";
+        menuMax.style.height = window.innerHeight + "px";
+    };
+    setMaxMenuSize();
+
+
+    /**
      * Show submenu where ever a li item holds a submenu. Used as callback
      * for li click events but only valid for the mobile version. The desktop
      * version uses hover instead och click events.
      */
-    var showSubmenu = function() {
+    var showSubmenu = function(event) {
         //console.log("Show submenu");
 
         if (this.parentNode.classList.contains("rm-desktop")) {
@@ -27,8 +45,11 @@
             return;
         }
 
-        this.classList.toggle("rm-submenu-open");
-        this.querySelector("ul").classList.toggle("rm-show-submenu");
+        this.parentElement.classList.toggle("rm-submenu-open");
+        this.parentElement.querySelector("ul").classList.toggle("rm-show-submenu");
+
+        //event.preventDefault();
+        event.stopPropagation();
     };
 
 
@@ -43,7 +64,14 @@
 
     // To support WordPress menus
     Array.prototype.filter.call(submenuswp, function(element) {
-        element.parentNode.addEventListener("click", showSubmenu);
+        // Add a clickable button to (max) menu
+        var button = document.createElement("a");
+        button.setAttribute("href", "#");
+        button.setAttribute("class", "rm-submenu-button");
+        button.addEventListener("click", showSubmenu);
+        element.parentNode.insertBefore(button, element.parentNode.firstChild);
+
+        //element.parentNode.addEventListener("click", showSubmenu);
         //console.log("found submenuwp");
     });
 
@@ -54,22 +82,15 @@
      */
     menuButton.addEventListener("click", function(event) {
 
-        var style = window.getComputedStyle(menu);
+        // Toggle display of menu
+        menu.classList.toggle("rm-clicked");
+        menuButton.classList.toggle("rm-clicked");
+        body.classList.toggle("rm-modal");
 
-        //console.log("Click: " + style.display);
-
-        if (style.display === "none") {
-            // Display the menu
+        // Toggle between desktop and mobile menu when no max menu enabled.
+        if (menuMax === null) {
             menu.classList.toggle("rm-mobile");
             menu.classList.toggle("rm-desktop");
-            menuButton.classList.toggle("rm-clicked");
-            menu.style.display = "block";
-        } else {
-            // Hide the menu
-            menu.style.display = "none";
-            menu.classList.toggle("rm-mobile");
-            menu.classList.toggle("rm-desktop");
-            menuButton.classList.toggle("rm-clicked");
         }
 
         event.preventDefault();
@@ -79,18 +100,41 @@
 
 
     /**
+     * Prevent touch event scrolling & closing maxmenu on iOS
+     */
+    /*
+    menuMax.addEventListener("scroll", function(event) {
+        event.stopPropagation();
+    });
+*/
+
+
+
+    /**
      *
      */
+    /*
     var clearMenu = function (event) {
         //console.log("Clear menu");
-        menu.style.display = "";
-        menu.classList.remove("rm-mobile");
-        menu.classList.add("rm-desktop");
+        // Add desktop and remove mobile, but not if max menu is enabled
+        if (menuMax === null) {
+            menu.classList.remove("rm-mobile");
+            menu.classList.add("rm-desktop");
+        }
+
+        // Remove clicked items
+        body.classList.remove("rm-modal");
         menuButton.classList.remove("rm-clicked");
+        menu.classList.remove("rm-clicked");
+
         event.preventDefault();
     };
+*/
 
-    window.addEventListener("resize", clearMenu);
+    window.addEventListener("resize", function(/* event */) {
+        //clearMenu(event);
+        setMaxMenuSize();
+    });
     //document.addEventListener("click", clearMenu);
 
 })();

@@ -33,7 +33,7 @@ To show it off, I'll auto-rotate the image based on its EXIF-information, I will
 
 This is how the magic looks like. 
 
-> `img.php?src=issue36/me-270.jpg&w=100&h=100&cf&aro`
+> `img.php?src=issue36/me-270.jpg&w=100&h=100&cf&aro`  
 > `&rb=-25&a=8,30,30,38&f=grayscale&convolve=sharpen-alt`
 
 [FIGURE src="/image/example/issue36/me-270.jpg&w=100&h=100&cf&aro&rb=-25&a=8,30,30,38&f=grayscale&convolve=sharpen-alt" caption="Me as a thumbnail."]

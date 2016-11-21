@@ -73,9 +73,7 @@ You can see why a web developer need to be able to manage the file size and imag
 Default level of quality is configurable {#default}
 ---------------------------------------
 
-There are default settings for JPEG quality and PNG compression. Thes can be overridden through configuration.
-
-This is the default configuration.
+There are in CImage default settings for JPEG quality and PNG compression. These can be overridden through configuration.
 
 ```php
 /**
@@ -83,11 +81,9 @@ This is the default configuration.
  * when saving images.
  *
  * Default value:
- *  jpg_quality:     null, integer between 0-100, 
- *                         default is 60
- *  png_compression: null, integer between 0-9,
- *                         default is -1 (PHP GD decides)
+ *  jpg_quality:     null, integer between 0-100
+ *  png_compression: null, integer between 0-9
  */
- //'jpg_quality'  => 60,
- //'png_compression' => -1,
+ //'jpg_quality'  => 75,
+ //'png_compression' => 1,
 ```

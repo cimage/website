@@ -85,7 +85,7 @@ Set the default background color to use when suitable.
 |----------------|----------------------------------------------|
 | `bg-color, bgc` | Set the background color to use (if its needed). Use six hex digits as `bgc=00ff00` and 8 digits when using the alpha channel, as this `bgc=00ff007f`. The alpha value can be between `00` and `7f`. |
 
-There are examples on how to use this option in "[Rotate images](rotate#perpendicular)".
+There are examples on how to use this option in "[Rotate non perpendicular angle](rotate#perpendicular)" and in "[Resize to fit a certain dimension](resize#resize-fit-landscape)".
 
 
 
@@ -158,6 +158,8 @@ Options for saving the target image.
 | `alias`        | Save resulting image as a copy in the alias-directory. |
 
 There are examples on how to use these options in "[Quality and file size](quality-filesize)", "[JPEG quality settings](jpeg-quality-settings)" and "[PNG compression levels](png-compression-settings)".
+
+The option [alias can be enabled in the config file](config-file#alias).
 
 
 

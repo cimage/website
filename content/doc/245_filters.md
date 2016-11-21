@@ -3,7 +3,12 @@ Filters and convolution
 
 There are a set of custom made filters that can be used to apply filter effects on the image. These are `sharpen`, `emboss` and `blur`. These filters are applied last in the processing chain, after the image has been resized to its final dimensions.
 
-The basis is to apply image processing based on a matrix, also called image convolution.
+
+
+Basics {#basics}
+-----------------------------
+
+The basics is to apply image processing based on a matrix, also called image convolution.
 
 [FIGURE src=/image/example/kodim22.png&w=w2&save-as=jpg caption="A red barn, kodimg22.png, from The Kodak Colorset."]
 
@@ -30,7 +35,7 @@ Custom filter with convolution
 
 The filters above are implemented as convolve-expressions. These are a matrix of 3x3 together with a divisor and an offset. Its just like the PHP-function [imageconvolution()](http://php.net/manual/en/function.imageconvolution.php).
 
-There are more [convolution expressions](config-file#convolution) supported. Lets see some examples on using convolution, based on this image.
+There are more convolution expressions supported. Lets see some examples on using convolution, based on this image.
 
 [FIGURE src="/image/example/kodim15.png&w=w2&save-as=jpg" caption="A girl in `kodim15.png` from the Kodak image set."]
 
@@ -44,4 +49,67 @@ There are more [convolution expressions](config-file#convolution) supported. Let
 | Edge.<br>`?w=300&convolve=edge`<br><img src=/image/example/kodim15.png&w=300&save-as=jpg&convolve=edge alt=''> | Edge alt.<br>`?w=300&convolve=edge-alt`<br><img src=/image/example/kodim15.png&w=300&save-as=jpg&convolve=edge-alt alt=''> |
 | Draw.<br>`?w=300&convolve=draw`<br><img src=/image/example/kodim15.png&w=300&save-as=jpg&&convolve=draw alt=''> | Combine several filters.<br>`&convolve=draw:edge-alt:emboss-alt:motion`<br><img src=/image/example/kodim15.png&w=300&save-as=jpg&convolve=draw:edge-alt:emboss-alt:motion alt=''>
 
-If you have some special filter that you use a lot, then create a constant for it in `img_config.php`. One place to change it, for all images on your website. 
+If you have some special filter that you use a lot, then create a constant for it in `img_config.php`. One place to change it, for all images on your website.
+
+
+
+Configuration of convolution expressions {#convolution}
+-----------------------------------
+
+CImage contains a set of convolution expressions. Here is the list.
+
+```php
+/**
+ * Custom convolution expressions, matrix 3x3, divisor and offset. 
+ */
+private $convolves = array(
+    'lighten'       => '0,0,0, 0,12,0, 0,0,0, 9, 0',
+    'darken'        => '0,0,0, 0,6,0, 0,0,0, 9, 0',
+    'sharpen'       => '-1,-1,-1, -1,16,-1, -1,-1,-1, 8, 0',
+    'sharpen-alt'   => '0,-1,0, -1,5,-1, 0,-1,0, 1, 0',
+    'emboss'        => '1,1,-1, 1,3,-1, 1,-1,-1, 3, 0',
+    'emboss-alt'    => '-2,-1,0, -1,1,1, 0,1,2, 1, 0',
+    'blur'          => '1,1,1, 1,15,1, 1,1,1, 23, 0',
+    'gblur'         => '1,2,1, 2,4,2, 1,2,1, 16, 0',
+    'edge'          => '-1,-1,-1, -1,8,-1, -1,-1,-1, 9, 0',
+    'edge-alt'      => '0,1,0, 1,-4,1, 0,1,0, 1, 0',
+    'draw'          => '0,-1,0, -1,5,-1, 0,-1,0, 0, 0',
+    'mean'          => '1,1,1, 1,1,1, 1,1,1, 9, 0',
+    'motion'        => '1,0,0, 0,1,0, 0,0,1, 3, 0',
+);
+```
+
+Each expression is an eleven float value string, separated by commas. The string is converted like this, into a matrix, divisor and offset.
+
+```php
+    // As defined
+    'sharpen'  => '-1,-1,-1, -1,16,-1, -1,-1,-1, 8, 0',
+
+    // Converted to ([] is short syntax for array())
+    $matrix = [
+        [-1, -1, -1],
+        [-1, 16, -1],
+        [-1, -1, -1],
+    ];
+
+    $divisor = 8;
+    $offset  = 0;
+
+    // Called by this
+    $img = imageconvolution($img, $matrix, $divisor, $offset)
+```
+
+So, above expressions are defined in CImage. You can define your own in `img_config.php`. The default config-file contains an example on how to do it. They are outcommented by default since they are only there as an example.
+
+```php
+/**
+ * Create custom convolution expressions, matrix 3x3, divisor and 
+ * offset.
+ */
+'convolution_constant' => array(
+    //'sharpen'       => '-1,-1,-1, -1,16,-1, -1,-1,-1, 8, 0',
+    //'sharpen-alt'   => '0,-1,0, -1,5,-1, 0,-1,0, 1, 0',
+),
+```
+
+The convolution expressions defined in `img_config.php` will add to, or overwrite, those defined in CImage. Any convolution constant can then be used, no matter where its defined.

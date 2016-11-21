@@ -1,11 +1,11 @@
 Basic configuration
 ======================================
 
-The script img.php reads its configuration from the configuration file img_config.php found in the same directory.
+The script img.php reads its configuration from the configuration file `img_config.php` found in the same directory.
 
 Most settings have working default values and does not need to be changed.
 
-For now, lets review the most basic settings to get going with CImage.
+For now, lets review the most basic settings to get going with CImage, which aids in getting to know CImage a bit better.
 
 
 
@@ -21,7 +21,7 @@ The bundle will look for a configuration file and use it if it is found. The bun
 Autoloading {#autoloading}
 --------------------------------------
 
-A bundle does not need the autoloader since it has all code in one script. But when using img.php you need to point to the file containing the autoloader.
+A bundle does not need the autoloader since it has all code in one script. But, when using img.php you need to point to the file containing the autoloader.
 
 The default setting looks like this.
 
@@ -42,7 +42,7 @@ Development mode {#mode}
 
 The development mode is more verbose of its error situations. This is good for first time users.
 
-Update your configuration file to use development mode. This will provide you with debug options and verbose error messages.
+You can update your configuration file to use development mode. This will provide you with debug options and verbose error messages.
 
 ```php
 /**

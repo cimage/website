@@ -1,9 +1,9 @@
 Convert to sRGB color space
 ==============================
 
-This is how you can deal with images not being saved as pure sRGB images.
+This is how you can deal with images not being pure sRGB images.
 
-PHP GD operates on pure sRGB color space. This makes it troublesome to deal with images that is not saved in sRGB color space. Since PHP GD ignores the extra information on color profile, the images usually end up looking dull and misses the vibrant colors from the original image.
+PHP GD operates on pure sRGB color space. This makes it troublesome to deal with images that is not in sRGB color space. Since PHP GD ignores the extra information on color profile, the images usually end up looking dull, missing the vibrant colors from the original image.
 
 The PHP extension imagick needs to be installed to support this.
 

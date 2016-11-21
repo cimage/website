@@ -31,32 +31,45 @@ $ ./cache.bash
 Usage: ./cache.bash [cache-dir]   
 
 $ ./cache.bash cache                         
-Total size:       27M                                            
-Number of files:  225                                            
-                                                                 
-Top-5 largest files:                                             
-1032    cache/_._kodim08_768_512_q60convolvesharpen.png          
-960     cache/_._kodim08_768_512_q60convolveemboss.png           
-932     cache/_._kodim08_768_512_q60_rb45.png                    
-932     cache/_._kodim08_768_512_q60_ra45.png                    
-856     cache/_._kodim08_768_512_q60_rb90.png                    
-                                                                 
-Last-5 created files:                                            
-2014-11-26 16:51 cache/_._kodim08_768_512_q60convolvelighten.png 
-2014-11-26 16:51 cache/_._kodim08_768_512_q60convolveblur.png    
-2014-11-26 16:48 cache/_._kodim08_400_267_q60convolvesharpen.png 
-2014-11-26 16:48 cache/_._kodim08_400_267_q60convolvelighten.png 
-2014-11-26 16:48 cache/_._kodim08_400_267_q60convolveemboss.png  
-                                                                 
-Last-5 accessed files:                                           
-2014-11-27 16:12 _._wider_900_581_q60.jpg                        
-2014-11-27 16:12 _._wider_750_484_q60.jpg                        
-2014-11-27 16:12 _._wider_640_413_q60.jpg                        
-2014-11-27 16:12 _._wider_640_200_c640-200-0-100_q60.jpg         
-2014-11-27 16:12 _._wider_600_387_q60.jpg                        
+# Size
+Total size:       316M
+Number of files:  6437
+Number of dirs:   2
+
+# Top-5 largest files/dirs:
+11136   cimage//fasttrack
+4440    cimage//oopython-bok_python3-object-oriented-programming.png_2000_2588_q85_co-1
+4280    cimage//oopython-bok_python3-object-oriented-programming.png_2000_2588_q85_co-1.png
+4004    cimage//vimmel_pt91-skolfoto.jpg_3880_2801_q85_co-1
+3888    cimage//vimmel_pi92-skolfoto.jpg_3855_2704_q85_co-1
+
+# Last-5 created files:
+2016-11-21 06:00 cimage/oophp-kmom01_image16.png_695_562_q85_co-1.png
+2016-11-21 06:00 cimage/oophp-kmom01_image16.png_695_562_q85_co-1
+2016-11-21 06:00 cimage/fasttrack/4430da4c8fe3c38cc472dc6ad017415a
+2016-11-20 02:34 cimage/tiles-floor_grass_e.png_32_32_q85_co-1.png
+2016-11-20 02:34 cimage/tiles-floor_grass_e.png_32_32_q85_co-1
+
+# Last-5 accessed files:
+2016-11-21 09:30 snapht15_webgl-sandbox2-point.png_958_821_q85_co-1
+2016-11-21 09:30 htmlphp-kmom04_image10.png_630_375_q85_co-1
+2016-11-21 09:30 htmlphp-kmom04_image09.png_630_539_q85_co-1
+2016-11-21 09:30 htmlphp-kmom04_image08.png_630_539_q85_co-1
+2016-11-21 09:30 htmlphp-kmom04_image07.png_630_550_q85_co-1
+
+# 5 Oldest files:
+2016-08-08 11:52 snapvt16_kutv-vt16.png_134_108_q85_co-1.png
+2016-08-08 11:52 tema-trad_blad_40x38.png_40_38_q85_co-1.png
+2016-08-08 11:53 snapht15_google-chrome-postman.png_630_453_q85_co-1.png
+2016-08-08 12:36 snapht14_python-mos-me-page.png_630_569_q85_co-1.png
+2016-08-08 13:01 snapht15_js-boulder-dash.png_190_107_o553-411-231-164_q85_co-1.png
+
+# Files not accessed within the last 30 days
+Number of files: 2191
+Total file size: 134276
 ```
 
-Use it as a base if you feel the need to monitor the size of the cache-directory. Perhaps modify the script and execute it regularly using crontab.
+Use it as a base if you feel the need to monitor the size of the cache-directory. Perhaps modify the script to your needs and execute it regularly using crontab.
 
 
 
@@ -74,7 +87,7 @@ You can allow `img.php` to download remote images. That can be enabled in the co
 
 That sounds scary. It should.
 
-For my own sake I will use it like this, since I consider it a most useful feature.
+For my own sake I will use it like this.
 
 * Create a special version of `img.php` that has remote download allowed, hide it from public usage.
 * Always use a password.

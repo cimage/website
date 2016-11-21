@@ -3,7 +3,7 @@ Download & Install
 
 [FIGURE class="right" src="/image/example/kodim04.png?w=200&h=100&cf&a=32,20,40,35" caption="A cropped image."]
 
-There are mainly two ways of using CImage. You either install the whole project which uses the autoloader to include the various files, or you install the all-included bundle that -- for convenience and ease of use -- contains all code in one script.
+There are mainly two ways of using CImage. You either install the whole project which uses the autoloader to include needed files, or you install the all-included bundle that -- for convenience and ease of use -- contains all code in one script.
 
 You can download CImage from GitHub or by using composer.
 

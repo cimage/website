@@ -4,8 +4,9 @@ Revision
 This is the revision history of this documentation.
 
 <span class="revision-history" markdown="1">
-2016-03-12 (PF, mos) Major rewrite and publish to website.  
-2015-07-25 (E, mos) Minor edits for release 0.7.1.  
+2016-11-21 (J, mos) Walkthrough and cleaning up.  
+2016-03-12 (I, mos) Major rewrite and publish to website.  
+2015-07-25 (H, mos) Minor edits for release 0.7.1.  
 2015-02-10 (G, mos) Release 0.7.  
 2015-01-08 (F, mos) Release 0.6.1.  
 2014-12-06 (E, mos) Release 0.6.  

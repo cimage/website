@@ -31,6 +31,8 @@ You can configure to [enable download of remote images](config-file#remote-downl
 
 > `img.php?src=http://dbwebb.se/img/vimmel/jul-dbwebb-2013.jpg`
 
+Read on [implications on enabling remote image download](implications#remote).
+
 
 
 Dummy image as placeholder

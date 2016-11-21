@@ -21,13 +21,13 @@ return [
             "favicon"       => "img/favicon/favicon_128x128.png",
 
             // Style and stylesheets
-            "stylesheets" => ["css/style.min.css"],
+            "stylesheets" => ["css/style.min.css?2016-11-20"],
             "styleInline" => null,
 
             // JavaScript
             "javascripts" => [
-                "js/mos-theme/image-overlay.js",
-                "js/mos-theme/responsive-menu.js",
+                "js/theme/image-overlay.js?2016-11-20",
+                "js/theme/responsive-menu.min.js?2016-11-20",
             ],
         ],
     ],
@@ -68,6 +68,12 @@ return [
             "template" => "default/navbar",
             "data" => [],
             "sort" => 1
+        ],
+        [
+            "region" => "profile",
+            "template" => "default/navbar-max",
+            "data" => [],
+            "sort" => -1
         ],
         [
             "region" => "footer",
