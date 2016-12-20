@@ -159,7 +159,7 @@ Options for saving the target image.
 
 There are examples on how to use these options in "[Quality and file size](quality-filesize)", "[JPEG quality settings](jpeg-quality-settings)" and "[PNG compression levels](png-compression-settings)".
 
-The option [alias can be enabled in the config file](config-file#alias).
+The option [alias can be enabled in the config file](config-file#alias) and must be used together with a [password](#option-pwd).
 
 
 

@@ -119,6 +119,8 @@ You can download an external image, or another image you are processing, and sav
 //'alias_path'   =>  __DIR__ . '/img/alias/',
 ```
 
+Using alias requires one to use a password, other alias will fail.
+
 
 
 Alternative source as backup image {#src-alt}
