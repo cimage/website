@@ -163,6 +163,9 @@ lint: less
 # target: site-build - Build site structure from codebase.
 .PHONY: site-build
 site-build:
+	# Target dir
+	install --directory $(LOCAL_HTDOCS)
+
 	# Copy from CImage
 	install -d htdocs/cimage
 	rsync -av vendor/mos/cimage/webroot/imgd.php htdocs/cimage/imgd.php
