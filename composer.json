@@ -3,6 +3,6 @@
         "mos/anax": "^2.5",
         "mos/ctextfilter": "^1.2",
         "mos/cimage": "^0.7",
-        "ext-yaml": "*"
+        "symfony/yaml": "^5.2"
     }
 }
