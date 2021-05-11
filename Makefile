@@ -71,7 +71,7 @@ cache-clear:
 
 
 #
-# 
+#
 # target: local-publish-clear - Publish website to local host and clear the cache.
 .PHONY: local-publish-clear
 local-publish-clear: local-cache-clear local-publish
