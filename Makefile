@@ -197,16 +197,20 @@ etc-hosts:
 # target: ssl-cert-create - One way to create the certificates.
 .PHONY: ssl-cert-create
 ssl-cert-create:
-	cd $(HOME)/git/letsencrypt
-	./letsencrypt-auto certonly --standalone -d $(WWW_SITE) -d www.$(WWW_SITE)
+	#cd $(HOME)/git/letsencrypt
+	#./letsencrypt-auto certonly --standalone -d $(WWW_SITE) -d www.$(WWW_SITE)
+	sudo certbot certonly --standalone -d $(WWW_SITE) -d www.$(WWW_SITE)
 
 
 
 # target: ssl-cert-update - Update certificates with new expiray date.
 .PHONY: ssl-cert-renew
 ssl-cert-update:
-	cd $(HOME)/git/letsencrypt
-	./letsencrypt-auto renew
+	#cd $(HOME)/git/letsencrypt
+	#./letsencrypt-auto renew
+	sudo service apache2 stop
+	sudo certbot renew
+	sudo service apache2 start
 
 
 
