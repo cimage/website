@@ -199,7 +199,9 @@ etc-hosts:
 ssl-cert-create:
 	#cd $(HOME)/git/letsencrypt
 	#./letsencrypt-auto certonly --standalone -d $(WWW_SITE) -d www.$(WWW_SITE)
+	sudo service apache2 stop
 	sudo certbot certonly --standalone -d $(WWW_SITE) -d www.$(WWW_SITE)
+	sudo service apache2 start
 
 
 
