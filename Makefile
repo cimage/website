@@ -334,8 +334,8 @@ ServerName www.$${site}
 
 <VirtualHost *:443>
 	Include $(SSL_APACHE_CONF)
-	SSLCertificateFile 		$(SSL_PEM_BASE)/cert.pem
-	SSLCertificateKeyFile 	$(SSL_PEM_BASE)/privkey.pem
+	SSLCertificateFile $(SSL_PEM_BASE)/cert.pem
+	SSLCertificateKeyFile $(SSL_PEM_BASE)/privkey.pem
 	SSLCertificateChainFile $(SSL_PEM_BASE)/chain.pem
 
 	ServerName www.$${site}
