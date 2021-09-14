@@ -206,7 +206,7 @@ ssl-cert-create:
 
 
 # target: ssl-cert-update - Update certificates with new expiray date.
-.PHONY: ssl-cert-renew
+.PHONY: ssl-cert-update
 ssl-cert-update:
 	#cd $(HOME)/git/letsencrypt
 	#./letsencrypt-auto renew
@@ -235,6 +235,7 @@ ServerName $${site}
 	ServerAlias do3.$${site}
 	ServerAlias do4.$${site}
 	DocumentRoot $(HTDOCS_BASE)/$${site}/htdocs
+    ServerSignature Off
 
 	<Directory />
 		Options Indexes FollowSymLinks
@@ -324,6 +325,7 @@ export VIRTUAL_HOST_443
 define VIRTUAL_HOST_443_WWW
 Define site $(WWW_SITE)
 ServerAdmin $(SERVER_ADMIN)
+ServerName www.$${site}
 
 <VirtualHost *:80>
 	ServerName www.$${site}
