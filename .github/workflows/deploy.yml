@@ -1,0 +1,29 @@
+name: Deploy archive to do6
+
+on:
+  push:
+    branches: [master]
+    paths: ['archive/**', '.github/workflows/deploy.yml']
+  workflow_dispatch:
+
+concurrency: deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare SSH
+        run: |
+          install -m 700 -d ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
+      # The key on the server is locked to "rrsync -wo /srv/cimage.se": it can only write there.
+      - name: Sync archive/
+        run: |
+          rsync -rlt --delete --itemize-changes \
+            -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
+            archive/ "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:."
