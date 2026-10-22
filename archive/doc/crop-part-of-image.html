@@ -1,0 +1,389 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Crop parts of image | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-doc-crop-part-of-image">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="crop-part-of-image.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../doc.html">CImage Manual</a></li>
+        <li><a href="crop-part-of-image.html">Crop parts of image</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+                        <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                <div class="block toc">
+
+    <h4>CImage Manual</h4>
+    
+    <ul class="toc">
+
+        <li class="level-0"><a href="../doc.html">Welcome</a></li><li class="section-header">Get going</li><li class="level-0"><a href="introduction.html">Introduction</a></li><li class="level-1"><a href="requirements.html">Requirements</a></li><li class="level-2"><a href="download-and-install.html">Download &amp; Install</a></li><li class="level-2"><a href="configure.html">Basic configuration</a></li><li class="level-2"><a href="check-environment.html">Check environment</a></li><li class="level-1"><a href="get-going-quickly.html">Get going quickly</a></li><li class="level-1"><a href="use-case.html">Use case</a></li><li class="section-header">Features and Options</li><li class="level-0"><a href="features-and-options.html">Options</a></li><li class="level-2"><a href="select-the-source.html">Select the source</a></li><li class="level-2"><a href="resize.html">Resize strategies</a></li><li class="level-2"><a href="working-with-size.html">Working with sizes</a></li><li class="level-1 selected"><a href="crop-part-of-image.html">Crop parts of image</a></li><li class="level-2"><a href="scale-before-processing.html">Scale before processing</a></li><li class="level-2"><a href="filters.html">Filters and convolution</a></li><li class="level-2"><a href="gdfilter.html">Filters and effects from PHP GD</a></li><li class="level-2"><a href="shortcut.html">Create and use shortcuts</a></li><li class="level-1"><a href="rotate.html">Rotate images</a></li><li class="level-2"><a href="quality-filesize.html">Quality and file size</a></li><li class="level-1"><a href="jpeg-quality-settings.html">JPEG quality settings</a></li><li class="level-2"><a href="png-compression-settings.html">PNG compression levels</a></li><li class="level-1"><a href="post-processing.html">Post-processing with external tools</a></li><li class="level-1"><a href="ascii-art.html">ASCII art</a></li><li class="level-1"><a href="convert-to-srgb.html">Convert to sRGB color space</a></li><li class="level-1"><a href="troubleshoot.html">Troubleshoot image processing</a></li><li class="level-1"><a href="config-file.html">The configuration file</a></li><li class="section-header">Nice to know</li><li class="level-0"><a href="friendly-urls.html">Friendly urls through .htaccess</a></li><li class="level-0"><a href="implications.html">Implications and considerations</a></li><li class="level-0"><a href="cimage-api.html">How it all works</a></li><li class="level-0"><a href="community.html">Community and issues</a></li><li class="level-0"><a href="revision.html">Revision</a></li>
+    </ul>
+
+</div>
+            </div>
+            
+                        <main class="main has-sidebar-left has-sidebar" role="main">
+                <div class="next-previous">
+        <div class="next"><a href="scale-before-processing.html">Next</a> »</div>
+    
+        <div class="previous">« <a href="working-with-size.html">Previous</a></div>
+    </div>
+<article class="article">
+<h1>Crop parts of image</h1>
+
+<figure class="figure figure right">
+<a href="../image/example/kodim04.png"><img src="../image/example/kodim04__w300-h150-crop-to-fit-save-asjpg.jpg" alt="A face cropped to fit a certain width and height."/></a>
+<figcaption>
+
+<p>A face cropped to fit a certain width and height.</p>
+
+</figcaption>
+</figure>
+
+<p>You can control the resulting image dimension using <code>width</code> and <code>height</code> together with the resizing strategies. The strategy <code>crop-to-fit</code> seems to be most useful when creating images of specified dimensions.</p>
+
+<p>Lets review some examples where we use <code>crop-to-fit</code> together with various options to control the size and active part of the image.</p>
+
+<h2 id="area"><a class="header-anchor" href="crop-part-of-image.html#area">#</a>Choose the area of the image to work on</h2>
+
+<p>When you crop to fit an image, the base will be the center of the image. You can change this by setting an <code>area</code> as a base for calculating which part to use of the source image. This is actually an easy way of cropping the part of the image that you want to use. You can see this as defining an offset for the active part of the image. You set the area using values for <code>top,right,bottom,left</code>, each value being a percentage of the original image width/height.</p>
+
+<p>Lets take an example where we want to create a thumbnail of the lady, we want to focus on her eyes and mouth.</p>
+
+<table>
+<thead>
+<tr>
+  <th>What</th>
+  <th>The image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Crop to fit without defining the area.<br><code>?w=150&amp;h=150&amp;crop-to-fit</code></td>
+  <td><img src="../image/example/kodim04__w150-h150-crop-to-fit.png" alt=''></td>
+</tr>
+<tr>
+  <td>Ignore the top 25% of the image.<br><code>?w=150&amp;h=150&amp;crop-to-fit&amp;area=25,0,0,0</code></td>
+  <td><img src="../image/example/kodim04__w150-h150-crop-to-fit-area25_0_0_0.png" alt=''></td>
+</tr>
+<tr>
+  <td>Ignore the right 20% of the image.<br><code>?w=150&amp;h=150&amp;crop-to-fit&amp;area=0,20,0,0</code></td>
+  <td><img src="../image/example/kodim04__w150-h150-crop-to-fit-area0_20_0_0.png" alt=''></td>
+</tr>
+<tr>
+  <td>Ignore the bottom 20% of the image.<br><code>?w=150&amp;h=150&amp;crop-to-fit&amp;area=0,0,20,0</code></td>
+  <td><img src="../image/example/kodim04__w150-h150-crop-to-fit-area0_0_20_0.png" alt=''></td>
+</tr>
+<tr>
+  <td>Ignore the left 35% of the image.<br><code>?w=150&amp;h=150&amp;crop-to-fit&amp;area=0,0,0,35</code></td>
+  <td><img src="../image/example/kodim04__w150-h150-crop-to-fit-area0_0_0_35.png" alt=''></td>
+</tr>
+<tr>
+  <td>Make it altogether to fit only the eyes and the mouth. It may take some tries to get it right.<br><code>?w=150&amp;h=150&amp;crop-to-fit&amp;area=25,20,20,35</code></td>
+  <td><img src="../image/example/kodim04__w150-h150-crop-to-fit-area30_20_25_35.png" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="crop"><a class="header-anchor" href="crop-part-of-image.html#crop">#</a>Crop a portion of the image</h2>
+
+<p>You can crop parts of an image by setting the <em>width</em>, <em>height</em>, <em>start_x</em> and <em>start_y</em> to define the area to crop from the original image. Doing this, we can achieve the same results as when using <code>area</code>. It is just another mean to the same end, which is &#8211; cropping out a certain area of the image. Lets see how this way of cropping works. Lets crop the eyes and the mouth of the lady, once more.</p>
+
+<table>
+<thead>
+<tr>
+  <th>What</th>
+  <th>Parameters</th>
+  <th>The image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Crop a portion of 300x300 pixels, start at the left, top corner, that is position 0, 0.</td>
+  <td><code>?w=150&amp;crop=300,300,0,0</code></td>
+  <td><img src="../image/example/kodim04__w150-crop300_300_0_0.png" alt=''></td>
+</tr>
+<tr>
+  <td>Crop portion, start at the right, top corner.</td>
+  <td><code>?w=150&amp;crop=300,300,right,top</code></td>
+  <td><img src="../image/example/kodim04__w150-crop300_300_right_top.png" alt=''></td>
+</tr>
+<tr>
+  <td>Crop portion, start at the right, bottom corner.</td>
+  <td><code>?w=150&amp;crop=300,300,right,bottom</code></td>
+  <td><img src="../image/example/kodim04__w150-crop300_300_right_bottom.png" alt=''></td>
+</tr>
+<tr>
+  <td>Crop portion, start at the left, bottom corner.</td>
+  <td><code>?w=150&amp;crop=300,300,left,bottom</code></td>
+  <td><img src="../image/example/kodim04__w150-crop300_300_left_bottom.png" alt=''></td>
+</tr>
+<tr>
+  <td>Crop portion, start at the center, center.</td>
+  <td><code>?w=150&amp;crop=300,300,center,center</code></td>
+  <td><img src="../image/example/kodim04__w150-crop300_300_center_center.png" alt=''></td>
+</tr>
+<tr>
+  <td>Crop only the eyes and the mouth.</td>
+  <td><code>?w=150&amp;crop=200,220,190,300</code></td>
+  <td><img src="../image/example/kodim04__w150-crop200_220_190_300.png" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>Cropping is essential when trying to only get the most interesting part of the image.</p>
+
+<p>Learn to crop your images, creative cropping can make wonderful images from appearingly useless originals.</p>
+</article>
+<div class="next-previous">
+        <div class="next"><a href="scale-before-processing.html">Scale before processing</a> »</div>
+    
+        <div class="previous">« <a href="working-with-size.html">Working with sizes</a></div>
+    </div>
+            </main>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

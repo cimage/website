@@ -1,0 +1,457 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Resize strategies | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-doc-resize">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="resize.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../doc.html">CImage Manual</a></li>
+        <li><a href="resize.html">Resize strategies</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+                        <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                <div class="block toc">
+
+    <h4>CImage Manual</h4>
+    
+    <ul class="toc">
+
+        <li class="level-0"><a href="../doc.html">Welcome</a></li><li class="section-header">Get going</li><li class="level-0"><a href="introduction.html">Introduction</a></li><li class="level-1"><a href="requirements.html">Requirements</a></li><li class="level-2"><a href="download-and-install.html">Download &amp; Install</a></li><li class="level-2"><a href="configure.html">Basic configuration</a></li><li class="level-2"><a href="check-environment.html">Check environment</a></li><li class="level-1"><a href="get-going-quickly.html">Get going quickly</a></li><li class="level-1"><a href="use-case.html">Use case</a></li><li class="section-header">Features and Options</li><li class="level-0"><a href="features-and-options.html">Options</a></li><li class="level-2"><a href="select-the-source.html">Select the source</a></li><li class="level-2 selected"><a href="resize.html">Resize strategies</a></li><li class="level-2"><a href="working-with-size.html">Working with sizes</a></li><li class="level-1"><a href="crop-part-of-image.html">Crop parts of image</a></li><li class="level-2"><a href="scale-before-processing.html">Scale before processing</a></li><li class="level-2"><a href="filters.html">Filters and convolution</a></li><li class="level-2"><a href="gdfilter.html">Filters and effects from PHP GD</a></li><li class="level-2"><a href="shortcut.html">Create and use shortcuts</a></li><li class="level-1"><a href="rotate.html">Rotate images</a></li><li class="level-2"><a href="quality-filesize.html">Quality and file size</a></li><li class="level-1"><a href="jpeg-quality-settings.html">JPEG quality settings</a></li><li class="level-2"><a href="png-compression-settings.html">PNG compression levels</a></li><li class="level-1"><a href="post-processing.html">Post-processing with external tools</a></li><li class="level-1"><a href="ascii-art.html">ASCII art</a></li><li class="level-1"><a href="convert-to-srgb.html">Convert to sRGB color space</a></li><li class="level-1"><a href="troubleshoot.html">Troubleshoot image processing</a></li><li class="level-1"><a href="config-file.html">The configuration file</a></li><li class="section-header">Nice to know</li><li class="level-0"><a href="friendly-urls.html">Friendly urls through .htaccess</a></li><li class="level-0"><a href="implications.html">Implications and considerations</a></li><li class="level-0"><a href="cimage-api.html">How it all works</a></li><li class="level-0"><a href="community.html">Community and issues</a></li><li class="level-0"><a href="revision.html">Revision</a></li>
+    </ul>
+
+</div>
+            </div>
+            
+                        <main class="main has-sidebar-left has-sidebar" role="main">
+                <div class="next-previous">
+        <div class="next"><a href="working-with-size.html">Next</a> »</div>
+    
+        <div class="previous">« <a href="select-the-source.html">Previous</a></div>
+    </div>
+<article class="article">
+<h1>Resize strategies</h1>
+
+<p>This is how you can resize an image using <code>width</code>, <code>height</code> and different resize strategies.</p>
+
+<h2 id="resize"><a class="header-anchor" href="resize.html#resize">#</a>Resize using constraints on max dimensions</h2>
+
+<p>Create a custom version of the image by applying constraints on width and height, or one of them.</p>
+
+<p>First lets look at a image with landscape orientation, scaled to width and/or height matching 150px.</p>
+
+<table>
+<thead>
+<tr>
+  <th><code>&amp;width=150</code></th>
+  <th><code>&amp;height=150</code></th>
+  <th><code>&amp;w=150&amp;h=150</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><img src="../image/example/kodim13__w150.png" alt=''></td>
+  <td><img src="../image/example/kodim13__h150.png" alt=''></td>
+  <td><img src="../image/example/kodim13__w150-h150.png" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>Then we use the same settings on an image with portrait orientation.</p>
+
+<table>
+<thead>
+<tr>
+  <th><code>&amp;width=150</code></th>
+  <th><code>&amp;height=150</code></th>
+  <th><code>&amp;w=150&amp;h=150</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><img src="../image/example/kodim04__w150.png" alt=''></td>
+  <td><img src="../image/example/kodim04__h150.png" alt=''></td>
+  <td><img src="../image/example/kodim04__w150-h150.png" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>Now, lets consider how it works.</p>
+
+<p>By setting <code>width</code>, <code>height</code> or both, the image gets resized to be <em>not larger</em> than the defined dimensions <em>and</em> keeping its original aspect ratio.</p>
+
+<p>Think of the constraints as a imaginary box where the image should fit. With <code>width=150</code> and <code>height=150</code> the box would have the dimension of 150x150px.</p>
+
+<p>This box is 150x150 pixels.</p>
+
+<div class="square150"></div>
+
+<p>A landscape image would fit in that box and its width would be 150px and its height depending on the aspect ratio, but for sure less than 150px.</p>
+
+<blockquote>
+  <p><code>kodim13.png?w=150&amp;h=150</code></p>
+</blockquote>
+
+<div class="square150"><img src="../image/example/kodim13__w150-h150.png" alt=""></div>
+
+<p>The width is 150 pixels and the height is less than 150 pixels due to landscape image keeping its aspect ratio.</p>
+
+<p>A portrait image would fit with a height of 150px and the width depending on the aspect ratio, but surely less than 150px.</p>
+
+<blockquote>
+  <p><code>kodim04.png?w=150&amp;h=150</code></p>
+</blockquote>
+
+<div class="square150"><img src="../image/example/kodim04__w150-h150.png" alt=""></div>
+
+<p>The height is 150 pixels and the width is less than 150 pixels due to portrait image keeping its aspect ratio.</p>
+
+<p>So, the important thing to remember is, when using both width and height constraint, an imaginary box is created and all parts of the image fits in that box.</p>
+
+<h2 id="resize-fit-landscape"><a class="header-anchor" href="resize.html#resize-fit-landscape">#</a>Resize to fit a certain dimension (landscape)</h2>
+
+<p>Creating an image with a certain dimension of width and height, usually involves stretching or cropping the image to fit in the selected dimensions. Here is how you create an image that has the exact dimensions of 300x150 pixels, by either <em>stretching</em>, <em>cropping</em> or <em>fill to fit</em>.</p>
+
+<p>First, here is the image resized using both width &amp; height but without any resizing strategy. The box has  a width and height of 300x150 pixels.</p>
+
+<div class="square150" style="width:300px;"><img src="../image/example/kodim13__w300-h150.png" alt=''></div>
+
+<p>The resized image fits in the box with a height of 150px and a width of less than 300px, just as we learned in the previous chapter.</p>
+
+<p>Now lets see the same example using the different resize strategies.</p>
+
+<table>
+<thead>
+<tr>
+  <th>What</th>
+  <th>The image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Original.</strong> The original image resized with a max width and max height.<br><code>?w=300&amp;h=150</code></td>
+  <td><img src="../image/example/kodim13__w300-h150.png" alt=''></td>
+</tr>
+<tr>
+  <td><strong>Stretch.</strong> Stretch the image so that the resulting image has the defined width and height.<br><code>?w=300&amp;h=150&amp;stretch</code></td>
+  <td><img src="../image/example/kodim13__w300-h150-stretch.png" alt=''></td>
+</tr>
+<tr>
+  <td><strong>Crop to fit.</strong> Keep the aspect ratio and crop out the parts of the image that does not fit.<br><code>?w=300&amp;h=150&amp;crop-to-fit</code></td>
+  <td><img src="../image/example/kodim13__w300-h150-crop-to-fit.png" alt=''></td>
+</tr>
+<tr>
+  <td><strong>Fill to fit.</strong> Keep the aspect ratio and fill then blank space with a background color.<br><code>?w=300&amp;h=150&amp;fill-to-fit=006600</code></td>
+  <td><img src="../image/example/kodim13__w300-h150-fill-to-fit006600.png" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>Stretching might work, like in the above example where you can not really notice that the image is stretched. But usually, stretching is not that a good option since it distorts the ratio. Stretching a face may not turn out particularly well.</p>
+
+<p>Fill to fit is useful when you have some image that must fit in a certain dimension and stretching nor cropping can do it. Carefully choose the background color to make a good resulting image. Choose the same background color as your website and no one will even notice.</p>
+
+<h2 id="resize-fit-portrait"><a class="header-anchor" href="resize.html#resize-fit-portrait">#</a>Resize to fit a certain dimension (portrait)</h2>
+
+<p>Lets take the same example on the portrait image.</p>
+
+<div class="square150" style="width:300px;"><img src="../image/example/kodim04__w300-h150.png" alt=''></div>
+
+<table>
+<thead>
+<tr>
+  <th>What</th>
+  <th>The image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Original.</strong> The original image resized with a max width and max height.<br><code>?w=300&amp;h=150</code></td>
+  <td><img src="../image/example/kodim04__w300-h150.png" alt=''></td>
+</tr>
+<tr>
+  <td><strong>Stretch.</strong> Stretch the image so that the resulting image has the defined width and height.<br><code>?w=300&amp;h=150&amp;stretch</code></td>
+  <td><img src="../image/example/kodim04__w300-h150-stretch.png" alt=''></td>
+</tr>
+<tr>
+  <td><strong>Crop to fit.</strong> Keep the aspect ratio and crop the parts of the image that does not fit.<br><code>?w=300&amp;h=150&amp;crop-to-fit</code></td>
+  <td><img src="../image/example/kodim04__w300-h150-crop-to-fit.png" alt=''></td>
+</tr>
+<tr>
+  <td><strong>Fill to fit.</strong> Keep the aspect ratio and fit the whole image in the dimension, fill out the remaining parts with a background color.<br><code>?w=300&amp;h=150&amp;fill-to-fit=66000</code></td>
+  <td><img src="../image/example/kodim04__w300-h150-fill-to-fit660000.png" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>As one can see - stretching an image is not always a good solution. Here its quite obvious that the crop-to-fit option makes the &#8220;best&#8221; image.</p>
+
+<h2 id="no-upscale"><a class="header-anchor" href="resize.html#no-upscale">#</a>Do not upscale smaller images</h2>
+
+<p>The option <code>no-upscale</code> prevents smaller images from being upscaled. Consider the following image.</p>
+
+<p><img src="../image/example/car.png" alt=''></p>
+
+<p>Lets use this image with <code>fill-to-fit</code> using a background-color and without <code>no-upscale</code>.</p>
+
+<p><img src="../image/example/car__w600-h420-fill-to-fit660000-srgb.png" alt=''></p>
+
+<p>Now the same image with <code>no-upscale</code>.</p>
+
+<p><img src="../image/example/car__w600-h420-fill-to-fit660000-srgb-no-upscale.png" alt=''></p>
+
+<p>The image is not upscaled and keeps it original size.</p>
+
+<p>This is good for images that you really do not want to be upscaled. You can set the proper background color, perhaps to match the background color of your website.</p>
+</article>
+<div class="next-previous">
+        <div class="next"><a href="working-with-size.html">Working with sizes</a> »</div>
+    
+        <div class="previous">« <a href="select-the-source.html">Select the source</a></div>
+    </div>
+            </main>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

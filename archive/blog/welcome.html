@@ -1,0 +1,336 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>A new website for CImage | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-blog-welcome">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="welcome.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../blog.html">Development blog</a></li>
+        <li><a href="welcome.html">A new website for CImage</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+            
+                        <main class="main has-sidebar-right has-sidebar" role="main">
+                <article class="article blog-post" itemscope itemtype="http://schema.org/Article">
+
+    <header>
+    <h1>A new website for CImage</h1>
+    <p class="meta-header">
+    <adress class="author">By mos.</adress>
+    Published <time pubdate datetime="1458777600">1458777600</time>.
+    </p>
+</header>
+
+<figure class="figure right">
+<a href="../image/example/kodim04.png"><img src="../image/example/kodim04__w200-h100-cf-a32_20_40_35.png" alt="Keep an eye on whats up."/></a>
+<figcaption>
+
+<p>Keep an eye on whats up.</p>
+
+</figcaption>
+</figure>
+
+<p>I&#8217;ve been, still being, in the process of rewriting the documentation for CImage and the result should pop up here on this website.</p>
+
+<p>The idea was to get its own website for CImage and creating a better base for improving and extending the documentation.</p>
+
+<!--more-->
+
+<h2 id="docs"><a class="header-anchor" href="welcome.html#docs">#</a>Improve documentation</h2>
+
+<p>So, this is still work in progress, but the website is at least up and running and the documentation is in large ported from its original location at <a href="http://dbwebb.se/opensource/cimage">dbwebb.se/opensource/cimage</a>.</p>
+
+<p>It used to be one large file, making it hard to maintain and extend, so I splitted it into several parts instead, hopefully making it a bit more accessible and for sure easier to maintain.</p>
+
+<p>You reach the documentation from the navbar at the top of the page.</p>
+
+<h2 id="org"><a class="header-anchor" href="welcome.html#org">#</a>GitHub Organisation</h2>
+
+<p>I have prepared a <a href="https://github.com/cimage">GitHub organisation</a> and intend to move my CImage related stuff there. I guess it will be more visible to put it in an organisation, lets see how it turns out.</p>
+
+<p>I will not move CImage from mosbth yet, I need to check up on some things first.</p>
+
+<p>For now this website lies there, thats a start.</p>
+
+<h2 id="code"><a class="header-anchor" href="welcome.html#code">#</a>Codewise v0.8.0</h2>
+
+<p>Besides this website, and rewriting the documentation, am I in the start of version v0.8.0 which means a larger rewrite on how image scaling, crop and processing is done in the class CImage. It is far from done yet, but work has started.</p>
+
+<p>I need to do that rewrite before introducing any new features, the code is becoming to hard to maintain, so rewriting a part of the &#8220;CImage brain&#8221; will fix that to make it easier to introduce more features.</p>
+
+<p>So, for now.</p>
+
+<p>/Mikael</p>
+
+    
+</article>
+            </main>
+            
+                        <div class="sidebar sidebar-right has-sidebar-right has-sidebar" role="complementary">
+                <div class="block">
+
+    
+            <h4>Development blog</h4>
+
+<p>Posts about development, documentation, articles on how to use CImage and info on image processing in general.</p>
+    
+    
+    
+</div>
+<div class="block toc article-toc">
+
+    <h4>Table Of Content</h4>
+    
+    <ul class="toc">
+                <li class="level-h2"><a href="welcome.html#docs">Improve documentation</a></li>
+                <li class="level-h2"><a href="welcome.html#org">GitHub Organisation</a></li>
+                <li class="level-h2"><a href="welcome.html#code">Codewise v0.8.0</a></li>
+            </ul>
+
+</div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>The configuration file | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-doc-config-file">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="config-file.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../doc.html">CImage Manual</a></li>
+        <li><a href="config-file.html">The configuration file</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+                        <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                <div class="block toc">
+
+    <h4>CImage Manual</h4>
+    
+    <ul class="toc">
+
+        <li class="level-0"><a href="../doc.html">Welcome</a></li><li class="section-header">Get going</li><li class="level-0"><a href="introduction.html">Introduction</a></li><li class="level-1"><a href="requirements.html">Requirements</a></li><li class="level-2"><a href="download-and-install.html">Download &amp; Install</a></li><li class="level-2"><a href="configure.html">Basic configuration</a></li><li class="level-2"><a href="check-environment.html">Check environment</a></li><li class="level-1"><a href="get-going-quickly.html">Get going quickly</a></li><li class="level-1"><a href="use-case.html">Use case</a></li><li class="section-header">Features and Options</li><li class="level-0"><a href="features-and-options.html">Options</a></li><li class="level-2"><a href="select-the-source.html">Select the source</a></li><li class="level-2"><a href="resize.html">Resize strategies</a></li><li class="level-2"><a href="working-with-size.html">Working with sizes</a></li><li class="level-1"><a href="crop-part-of-image.html">Crop parts of image</a></li><li class="level-2"><a href="scale-before-processing.html">Scale before processing</a></li><li class="level-2"><a href="filters.html">Filters and convolution</a></li><li class="level-2"><a href="gdfilter.html">Filters and effects from PHP GD</a></li><li class="level-2"><a href="shortcut.html">Create and use shortcuts</a></li><li class="level-1"><a href="rotate.html">Rotate images</a></li><li class="level-2"><a href="quality-filesize.html">Quality and file size</a></li><li class="level-1"><a href="jpeg-quality-settings.html">JPEG quality settings</a></li><li class="level-2"><a href="png-compression-settings.html">PNG compression levels</a></li><li class="level-1"><a href="post-processing.html">Post-processing with external tools</a></li><li class="level-1"><a href="ascii-art.html">ASCII art</a></li><li class="level-1"><a href="convert-to-srgb.html">Convert to sRGB color space</a></li><li class="level-1"><a href="troubleshoot.html">Troubleshoot image processing</a></li><li class="level-1 selected"><a href="config-file.html">The configuration file</a></li><li class="section-header">Nice to know</li><li class="level-0"><a href="friendly-urls.html">Friendly urls through .htaccess</a></li><li class="level-0"><a href="implications.html">Implications and considerations</a></li><li class="level-0"><a href="cimage-api.html">How it all works</a></li><li class="level-0"><a href="community.html">Community and issues</a></li><li class="level-0"><a href="revision.html">Revision</a></li>
+    </ul>
+
+</div>
+            </div>
+            
+                        <main class="main has-sidebar-left has-sidebar" role="main">
+                <div class="next-previous">
+        <div class="next"><a href="friendly-urls.html">Next</a> »</div>
+    
+        <div class="previous">« <a href="troubleshoot.html">Previous</a></div>
+    </div>
+<article class="article">
+<h1>The configuration file</h1>
+
+<p>The configuration file contain options to configure CImage and img.php to meet your specific needs.</p>
+
+<p>Consult the source code of <a href="https://github.com/mosbth/cimage/blob/master/webroot/img_config.php"><code>webroot/img_config.php</code></a> for a complete list together with the default values for each configuration setting. There are comments explaining each section together with examples.</p>
+
+<p>This document provides you with additional information to navigate through the configuration options.</p>
+
+<h2 id="basic"><a class="header-anchor" href="config-file.html#basic">#</a>Basic configuration</h2>
+
+<p>You need to do some <a href="configure.html">basic configuration</a> to get going with CImage. It concerns configuration of autoloading, (development/production/strict) mode and paths to the image and cache directory.</p>
+
+<p>This will enable you to move around the files and store them where you want to match your specific system.</p>
+
+<h2 id="more"><a class="header-anchor" href="config-file.html#more">#</a>More settings in the configuration file</h2>
+
+<p>The following sections have their own pages.</p>
+
+<ul>
+<li><a href="working-with-size.html">Constants for size and aspect ratio</a></li>
+<li><a href="filters.html">Filters and Convolution</a></li>
+<li><a href="quality-filesize.html">JPEG/PNG quality</a></li>
+<li><a href="shortcut.html">Create and use shortcuts</a></li>
+<li><a href="post-processing.html">Post processing</a></li>
+<li><a href="convert-to-srgb.html">Convert to sRGB color space</a></li>
+<li><a href="troubleshoot.html#skip-original">Skip the original image</a></li>
+<li><a href="ascii-art.html">ASCII art</a></li>
+</ul>
+
+<h2 id="password"><a class="header-anchor" href="config-file.html#password">#</a>Password</h2>
+
+<p>You can use a password to protect sensitive options like <code>alias</code> and remote download of images.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Use password to protect from missusage, send &amp;pwd=... or &amp;password=..
+ * with the request to match the password or set to false to disable.
+ * Passwords are only used together with options for remote download
+ * and aliasing.
+ *
+ * Create a passwords like this, depending on the type used:
+ *  text: 'my_password'
+ *  md5:  md5('my_password')
+ *  hash: password_hash('my_password', PASSWORD_DEFAULT)
+ *
+ * Default values.
+ *  password_always: false  // do not always require password,
+ *  password:        false  // as in do not use password
+ *  password_type:   'text' // use plain password, not encoded,
+ */</span>
+<span class="hljs-comment">//'password_always' =&gt; false, // always require password,</span>
+<span class="hljs-comment">//'password'        =&gt; false, // "secret-password",</span>
+<span class="hljs-comment">//'password_type'   =&gt; 'text', // supports 'text', 'md5', 'hash',</span>
+</pre>
+
+<p>This is a shallow layer of protection. But it can to some extent prevent unwanted usage.</p>
+
+<h2 id="remote-download"><a class="header-anchor" href="config-file.html#remote-download">#</a>Remote download</h2>
+
+<p>This part relates to allow download of remote images.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Allow or disallow downloading of remote images available on
+ * remote servers. Default is to disallow remote download.
+ *
+ * When enabling remote download, the default is to allow download any
+ * link starting with http or https. This can be changed using
+ * remote_pattern.
+ *
+ * When enabling remote_whitelist a check is made that the hostname of the
+ * source to download matches the whitelist. By default the check is
+ * disabled and thereby allowing download from any hosts.
+ *
+ * Default values.
+ *  remote_allow:     false
+ *  remote_pattern:   null  // use default values from CImage which is to
+ *                          // allow download from any http- and
+ *                          // https-source.
+ *  remote_whitelist: null  // use default values from CImage which is to
+ *                          // allow download from any hosts.
+ */</span>
+<span class="hljs-comment">//'remote_allow'     =&gt; true,</span>
+<span class="hljs-comment">//'remote_pattern'   =&gt; '#^https?://#',</span>
+<span class="hljs-comment">//'remote_whitelist' =&gt; array(</span>
+<span class="hljs-comment">//    '\.facebook\.com$',</span>
+<span class="hljs-comment">//    '^(?:images|photos-[a-z])\.ak\.instagram\.com$',</span>
+<span class="hljs-comment">//    '\.google\.com$'</span>
+<span class="hljs-comment">//),</span>
+</pre>
+
+<h2 id="alias"><a class="header-anchor" href="config-file.html#alias">#</a>Path to alias directory</h2>
+
+<p>You can download an external image, or another image you are processing, and save a copy of it locally in the alias directory.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Path to aliases, useful when downloading external images and you
+ * want to create a local copy of the file, a alias file.
+ * End all paths with a slash.
+ *
+ * Default values:
+ *  alias_path: null
+ */</span>
+<span class="hljs-comment">//'alias_path'   =&gt;  __DIR__ . '/img/alias/',</span>
+</pre>
+
+<p>Using alias requires one to use a password, other alias will fail.</p>
+
+<h2 id="src-alt"><a class="header-anchor" href="config-file.html#src-alt">#</a>Alternative source as backup image</h2>
+
+<p>You can configure to always supply a backup image if the source image is missing from disk.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Use backup image if src-image is not found on disk. The backup image
+ * is only available for local images and based on wether the original
+ * image is found on disk or not. The backup image must be a local image
+ * or the dummy image.
+ *
+ * Default value:
+ *  src_alt:  null //disabled by default
+ */</span>
+ <span class="hljs-comment">//'src_alt' =&gt; 'car.png',</span>
+ <span class="hljs-comment">//'src_alt' =&gt; 'dummy',</span>
+</pre>
+
+<h2 id="dummy"><a class="header-anchor" href="config-file.html#dummy">#</a>Dummy image</h2>
+
+<p>You can change the settings for the dummy image.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * The name representing a dummy image which is automatically created
+ * and stored as a image in the dir CACHE_PATH/dummy. The dummy image
+ * can then be used as a placeholder image.
+ * The dir CACHE_PATH/dummy is automatically created when needed.
+ * Write protect the CACHE_PATH/dummy to prevent creation of new
+ * dummy images, but continue to use the existing ones.
+ *
+ * Default value:
+ *  dummy_enabled:  true as default, disable dummy feature by setting
+ *                  to false.
+ *  dummy_filename: 'dummy' use this as ?src=dummy to create a dummy image.
+ */</span>
+ <span class="hljs-comment">//'dummy_enabled' =&gt; true,</span>
+ <span class="hljs-comment">//'dummy_filename' =&gt; 'dummy',</span>
+</pre>
+
+<h2 id="bgc"><a class="header-anchor" href="config-file.html#bgc">#</a>Background color</h2>
+
+<p>You can define your own default background-color on those images using it.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Set default background color for all images. Override it using
+ * option bgColor.
+ * Colorvalue is 6 digit hex string between 000000-FFFFFF
+ * or 8 digit hex string if using the alpha channel where
+ * the alpha value is between 00 (opaqe) and 7F (transparent),
+ * that is between 00000000-FFFFFF7F.
+ *
+ * Default values.
+ *  background_color: As specified by CImage
+ */</span>
+<span class="hljs-comment">//'background_color' =&gt; "FFFFFF",</span>
+<span class="hljs-comment">//'background_color' =&gt; "FFFFFF7F",</span>
+</pre>
+
+<h2 id="cache"><a class="header-anchor" href="config-file.html#cache">#</a>Cache control</h2>
+
+<p>There are several ways to work with caching to improve performance.</p>
+
+<h3 id="cachecontrol"><a class="header-anchor" href="config-file.html#cachecontrol">#</a>HTTP headers for cache control</h3>
+
+<p>Set the headers you want to deliver with each image.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Add header for cache control when outputting images.
+ *
+ * Default value:
+ *  cache_control: null, or set to string
+ */</span>
+ <span class="hljs-comment">//'cache_control' =&gt; "max-age=86400",</span>
+</pre>
+
+<h3 id="fasttrack"><a class="header-anchor" href="config-file.html#fasttrack">#</a>Fast track cache</h3>
+
+<p>This is a cache of the cache, improving time to deliver a cached image.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Fast track cache. Save a json representation of the image as a
+ * fast track to the cached version of the image. This avoids some
+ * processing and allows for quicker load times of cached images.
+ *
+ * Default values:
+ *  fast_track_allow: false
+ */</span>
+<span class="hljs-comment">//'fast_track_allow' =&gt; true,</span>
+</pre>
+
+<h2 id="security"><a class="header-anchor" href="config-file.html#security">#</a>Enhancing security through constraints</h2>
+
+<p>The settings below are related to security and constraints you choose to set.</p>
+
+<h3 id="valchars"><a class="header-anchor" href="config-file.html#valchars">#</a>Validate characters in filename</h3>
+
+<p>Decide what characters you allow in the image source filename.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * A regexp for validating characters in the image or alias filename.
+ *
+ * Default value:
+ *  valid_filename:  '#^[a-z0-9A-Z-/_ \.:]+$#'
+ *  valid_aliasname: '#^[a-z0-9A-Z-_]+$#'
+ */</span>
+ <span class="hljs-comment">//'valid_filename'  =&gt; '#^[a-z0-9A-Z-/_ \.:]+$#',</span>
+ <span class="hljs-comment">//'valid_aliasname' =&gt; '#^[a-z0-9A-Z-_]+$#',</span>
+</pre>
+
+<h3 id="realpath"><a class="header-anchor" href="config-file.html#realpath">#</a>Manage where the image directory is</h3>
+
+<p>Ensure that the images accessed are below a certain directory.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+* Check that the imagefile is a file below 'image_path' using realpath().
+* Security constraint to avoid reaching images outside image_path.
+* This means that symbolic links to images outside the image_path will
+* fail.
+*
+* Default value:
+*  image_path_constraint: true
+*/</span>
+<span class="hljs-comment">//'image_path_constraint' =&gt; false,</span>
+</pre>
+
+<h3 id="maxdimension"><a class="header-anchor" href="config-file.html#maxdimension">#</a>Maxe dimensions</h3>
+
+<p>Limit how large the images can be to decrease load on your system.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Max image dimensions, larger dimensions results in 404.
+ * This is basically a security constraint to avoid using resources on creating
+ * large (unwanted) images.
+ *
+ * Default values.
+ *  max_width:  2000
+ *  max_height: 2000
+ */</span>
+<span class="hljs-comment">//'max_width'     =&gt; 2000,</span>
+<span class="hljs-comment">//'max_height'    =&gt; 2000,</span>
+</pre>
+
+<h3 id="leeching"><a class="header-anchor" href="config-file.html#leeching">#</a>Prevent leeching</h3>
+
+<p>Avoid for others to leech you images.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Prevent leeching of images by controlling the hostname of those who
+ * can access the images. Default is to allow hotlinking.
+ *
+ * Password apply when hotlinking is disallowed, use password to allow
+ * hotlinking.
+ *
+ * The whitelist is an array of regexpes for allowed hostnames that can
+ * hotlink images.
+ *
+ * Default values.
+ *  allow_hotlinking:     true
+ *  hotlinking_whitelist: array()
+ */</span>
+ <span class="hljs-comment">/*
+'allow_hotlinking' =&gt; false,
+'hotlinking_whitelist' =&gt; array(
+    '^dbwebb\.se$',
+),
+*/</span>
+</pre>
+
+<h2 id="hook"><a class="header-anchor" href="config-file.html#hook">#</a>Hook before CImage</h2>
+
+<p>You can define and call a function after all options are compiled together with the settings from the configuration file, and before CImage is used to process the image.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+* A function (hook) can be called after img.php has processed all
+* configuration options and before processing the image using CImage.
+* The function receives the $img variabel and an array with the
+* majority of current settings.
+*
+* Default value:
+*  hook_before_CImage:     null
+*/</span>
+<span class="hljs-comment">/*'hook_before_CImage' =&gt; function (CImage $img, Array $allConfig) {
+   if ($allConfig['newWidth'] &gt; 10) {
+       $allConfig['newWidth'] *= 2;
+   }
+   return $allConfig;
+},*/</span>
+</pre>
+
+<h2 id="timezone"><a class="header-anchor" href="config-file.html#timezone">#</a>Default timezone</h2>
+
+<p>Set the default timezone to use.</p>
+
+<pre class="hljs"> <span class="hljs-comment">/**
+ * Set default timezone.
+ *
+ * Default values.
+ *  default_timezone: ini_get('default_timezone') or 'UTC'
+ */</span>
+<span class="hljs-comment">//'default_timezone' =&gt; 'UTC',</span>
+</pre>
+
+<h2 id="di"><a class="header-anchor" href="config-file.html#di">#</a>Dependency injection</h2>
+
+<p>You can change the behaviour of CImage by deciding what classes to operate on. This is done by injecting classes to work on.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Class names to use, to ease dependency injection. You can change Class
+ * name if you want to use your own class instead. This is a way to extend
+ * the codebase.
+ *
+ * Default values:
+ *  CImage: CImage
+ *  CCache: CCache
+ *  CFastTrackCache: CFastTrackCache
+ */</span>
+ <span class="hljs-comment">//'CImage' =&gt; 'CImage',</span>
+ <span class="hljs-comment">//'CCache' =&gt; 'CCache',</span>
+ <span class="hljs-comment">//'CFastTrackCache' =&gt; 'CFastTrackCache',</span>
+</pre>
+</article>
+<div class="next-previous">
+        <div class="next"><a href="friendly-urls.html">Friendly urls through .htaccess</a> »</div>
+    
+        <div class="previous">« <a href="troubleshoot.html">Troubleshoot image processing</a></div>
+    </div>
+            </main>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

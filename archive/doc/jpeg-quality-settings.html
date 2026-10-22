@@ -1,0 +1,358 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>JPEG quality settings | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-doc-jpeg-quality-settings">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="jpeg-quality-settings.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../doc.html">CImage Manual</a></li>
+        <li><a href="jpeg-quality-settings.html">JPEG quality settings</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+                        <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                <div class="block toc">
+
+    <h4>CImage Manual</h4>
+    
+    <ul class="toc">
+
+        <li class="level-0"><a href="../doc.html">Welcome</a></li><li class="section-header">Get going</li><li class="level-0"><a href="introduction.html">Introduction</a></li><li class="level-1"><a href="requirements.html">Requirements</a></li><li class="level-2"><a href="download-and-install.html">Download &amp; Install</a></li><li class="level-2"><a href="configure.html">Basic configuration</a></li><li class="level-2"><a href="check-environment.html">Check environment</a></li><li class="level-1"><a href="get-going-quickly.html">Get going quickly</a></li><li class="level-1"><a href="use-case.html">Use case</a></li><li class="section-header">Features and Options</li><li class="level-0"><a href="features-and-options.html">Options</a></li><li class="level-2"><a href="select-the-source.html">Select the source</a></li><li class="level-2"><a href="resize.html">Resize strategies</a></li><li class="level-2"><a href="working-with-size.html">Working with sizes</a></li><li class="level-1"><a href="crop-part-of-image.html">Crop parts of image</a></li><li class="level-2"><a href="scale-before-processing.html">Scale before processing</a></li><li class="level-2"><a href="filters.html">Filters and convolution</a></li><li class="level-2"><a href="gdfilter.html">Filters and effects from PHP GD</a></li><li class="level-2"><a href="shortcut.html">Create and use shortcuts</a></li><li class="level-1"><a href="rotate.html">Rotate images</a></li><li class="level-2"><a href="quality-filesize.html">Quality and file size</a></li><li class="level-1 selected"><a href="jpeg-quality-settings.html">JPEG quality settings</a></li><li class="level-2"><a href="png-compression-settings.html">PNG compression levels</a></li><li class="level-1"><a href="post-processing.html">Post-processing with external tools</a></li><li class="level-1"><a href="ascii-art.html">ASCII art</a></li><li class="level-1"><a href="convert-to-srgb.html">Convert to sRGB color space</a></li><li class="level-1"><a href="troubleshoot.html">Troubleshoot image processing</a></li><li class="level-1"><a href="config-file.html">The configuration file</a></li><li class="section-header">Nice to know</li><li class="level-0"><a href="friendly-urls.html">Friendly urls through .htaccess</a></li><li class="level-0"><a href="implications.html">Implications and considerations</a></li><li class="level-0"><a href="cimage-api.html">How it all works</a></li><li class="level-0"><a href="community.html">Community and issues</a></li><li class="level-0"><a href="revision.html">Revision</a></li>
+    </ul>
+
+</div>
+            </div>
+            
+                        <main class="main has-sidebar-left has-sidebar" role="main">
+                <div class="next-previous">
+        <div class="next"><a href="png-compression-settings.html">Next</a> »</div>
+    
+        <div class="previous">« <a href="quality-filesize.html">Previous</a></div>
+    </div>
+<article class="article">
+<h1>JPEG quality settings</h1>
+
+<p>The compression algorithm for JPEG has a quality setting which defines the level of compression to be done. The larger compression results in smaller file size. The quality shall be between 1 (low quality, small file size) to 100 (high quality, large file size).</p>
+
+<h2 id="quality"><a class="header-anchor" href="jpeg-quality-settings.html#quality">#</a>Example on using quality settings</h2>
+
+<p>Here is an example on how the quality settings affect the file size and the visible image.</p>
+
+<p>The measurements in the example is based on <code>?src=kodim23.png&amp;save-as=jpg</code>. The original image is PNG and weights 820KB. The image is resized to <code>&amp;w=300</code> to make it fit in the table and to give you a hint of the visible change while using the option for <code>q</code>.</p>
+
+<table>
+<thead>
+<tr>
+  <th>What</th>
+  <th align="right"> Quality</th>
+  <th align="right">File size</th>
+  <th align="right">The image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;q=100</code></td>
+  <td align="right">100</td>
+  <td align="right">354KB</td>
+  <td align="right"><img src="../image/example/kodim23__w300-save-asjpg-q100.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><code>&amp;q=90</code></td>
+  <td align="right">90</td>
+  <td align="right">100KB</td>
+  <td align="right"><img src="../image/example/kodim23__w300-save-asjpg-q90.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><code>&amp;q=80</code></td>
+  <td align="right">80</td>
+  <td align="right">63KB</td>
+  <td align="right"><img src="../image/example/kodim23__w300-save-asjpg-q80.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><code>&amp;q=70</code></td>
+  <td align="right">70</td>
+  <td align="right">49KB</td>
+  <td align="right"><img src="../image/example/kodim23__w300-save-asjpg-q70.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><code>&amp;q=60</code></td>
+  <td align="right">60</td>
+  <td align="right">41KB</td>
+  <td align="right"><img src="../image/example/kodim23__w300-save-asjpg-q60.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><code>&amp;q=30</code></td>
+  <td align="right">30</td>
+  <td align="right">26BK</td>
+  <td align="right"><img src="../image/example/kodim23__w300-save-asjpg-q30.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><code>&amp;q=10</code></td>
+  <td align="right">10</td>
+  <td align="right">15KB</td>
+  <td align="right"><img src="../image/example/kodim23__w300-save-asjpg-q10.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><code>&amp;q=1</code></td>
+  <td align="right">1</td>
+  <td align="right">10KB</td>
+  <td align="right"> <img src="../image/example/kodim23__w300-save-asjpg-q1.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>The default value for <code>q</code> is 60, its perhaps rather low to start with.</p>
+
+<p><a href="post-processing.html">Post processing</a> of the JPEG image, using an external tool, can further decrease the file size.</p>
+</article>
+<div class="next-previous">
+        <div class="next"><a href="png-compression-settings.html">PNG compression levels</a> »</div>
+    
+        <div class="previous">« <a href="quality-filesize.html">Quality and file size</a></div>
+    </div>
+            </main>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

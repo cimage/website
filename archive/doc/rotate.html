@@ -1,0 +1,416 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Rotate images | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-doc-rotate">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="rotate.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../doc.html">CImage Manual</a></li>
+        <li><a href="rotate.html">Rotate images</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+                        <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                <div class="block toc">
+
+    <h4>CImage Manual</h4>
+    
+    <ul class="toc">
+
+        <li class="level-0"><a href="../doc.html">Welcome</a></li><li class="section-header">Get going</li><li class="level-0"><a href="introduction.html">Introduction</a></li><li class="level-1"><a href="requirements.html">Requirements</a></li><li class="level-2"><a href="download-and-install.html">Download &amp; Install</a></li><li class="level-2"><a href="configure.html">Basic configuration</a></li><li class="level-2"><a href="check-environment.html">Check environment</a></li><li class="level-1"><a href="get-going-quickly.html">Get going quickly</a></li><li class="level-1"><a href="use-case.html">Use case</a></li><li class="section-header">Features and Options</li><li class="level-0"><a href="features-and-options.html">Options</a></li><li class="level-2"><a href="select-the-source.html">Select the source</a></li><li class="level-2"><a href="resize.html">Resize strategies</a></li><li class="level-2"><a href="working-with-size.html">Working with sizes</a></li><li class="level-1"><a href="crop-part-of-image.html">Crop parts of image</a></li><li class="level-2"><a href="scale-before-processing.html">Scale before processing</a></li><li class="level-2"><a href="filters.html">Filters and convolution</a></li><li class="level-2"><a href="gdfilter.html">Filters and effects from PHP GD</a></li><li class="level-2"><a href="shortcut.html">Create and use shortcuts</a></li><li class="level-1 selected"><a href="rotate.html">Rotate images</a></li><li class="level-2"><a href="quality-filesize.html">Quality and file size</a></li><li class="level-1"><a href="jpeg-quality-settings.html">JPEG quality settings</a></li><li class="level-2"><a href="png-compression-settings.html">PNG compression levels</a></li><li class="level-1"><a href="post-processing.html">Post-processing with external tools</a></li><li class="level-1"><a href="ascii-art.html">ASCII art</a></li><li class="level-1"><a href="convert-to-srgb.html">Convert to sRGB color space</a></li><li class="level-1"><a href="troubleshoot.html">Troubleshoot image processing</a></li><li class="level-1"><a href="config-file.html">The configuration file</a></li><li class="section-header">Nice to know</li><li class="level-0"><a href="friendly-urls.html">Friendly urls through .htaccess</a></li><li class="level-0"><a href="implications.html">Implications and considerations</a></li><li class="level-0"><a href="cimage-api.html">How it all works</a></li><li class="level-0"><a href="community.html">Community and issues</a></li><li class="level-0"><a href="revision.html">Revision</a></li>
+    </ul>
+
+</div>
+            </div>
+            
+                        <main class="main has-sidebar-left has-sidebar" role="main">
+                <div class="next-previous">
+        <div class="next"><a href="quality-filesize.html">Next</a> »</div>
+    
+        <div class="previous">« <a href="shortcut.html">Previous</a></div>
+    </div>
+<article class="article">
+<h1>Rotate images</h1>
+
+<p>This is how you can rotate the image.</p>
+
+<h2 id="exif"><a class="header-anchor" href="rotate.html#exif">#</a>Auto rotate based on EXIF</h2>
+
+<p>Some smartphones uses EXIF-information to let applications know how the image is rotated. This is in general handled by image processing tools. But if you, for example, take a image with your iPhone and email the image to yourself and then adds it to your website, then it will not adhere to the EXIF-information.</p>
+
+<p>Let us see how it works.</p>
+
+<p>You need the <a href="http://php.net/manual/en/book.exif.php">EXIF extension</a> to support auto-rotation of JPEG-images.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Image taken with iPhone.<br><code>&amp;w=300</code></td>
+  <td align="right"> <img src="../image/example/issue36/me-270__w300.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Same image but auto rotated using EXIF.<br><code>&amp;w=300&amp;aro</code></td>
+  <td align="right"> <img src="../image/example/issue36/me-270__w300-aro.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="angle"><a class="header-anchor" href="rotate.html#angle">#</a>Rotate based on angle</h2>
+
+<p>If you need to rotate the image, you do so by adding the angle to rotate. This is how you use the same source image as above, and rotate it &#8220;by hand&#8221; to make it look okey.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Image from iPhoto, rotated -90°.<br><code>&amp;w=200&amp;r=-90</code></td>
+  <td align="right"> <img src="../image/example/issue36/me-270__w200-r-90.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Image from iPhoto, rotated 0°.<br><code>&amp;w=200&amp;r=0</code></td>
+  <td align="right"> <img src="../image/example/issue36/me-270__w200-r0.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Image from iPhoto, rotated 90°.<br><code>&amp;w=200&amp;r=90</code></td>
+  <td align="right"> <img src="../image/example/issue36/me-270__w200-r90.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Image from iPhoto, rotated 180°.<br><code>&amp;w=200&amp;r=180</code></td>
+  <td align="right"> <img src="../image/example/issue36/me-270__w200-r180.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Image from iPhoto, rotated 270°.<br><code>&amp;w=200&amp;r=270</code></td>
+  <td align="right"> <img src="../image/example/issue36/me-270__w200-r270.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="beforeafter"><a class="header-anchor" href="rotate.html#beforeafter">#</a>Rotate before or after processing?</h2>
+
+<p>Hmmm, in the example above, you got two different results on the resulting image dimension. Why? Well, <code>aro, auto-rotate</code> rotates the source image before its resized and <code>r, rotate</code> rotates the image after its resized.</p>
+
+<p>The difference can be spelled out as this.</p>
+
+<ol>
+<li><em>Before</em>. Take the image, rotate it, then give it its final dimensions which makes some sense with respect to the width and height you are expecting.</li>
+<li><em>After</em>. Take the image, resize it and then rotate the image. The target size you expect is there, but inverted - you get a portrait image and turn it to a landscape image and width and height are swapped.</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+  <th>Rotate before or after resizing</th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Rotate before, final dimension as expected (same as <code>auto-rotate</code>).<br><code>&amp;w=100&amp;h=200&amp;rb=-90</code></td>
+  <td>Rotate after, <em>expected</em> dimensions are inverted, width becomes height and height becomes width.<br><code>&amp;w=100&amp;h=200&amp;ra=-90</code></td>
+</tr>
+<tr>
+  <td><img src="../image/example/issue36/me-270__w100-h200-cf-rb-90.jpg" alt=''></td>
+  <td><img src="../image/example/issue36/me-270__w100-h200-cf-ra-90.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>So, normally this makes sense, but if you get in trouble, remember that rotate before, or after, processing and resizing, gives different results.</p>
+
+<h2 id="perpendicular"><a class="header-anchor" href="rotate.html#perpendicular">#</a>Rotate non perpendicular angle</h2>
+
+<p>If you rotate the image in a non perpendicular angle you need to fill the background with a color. You control what color to use with <code>bgc, bg-color</code>.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Rotate and fill remaining space</th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Use auto rotation to get it right in the first place.<br><code>&amp;w=100&amp;aro</code></td>
+  <td> <img src="../image/example/issue36/me-270__w100-aro.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Rotate 15 degrees, before processing. Resulting image keeps its dimensions,<br><code>&amp;w=100&amp;aro&amp;rb=15</code></td>
+  <td> <img src="../image/example/issue36/me-270__w100-aro-rb15.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Rotate 15 degrees, after processing. Resulting image gets unknown dimensions.<br><code>&amp;w=100&amp;aro&amp;ra=15</code></td>
+  <td> <img src="../image/example/issue36/me-270__w100-aro-ra15.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Rotate 15 degrees, after processing. Use <code>bgc, bg-color</code> to select the background color.<br><code>&amp;w=100&amp;aro&amp;ra=15&amp;bgc=cccccc</code></td>
+  <td> <img src="../image/example/issue36/me-270__w100-aro-ra15-bgccccccc.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Rotate 15 degrees, after processing. Combine with <code>a, area</code> to get only a part of the image and <code>height</code> together with <code>crop-to-fit</code> to make it all fit in a box of 100x100px.<br><code>&amp;w=100&amp;aro&amp;ra=15&amp;a=20,30,40,20</code></td>
+  <td> <img src="../image/example/issue36/me-270__w100-h100-cf-aro-rb15-a20_30_40_20.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="next-previous">
+        <div class="next"><a href="quality-filesize.html">Quality and file size</a> »</div>
+    
+        <div class="previous">« <a href="shortcut.html">Create and use shortcuts</a></div>
+    </div>
+            </main>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

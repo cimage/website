@@ -1,0 +1,612 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Filters and effects from PHP GD | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-doc-gdfilter">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="gdfilter.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../doc.html">CImage Manual</a></li>
+        <li><a href="gdfilter.html">Filters and effects from PHP GD</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+                        <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                <div class="block toc">
+
+    <h4>CImage Manual</h4>
+    
+    <ul class="toc">
+
+        <li class="level-0"><a href="../doc.html">Welcome</a></li><li class="section-header">Get going</li><li class="level-0"><a href="introduction.html">Introduction</a></li><li class="level-1"><a href="requirements.html">Requirements</a></li><li class="level-2"><a href="download-and-install.html">Download &amp; Install</a></li><li class="level-2"><a href="configure.html">Basic configuration</a></li><li class="level-2"><a href="check-environment.html">Check environment</a></li><li class="level-1"><a href="get-going-quickly.html">Get going quickly</a></li><li class="level-1"><a href="use-case.html">Use case</a></li><li class="section-header">Features and Options</li><li class="level-0"><a href="features-and-options.html">Options</a></li><li class="level-2"><a href="select-the-source.html">Select the source</a></li><li class="level-2"><a href="resize.html">Resize strategies</a></li><li class="level-2"><a href="working-with-size.html">Working with sizes</a></li><li class="level-1"><a href="crop-part-of-image.html">Crop parts of image</a></li><li class="level-2"><a href="scale-before-processing.html">Scale before processing</a></li><li class="level-2"><a href="filters.html">Filters and convolution</a></li><li class="level-2 selected"><a href="gdfilter.html">Filters and effects from PHP GD</a></li><li class="level-2"><a href="shortcut.html">Create and use shortcuts</a></li><li class="level-1"><a href="rotate.html">Rotate images</a></li><li class="level-2"><a href="quality-filesize.html">Quality and file size</a></li><li class="level-1"><a href="jpeg-quality-settings.html">JPEG quality settings</a></li><li class="level-2"><a href="png-compression-settings.html">PNG compression levels</a></li><li class="level-1"><a href="post-processing.html">Post-processing with external tools</a></li><li class="level-1"><a href="ascii-art.html">ASCII art</a></li><li class="level-1"><a href="convert-to-srgb.html">Convert to sRGB color space</a></li><li class="level-1"><a href="troubleshoot.html">Troubleshoot image processing</a></li><li class="level-1"><a href="config-file.html">The configuration file</a></li><li class="section-header">Nice to know</li><li class="level-0"><a href="friendly-urls.html">Friendly urls through .htaccess</a></li><li class="level-0"><a href="implications.html">Implications and considerations</a></li><li class="level-0"><a href="cimage-api.html">How it all works</a></li><li class="level-0"><a href="community.html">Community and issues</a></li><li class="level-0"><a href="revision.html">Revision</a></li>
+    </ul>
+
+</div>
+            </div>
+            
+                        <main class="main has-sidebar-left has-sidebar" role="main">
+                <div class="next-previous">
+        <div class="next"><a href="shortcut.html">Next</a> »</div>
+    
+        <div class="previous">« <a href="filters.html">Previous</a></div>
+    </div>
+<article class="article">
+<h1>Filters and effects from PHP GD</h1>
+
+<p>There are a set of filters that are built in to PHP GD library. You can get an overview of these filters and their arguments by reviewing the documentation for <a href="http://www.php.net/manual/en/function.imagefilter.php">imagefilter()</a>.</p>
+
+<figure class="figure">
+<a href="../image/example/kodim24__ww2-save-asjpg.jpg"><img src="../image/example/kodim24__ww2-save-asjpg.jpg" alt="A house, kodimg24.png, from The Kodak Colorset."/></a>
+<figcaption>
+
+<p>A house, kodimg24.png, from The Kodak Colorset.</p>
+
+</figcaption>
+</figure>
+
+<p>Lets see some examples on using these filters. The base for all examples are:</p>
+
+<blockquote>
+  <p><code>?src=kodim24.png&amp;w=300&amp;save-as=jpg</code></p>
+</blockquote>
+
+<h2 id="negate"><a class="header-anchor" href="gdfilter.html#negate">#</a>Filter Negate</h2>
+
+<p>This filter reverses all colors of the image.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;f=negate</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fnegate.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="grayscale"><a class="header-anchor" href="gdfilter.html#grayscale">#</a>Filter Grayscale</h2>
+
+<p>This filter converts the image into grayscale.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;f=grayscale</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fgrayscale.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="brightness"><a class="header-anchor" href="gdfilter.html#brightness">#</a>Filter Brightness</h2>
+
+<p>This filter changes the brightness of the image. Use <em>arg1</em> to set the level of brightness. 0 is current setting, 255 is max light which means white and -255 is max dark meaning black.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;f=brightness,50</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fbrightness_50.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><code>&amp;f=brightness,-50</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fbrightness_-50.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="contrast"><a class="header-anchor" href="gdfilter.html#contrast">#</a>Filter Contrast</h2>
+
+<p>This filter changes the contrast of the image. Use <em>arg1</em> to set the level of contrast. 0 is current setting, 100 is lowest contrast which means a completely gray image and -100 is max contrast.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;f=contrast,20</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fcontrast_20.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><code>&amp;f=contrast,-20</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fcontrast_-20.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="colorize"><a class="header-anchor" href="gdfilter.html#colorize">#</a>Filter Colorize</h2>
+
+<p>This is like the grayscale filter, except you can specify the color. Use <em>arg1</em>, <em>arg2</em> and <em>arg3</em> in the form of red, green, blue and <em>arg4</em> for the alpha channel. The range for each color is 0 to 255 where a positive value enhances the color and a negative value decreases the color. For the alpha channel it is a value between 0 and 127. 0 indicates completely opaque while 127 indicates completely transparent.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Enhance the green color <code>&amp;f=colorize,0,30,0,0</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fcolorize_0_30_0_0.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Make it look golden with some brown tone <code>&amp;f=colorize,100,60,0,0</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fcolorize_100_60_0_0.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Reduce the color red <code>&amp;f=colorize,-60,0,0,0</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fcolorize_-60_0_0_0.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="edgedetect"><a class="header-anchor" href="gdfilter.html#edgedetect">#</a>Filter Edge Detect</h2>
+
+<p>This filter uses edge detection to highlight the edges in the image.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;f=edgedetect</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fedgedetect.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="emboss"><a class="header-anchor" href="gdfilter.html#emboss">#</a>Filter Emboss</h2>
+
+<p>This filter embosses the image and gives it a 3D look.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;f=emboss</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-femboss.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="gaussian"><a class="header-anchor" href="gdfilter.html#gaussian">#</a>Filter Gaussian Blur</h2>
+
+<p>This filter blurs the image using the Gaussian method.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;f=gaussian_blur</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fgaussian_blur.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="selective"><a class="header-anchor" href="gdfilter.html#selective">#</a>Filter Selective Blur</h2>
+
+<p>This filter blurs the image.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;f=selective_blur</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fselective_blur.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="meanremoval"><a class="header-anchor" href="gdfilter.html#meanremoval">#</a>Filter Mean Removal</h2>
+
+<p>This filter uses mean removal to achieve a &#8220;sketchy&#8221; effect.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;f=mean_removal</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fmean_removal.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="smooth"><a class="header-anchor" href="gdfilter.html#smooth">#</a>Filter Smooth</h2>
+
+<p>This filter makes the image smoother. Use <em>arg1</em> to set the level of smoothness. 0 gives a very smooth image</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Smooth <code>&amp;f=smooth,0</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fsmooth_0.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Some smothness <code>&amp;f=smooth,10</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fsmooth_10.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>This filter applies a 9-cell convolution matrix where center pixel has the weight <em>arg1</em> and others weight of 1.0. Using negative values can produce some effects.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Make it unfocused <code>&amp;f=smooth,-5</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fsmooth_-5.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Show me the edges <code>&amp;f=smooth,-7</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fsmooth_-7.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Make it look sharper <code>&amp;f=smooth,-10</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fsmooth_-10.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="pixelate"><a class="header-anchor" href="gdfilter.html#pixelate">#</a>Filter Pixelate</h2>
+
+<p>This filter applies pixelation effect to the image, use <em>arg1</em> to set the block size in pixels and <em>arg2</em> to set the pixelation effect mode, whether to use advanced pixelation effect or not (defaults to FALSE).</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>&amp;f=pixelate,4,0</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fpixelate_4_0.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><code>&amp;f=pixelate,4,1</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fpixelate_4_1.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="combine"><a class="header-anchor" href="gdfilter.html#combine">#</a>Combine filters</h2>
+
+<p>You can combine up to eleven filters by naming them f, f0-f9.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Usage</th>
+  <th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Make it grayscale and lighter.<br><code>&amp;f=grayscale&amp;f0=brightness,40</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fgrayscale-f0brightness_40.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Make it grayscale, lighter and enhance contrast.<br><code>&amp;f=grayscale&amp;f0=brightness,40</code><br><code>&amp;f1=contrast,-20</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fgrayscale-f0brightness_40-f1contrast_-20.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Make it grayscale, lighter, enhance contrast &amp; sharpen it.<br><code>&amp;f=grayscale&amp;f0=brightness,40</code><br><code>&amp;f1=contrast,-20&amp;sharpen</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fgrayscale-f0brightness_40-f1contrast_-20-sharpen.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Make it sepia, a bit old.<br><code>&amp;f=grayscale&amp;f0=brightness,-10</code><br><code>&amp;f1=contrast,-20</code><br><code>&amp;f2=colorize,120,60,0,0&amp;sharpen</code></td>
+  <td align="right"> <img src="../image/example/kodim24__w300-save-asjpg-fgrayscale-f0brightness_-10-f1contrast_-20-f2colorize_120_60_0_0-sharpen.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>You can greatly enhance the perceived quality of the image by selecting a good combination of filters.</p>
+</article>
+<div class="next-previous">
+        <div class="next"><a href="shortcut.html">Create and use shortcuts</a> »</div>
+    
+        <div class="previous">« <a href="filters.html">Filters and convolution</a></div>
+    </div>
+            </main>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

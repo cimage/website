@@ -1,0 +1,373 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Troubleshoot image processing | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-doc-troubleshoot">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="troubleshoot.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../doc.html">CImage Manual</a></li>
+        <li><a href="troubleshoot.html">Troubleshoot image processing</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+                        <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                <div class="block toc">
+
+    <h4>CImage Manual</h4>
+    
+    <ul class="toc">
+
+        <li class="level-0"><a href="../doc.html">Welcome</a></li><li class="section-header">Get going</li><li class="level-0"><a href="introduction.html">Introduction</a></li><li class="level-1"><a href="requirements.html">Requirements</a></li><li class="level-2"><a href="download-and-install.html">Download &amp; Install</a></li><li class="level-2"><a href="configure.html">Basic configuration</a></li><li class="level-2"><a href="check-environment.html">Check environment</a></li><li class="level-1"><a href="get-going-quickly.html">Get going quickly</a></li><li class="level-1"><a href="use-case.html">Use case</a></li><li class="section-header">Features and Options</li><li class="level-0"><a href="features-and-options.html">Options</a></li><li class="level-2"><a href="select-the-source.html">Select the source</a></li><li class="level-2"><a href="resize.html">Resize strategies</a></li><li class="level-2"><a href="working-with-size.html">Working with sizes</a></li><li class="level-1"><a href="crop-part-of-image.html">Crop parts of image</a></li><li class="level-2"><a href="scale-before-processing.html">Scale before processing</a></li><li class="level-2"><a href="filters.html">Filters and convolution</a></li><li class="level-2"><a href="gdfilter.html">Filters and effects from PHP GD</a></li><li class="level-2"><a href="shortcut.html">Create and use shortcuts</a></li><li class="level-1"><a href="rotate.html">Rotate images</a></li><li class="level-2"><a href="quality-filesize.html">Quality and file size</a></li><li class="level-1"><a href="jpeg-quality-settings.html">JPEG quality settings</a></li><li class="level-2"><a href="png-compression-settings.html">PNG compression levels</a></li><li class="level-1"><a href="post-processing.html">Post-processing with external tools</a></li><li class="level-1"><a href="ascii-art.html">ASCII art</a></li><li class="level-1"><a href="convert-to-srgb.html">Convert to sRGB color space</a></li><li class="level-1 selected"><a href="troubleshoot.html">Troubleshoot image processing</a></li><li class="level-1"><a href="config-file.html">The configuration file</a></li><li class="section-header">Nice to know</li><li class="level-0"><a href="friendly-urls.html">Friendly urls through .htaccess</a></li><li class="level-0"><a href="implications.html">Implications and considerations</a></li><li class="level-0"><a href="cimage-api.html">How it all works</a></li><li class="level-0"><a href="community.html">Community and issues</a></li><li class="level-0"><a href="revision.html">Revision</a></li>
+    </ul>
+
+</div>
+            </div>
+            
+                        <main class="main has-sidebar-left has-sidebar" role="main">
+                <div class="next-previous">
+        <div class="next"><a href="config-file.html">Next</a> »</div>
+    
+        <div class="previous">« <a href="convert-to-srgb.html">Previous</a></div>
+    </div>
+<article class="article">
+<h1>Troubleshoot image processing</h1>
+
+<p>Here are a few useful tools to troubleshoot the image processing and to control how the cached image is created.</p>
+
+<h2 id="json"><a class="header-anchor" href="troubleshoot.html#json">#</a>JSON representation of the image</h2>
+
+<p>You can get a JSON representation of the image by adding the option <code>json</code>. This can be useful if you need to know the actual dimension of the image, or just for troubleshooting.</p>
+
+<p>For example, take the image created like this:</p>
+
+<blockquote>
+  <p><code>&amp;w=300&amp;save-as=jpg</code></p>
+</blockquote>
+
+<p><img src="../image/example/kodim24__w300-save-asjpg.jpg" alt=''></p>
+
+<p>Its JSON-representation is retrieved like this:</p>
+
+<blockquote>
+  <p><code>&amp;w=300&amp;save-as=jpg&amp;json</code></p>
+</blockquote>
+
+<p>Which gives the following result.</p>
+
+<pre class="hljs">{
+    <span class="hljs-string">"src"</span>: <span class="hljs-string">"example/kodim24.png"</span>,
+    <span class="hljs-string">"srcGmdate"</span>: <span class="hljs-string">"Thu, 24 Mar 2016 08:19:09"</span>,
+    <span class="hljs-string">"cache"</span>: <span class="hljs-string">"example_kodim24.png_300_200_q60_co-1_jpg"</span>,
+    <span class="hljs-string">"cacheGmdate"</span>: <span class="hljs-string">"Sun, 20 Nov 2016 15:48:06"</span>,
+    <span class="hljs-string">"filename"</span>: <span class="hljs-string">"example_kodim24.png_300_200_q60_co-1_jpg"</span>,
+    <span class="hljs-string">"mimeType"</span>: <span class="hljs-string">"image/jpeg"</span>,
+    <span class="hljs-string">"width"</span>: <span class="hljs-number">300</span>,
+    <span class="hljs-string">"height"</span>: <span class="hljs-number">200</span>,
+    <span class="hljs-string">"aspectRatio"</span>: <span class="hljs-number">1.5</span>,
+    <span class="hljs-string">"size"</span>: <span class="hljs-number">10998</span>,
+    <span class="hljs-string">"colors"</span>: <span class="hljs-number">25590</span>,
+    <span class="hljs-string">"includedFiles"</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">"memoryPeek"</span>: <span class="hljs-string">"4.306 MB"</span>,
+    <span class="hljs-string">"memoryCurrent"</span>: <span class="hljs-string">"0.338 MB"</span>,
+    <span class="hljs-string">"memoryLimit"</span>: <span class="hljs-string">"128M"</span>,
+    <span class="hljs-string">"loadTime"</span>: <span class="hljs-string">"0.059s"</span>
+}
+</pre>
+
+<p>I&#8217;ll use this feature for ease testing, but the feature can also be useful when one really want complete control over the resulting dimension of an image.</p>
+
+<h2 id="verbose"><a class="header-anchor" href="troubleshoot.html#verbose">#</a>Verbose output</h2>
+
+<p>You can visualize what happens during image processing by adding the <code>v, verbose</code> parameter. It will display the resulting image together with a verbose output on what is actually happening behind the scene.</p>
+
+<figure class="figure">
+<a href="../image/cimage-verbose-output.png"><img src="../image/cimage-verbose-output__ww2-q60-sharpen.png" alt="This is output from verbose output."/></a>
+<figcaption>
+
+<p>This is output from verbose output.</p>
+
+</figcaption>
+</figure>
+
+<p>This can be useful for debugging and to understand what actually happens during processing of the image.</p>
+
+<p>This option is only available when running in development mode.</p>
+
+<h2 id="no-cache"><a class="header-anchor" href="troubleshoot.html#no-cache">#</a>Ignore the cache</h2>
+
+<p>The parameter <code>nc, no-cache</code> ignores the cached item and will always create a new cached item.</p>
+
+<p>This can be useful when having older items in the cache and one wants to ensure that the cached item is re-created.</p>
+
+<h2 id="skip-original"><a class="header-anchor" href="troubleshoot.html#skip-original">#</a>Skip the original image</h2>
+
+<p>The parameter <code>so, skip-original</code> skips the original image, even if the original image is the best fit. As a result a cached image is created and displayed.</p>
+
+<p>You can configure to always skip the original image. This is how the default configuration looks like.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Set skip-original to true to always process the image and use
+ * the cached version. Default is false and to use the original
+ * image when its no processing needed.
+ *
+ * Default value:
+ *  skip_original: false
+ */</span>
+ <span class="hljs-comment">//'skip_original' =&gt; false,</span>
+</pre>
+
+<h2 id="env"><a class="header-anchor" href="troubleshoot.html#env">#</a>Check your environment</h2>
+
+<p>There are tools to <a href="check-environment.html">check your installed environment</a>.</p>
+</article>
+<div class="next-previous">
+        <div class="next"><a href="config-file.html">The configuration file</a> »</div>
+    
+        <div class="previous">« <a href="convert-to-srgb.html">Convert to sRGB color space</a></div>
+    </div>
+            </main>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

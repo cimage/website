@@ -1,0 +1,474 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Working with sizes | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-doc-working-with-size">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="working-with-size.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../doc.html">CImage Manual</a></li>
+        <li><a href="working-with-size.html">Working with sizes</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+                        <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                <div class="block toc">
+
+    <h4>CImage Manual</h4>
+    
+    <ul class="toc">
+
+        <li class="level-0"><a href="../doc.html">Welcome</a></li><li class="section-header">Get going</li><li class="level-0"><a href="introduction.html">Introduction</a></li><li class="level-1"><a href="requirements.html">Requirements</a></li><li class="level-2"><a href="download-and-install.html">Download &amp; Install</a></li><li class="level-2"><a href="configure.html">Basic configuration</a></li><li class="level-2"><a href="check-environment.html">Check environment</a></li><li class="level-1"><a href="get-going-quickly.html">Get going quickly</a></li><li class="level-1"><a href="use-case.html">Use case</a></li><li class="section-header">Features and Options</li><li class="level-0"><a href="features-and-options.html">Options</a></li><li class="level-2"><a href="select-the-source.html">Select the source</a></li><li class="level-2"><a href="resize.html">Resize strategies</a></li><li class="level-2 selected"><a href="working-with-size.html">Working with sizes</a></li><li class="level-1"><a href="crop-part-of-image.html">Crop parts of image</a></li><li class="level-2"><a href="scale-before-processing.html">Scale before processing</a></li><li class="level-2"><a href="filters.html">Filters and convolution</a></li><li class="level-2"><a href="gdfilter.html">Filters and effects from PHP GD</a></li><li class="level-2"><a href="shortcut.html">Create and use shortcuts</a></li><li class="level-1"><a href="rotate.html">Rotate images</a></li><li class="level-2"><a href="quality-filesize.html">Quality and file size</a></li><li class="level-1"><a href="jpeg-quality-settings.html">JPEG quality settings</a></li><li class="level-2"><a href="png-compression-settings.html">PNG compression levels</a></li><li class="level-1"><a href="post-processing.html">Post-processing with external tools</a></li><li class="level-1"><a href="ascii-art.html">ASCII art</a></li><li class="level-1"><a href="convert-to-srgb.html">Convert to sRGB color space</a></li><li class="level-1"><a href="troubleshoot.html">Troubleshoot image processing</a></li><li class="level-1"><a href="config-file.html">The configuration file</a></li><li class="section-header">Nice to know</li><li class="level-0"><a href="friendly-urls.html">Friendly urls through .htaccess</a></li><li class="level-0"><a href="implications.html">Implications and considerations</a></li><li class="level-0"><a href="cimage-api.html">How it all works</a></li><li class="level-0"><a href="community.html">Community and issues</a></li><li class="level-0"><a href="revision.html">Revision</a></li>
+    </ul>
+
+</div>
+            </div>
+            
+                        <main class="main has-sidebar-left has-sidebar" role="main">
+                <div class="next-previous">
+        <div class="next"><a href="crop-part-of-image.html">Next</a> »</div>
+    
+        <div class="previous">« <a href="resize.html">Previous</a></div>
+    </div>
+<article class="article">
+<h1>Working with sizes</h1>
+
+<figure class="figure figure right">
+<a href="../image/example/kodim13.png"><img src="../image/example/kodim13__w150-h150-crop-to-fit-save-asjpg.jpg" alt="Can we support grid based layout?"/></a>
+<figcaption>
+
+<p>Can we support grid based layout?</p>
+
+</figcaption>
+</figure>
+
+<p>The basis for resizing the image is the settings for <code>width</code> and <code>height</code>. But there are many ways of creating these values.</p>
+
+<p>Lets review some examples where we use alternate ways of calculating the dimension of the image. Lets check on predefined sizes, support for grid based layout and create sizes using aspect ratio.</p>
+
+<h2 id="sizes"><a class="header-anchor" href="working-with-size.html#sizes">#</a>Predefined sizes</h2>
+
+<p>There are a set of predefined sizes available in <code>img_config.php</code>. These are based on a grid of 24 columns where each column is 30px wide and a gutter of 10px between each column. The predefined sizes are named <code>c1</code> to <code>c24</code> and corresponds to the width of the columns in the grid. It can be useful to specify the image width based on predefined sizes, if you ever want to change the grid, or the size of the main article column or the sidebar column, then you have only one place to change the image size. This might be time saver when working on websites changing their layout.</p>
+
+<table>
+<thead>
+<tr>
+  <th>What</th>
+  <th>Parameters</th>
+  <th>The image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>One column, <code>c1</code>, 30px wide.</td>
+  <td><code>?w=c1&amp;h=150&amp;crop-to-fit</code></td>
+  <td><img src="../image/example/kodim04__wc1-h150-crop-to-fit.png" alt=''></td>
+</tr>
+<tr>
+  <td>Two columns width, <code>c2</code>, 30px * 2 + 10px = 70px wide.</td>
+  <td><code>?w=c2&amp;h=150&amp;crop-to-fit</code></td>
+  <td><img src="../image/example/kodim04__wc2-h150-crop-to-fit.png" alt=''></td>
+</tr>
+<tr>
+  <td>Three columns, <code>c3</code>, 30px * 3 + 10px * 2 = 110px wide.</td>
+  <td><code>?w=c3&amp;h=150&amp;crop-to-fit</code></td>
+  <td><img src="../image/example/kodim04__wc3-h150-crop-to-fit.png" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>You can specify your own constants and map them to a size. You do this by editing the configuration file.</p>
+
+<h2 id="aspectratio"><a class="header-anchor" href="working-with-size.html#aspectratio">#</a>Calculate dimensions using aspect ratio</h2>
+
+<p>You can use aspect ratio to create images that has a well defined relation between width and height. Specify width, or height, together with aspect ratio and the other dimension will be calculated. If you omit both width and height, but specify aspect ratio, the resulting dimensions is based on the original dimensions.</p>
+
+<p>The resulting dimensions specify a box for the image, which any resulting image dimension will not overflow, you need to use <code>stretch</code>, <code>crop-to-fit</code> or <code>fill-to-fit</code> to make the image fit into the box.</p>
+
+<p>Here are some examples on how to use aspect ratio.</p>
+
+<h3 id="aspect-landscape"><a class="header-anchor" href="working-with-size.html#aspect-landscape">#</a>Aspect ratio on landscape image</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Aspect ratio, parameters</th>
+  <th>The image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>16:10</strong><br><code>&amp;w=300&amp;crop-to-fit&amp;aspect-ratio=16:10</code></td>
+  <td><img src="../image/example/kodim13__sajpg-w300-ar16_10-cf.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><strong>3:1</strong><br><code>&amp;w=300&amp;crop-to-fit&amp;aspect-ratio=3:1</code></td>
+  <td><img src="../image/example/kodim13__sajpg-w300-ar3_1-cf.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>The aspect ratio can be a float, for example <code>&amp;aspect-ratio=1.6</code> or any of the predefined aspect ratios in <code>img_config.php</code>, as of this writing it includes 3:1, 3:2, 4:3, 8:5, 16:10, 16:9 and golden (for the golden ratio).</p>
+
+<p>The aspect ratio can be inverted by prepending an exclamation mark <code>!</code> to the value. This can be useful when working with portrait images.</p>
+
+<h3 id="aspect-portrait"><a class="header-anchor" href="working-with-size.html#aspect-portrait">#</a>Inverted aspect ratio on portrait image</h3>
+
+<table>
+<thead>
+<tr>
+  <th>What, parameters</th>
+  <th>The image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>!16:10</strong><br><code>&amp;h=200&amp;crop-to-fit&amp;aspect-ratio=!16:10</code></td>
+  <td><img src="../image/example/kodim04__sajpg-h200-ar_16_10-cf.jpg" alt=''></td>
+</tr>
+<tr>
+  <td><strong>!3:1</strong><br><code>&amp;h=200&amp;crop-to-fit&amp;aspect-ratio=!3:1</code></td>
+  <td><img src="../image/example/kodim04__sajpg-h200-ar_3_1-cf.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>Aspect ratio can be a good way to make all images the same size, or at least, having the same aspect ratio.</p>
+
+<h2 id="dpr"><a class="header-anchor" href="working-with-size.html#dpr">#</a>Device pixel ratio</h2>
+
+<p>When working with devices having a higher device pixel rate, one could decide to send a larger image to such devices. The option <code>device-pixel-rate, dpr</code> is a shortcut to enlarge the image dimensions.</p>
+
+<p>Lets see two examples using the options <code>&amp;w=200&amp;h=200&amp;</code>.</p>
+
+<table>
+<thead>
+<tr>
+  <th><code>dpr=1</code></th>
+  <th><code>dpr=2</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><img src="../image/example/kodim13__sajpg-w200-h200-dpr1-cf.jpg" alt=''></td>
+  <td><img src="../image/example/kodim13__sajpg-w200-h200-dpr2-cf.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>You see that the option <code>dpr=2</code> simply enlarges both width and height with the selected factor.</p>
+
+<h2 id="size"><a class="header-anchor" href="working-with-size.html#size">#</a>Configure size constants</h2>
+
+<p>This section in <code>img_config.php</code> allows to configure your own size constants.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Predefined size constants.
+ *
+ * These can be used together with &amp;width or &amp;height to create a constant value
+ * for a width or height where can be changed in one place.
+ * Useful when your site changes its layout or if you have a grid to fit images into.
+ *
+ * Example:
+ *  &amp;width=w1  // results in width=613
+ *  &amp;width=c2  // results in spanning two columns with a gutter, 30*2+10=70
+ *  &amp;width=c24 // results in spanning whole grid 24*30+((24-1)*10)=950
+ *
+ * Default values.
+ *  size_constant: As specified by the function below.
+ */</span>
+<span class="hljs-comment">/*
+'size_constant' =&gt; function () {
+    // Set sizes to map constant to value, easier to use with width or height
+    $sizes = array(
+      'w1' =&gt; 613,
+      'w2' =&gt; 630,
+    );
+    // Add grid column width, useful for use as predefined size for width (or height).
+    $gridColumnWidth = 30;
+    $gridGutterWidth = 10;
+    $gridColumns     = 24;
+    for ($i = 1; $i &lt;= $gridColumns; $i++) {
+        $sizes['c' . $i] = ($gridColumnWidth + $gridGutterWidth) * $i - $gridGutterWidth;
+    }
+    return $sizes;
+},*/</span>
+</pre>
+
+<p>Using size constants can make you better prepared for changing requirements on your website, for example when the page layout changes.</p>
+
+<h2 id="aspect-ratio"><a class="header-anchor" href="working-with-size.html#aspect-ratio">#</a>Configure aspect ratio constants</h2>
+
+<p>This section in <code>img_config.php</code> allows to configure your own constants for aspect ratio.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Predefined aspect ratios.
+ *
+ * Default values.
+ *  aspect_ratio_constant: As the function below.
+ */</span>
+<span class="hljs-comment">/*'aspect_ratio_constant' =&gt; function () {
+    return array(
+        '3:1'   =&gt; 3/1,
+        '3:2'   =&gt; 3/2,
+        '4:3'   =&gt; 4/3,
+        '8:5'   =&gt; 8/5,
+        '16:10' =&gt; 16/10,
+        '16:9'  =&gt; 16/9,
+        'golden' =&gt; 1.618,
+    );
+},*/</span>
+</pre>
+
+<p>Using these constants can be a tool to make your images have the same relation on width and height all through your website.</p>
+</article>
+<div class="next-previous">
+        <div class="next"><a href="crop-part-of-image.html">Crop parts of image</a> »</div>
+    
+        <div class="previous">« <a href="resize.html">Resize strategies</a></div>
+    </div>
+            </main>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

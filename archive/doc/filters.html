@@ -1,0 +1,442 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Filters and convolution | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-doc-filters">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="filters.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../doc.html">CImage Manual</a></li>
+        <li><a href="filters.html">Filters and convolution</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+                        <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                <div class="block toc">
+
+    <h4>CImage Manual</h4>
+    
+    <ul class="toc">
+
+        <li class="level-0"><a href="../doc.html">Welcome</a></li><li class="section-header">Get going</li><li class="level-0"><a href="introduction.html">Introduction</a></li><li class="level-1"><a href="requirements.html">Requirements</a></li><li class="level-2"><a href="download-and-install.html">Download &amp; Install</a></li><li class="level-2"><a href="configure.html">Basic configuration</a></li><li class="level-2"><a href="check-environment.html">Check environment</a></li><li class="level-1"><a href="get-going-quickly.html">Get going quickly</a></li><li class="level-1"><a href="use-case.html">Use case</a></li><li class="section-header">Features and Options</li><li class="level-0"><a href="features-and-options.html">Options</a></li><li class="level-2"><a href="select-the-source.html">Select the source</a></li><li class="level-2"><a href="resize.html">Resize strategies</a></li><li class="level-2"><a href="working-with-size.html">Working with sizes</a></li><li class="level-1"><a href="crop-part-of-image.html">Crop parts of image</a></li><li class="level-2"><a href="scale-before-processing.html">Scale before processing</a></li><li class="level-2 selected"><a href="filters.html">Filters and convolution</a></li><li class="level-2"><a href="gdfilter.html">Filters and effects from PHP GD</a></li><li class="level-2"><a href="shortcut.html">Create and use shortcuts</a></li><li class="level-1"><a href="rotate.html">Rotate images</a></li><li class="level-2"><a href="quality-filesize.html">Quality and file size</a></li><li class="level-1"><a href="jpeg-quality-settings.html">JPEG quality settings</a></li><li class="level-2"><a href="png-compression-settings.html">PNG compression levels</a></li><li class="level-1"><a href="post-processing.html">Post-processing with external tools</a></li><li class="level-1"><a href="ascii-art.html">ASCII art</a></li><li class="level-1"><a href="convert-to-srgb.html">Convert to sRGB color space</a></li><li class="level-1"><a href="troubleshoot.html">Troubleshoot image processing</a></li><li class="level-1"><a href="config-file.html">The configuration file</a></li><li class="section-header">Nice to know</li><li class="level-0"><a href="friendly-urls.html">Friendly urls through .htaccess</a></li><li class="level-0"><a href="implications.html">Implications and considerations</a></li><li class="level-0"><a href="cimage-api.html">How it all works</a></li><li class="level-0"><a href="community.html">Community and issues</a></li><li class="level-0"><a href="revision.html">Revision</a></li>
+    </ul>
+
+</div>
+            </div>
+            
+                        <main class="main has-sidebar-left has-sidebar" role="main">
+                <div class="next-previous">
+        <div class="next"><a href="gdfilter.html">Next</a> »</div>
+    
+        <div class="previous">« <a href="scale-before-processing.html">Previous</a></div>
+    </div>
+<article class="article">
+<h1>Filters and convolution</h1>
+
+<p>There are a set of custom made filters that can be used to apply filter effects on the image. These are <code>sharpen</code>, <code>emboss</code> and <code>blur</code>. These filters are applied last in the processing chain, after the image has been resized to its final dimensions.</p>
+
+<h2 id="basics"><a class="header-anchor" href="filters.html#basics">#</a>Basics</h2>
+
+<p>The basics is to apply image processing based on a matrix, also called image convolution.</p>
+
+<figure class="figure">
+<a href="../image/example/kodim22__ww2-save-asjpg.jpg"><img src="../image/example/kodim22__ww2-save-asjpg.jpg" alt="A red barn, kodimg22.png, from The Kodak Colorset."/></a>
+<figcaption>
+
+<p>A red barn, kodimg22.png, from The Kodak Colorset.</p>
+
+</figcaption>
+</figure>
+
+<p>Sharpening an image enhances its edges and textures and makes it more focused and sharp.</p>
+
+<p>Blurring an image makes it more unfocused, it smooths out the sharp edges.</p>
+
+<p>Embossing makes the image look a little like 3D by adding highlights or shadows to the image.</p>
+
+<p>In general, it seems like a good idea to add a sharpening effect when resizing images to smaller dimensions. Sharpening may remove the blurry edges that is a artifact from scaling down an image and result in an overall better looking image.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Examples on filtering</th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Original. <code>?w=300&amp;save-as=jpg</code> <img src="../image/example/kodim22__w300-save-asjpg.jpg" alt=''></td>
+  <td>Sharpen. <code>?w=300&amp;save-as=jpg&amp;sharpen</code> <img src="../image/example/kodim22__w300-save-asjpg-sharpen.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Emboss. <code>?w=300&amp;save-as=jpg&amp;emboss</code> <img src="../image/example/kodim22__w300-save-asjpg-emboss.jpg" alt=''></td>
+  <td>Blur. <code>?w=300&amp;save-as=jpg&amp;blur</code> <img src="../image/example/kodim22__w300-save-asjpg-blur.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>These are easy to use filters which quickly can add effects to the image. You can combine all three filters and they are then executed in this order, (1) blur, (2) emboss, (3) sharpen. These are the lasts effects that are applied to the image, just before saving it to disk.</p>
+
+<h2>Custom filter with convolution</h2>
+
+<p>The filters above are implemented as convolve-expressions. These are a matrix of 3x3 together with a divisor and an offset. Its just like the PHP-function <a href="http://php.net/manual/en/function.imageconvolution.php">imageconvolution()</a>.</p>
+
+<p>There are more convolution expressions supported. Lets see some examples on using convolution, based on this image.</p>
+
+<figure class="figure">
+<a href="../image/example/kodim15__ww2-save-asjpg.jpg"><img src="../image/example/kodim15__ww2-save-asjpg.jpg" alt="A girl in `kodim15.png` from the Kodak image set."/></a>
+<figcaption>
+
+<p>A girl in <code>kodim15.png</code> from the Kodak image set.</p>
+
+</figcaption>
+</figure>
+
+<table>
+<thead>
+<tr>
+  <th>Example of convolution</th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Lighten.<br><code>?w=300&amp;convolve=lighten</code><br><img src="../image/example/kodim15__w300-save-asjpg--convolvelighten.jpg" alt=''></td>
+  <td>Darken.<br><code>?w=300&amp;convolve=darken</code><br><img src="../image/example/kodim15__w300-save-asjpg-convolvedarken.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Sharpen.<br><code>?w=300&amp;convolve=sharpen</code><br><img src="../image/example/kodim15__w300-save-asjpg-convolvesharpen.jpg" alt=''></td>
+  <td>Sharpen-alt.<br><code>?w=300&amp;convolve=sharpen-alt</code><br><img src="../image/example/kodim15__w300-save-asjpg--convolvesharpen-alt.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Blur.<br><code>?w=300&amp;convolve=blur</code><br><img src="../image/example/kodim15__w300-save-asjpg-convolveblur.jpg" alt=''></td>
+  <td>Gaussian blur.<br><code>?w=300&amp;convolve=gblur</code><br><img src="../image/example/kodim15__w300-save-asjpg--convolvegblur.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Mean.<br><code>?w=300&amp;convolve=mean</code><br><img src="../image/example/kodim15__w300-save-asjpg-convolvemean.jpg" alt=''></td>
+  <td>Motion.<br><code>?w=300&amp;convolve=motion</code><br><img src="../image/example/kodim15__w300-save-asjpg--convolvemotion.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Emboss.<br><code>?w=300&amp;convolve=emboss</code><br><img src="../image/example/kodim15__w300-save-asjpg-convolveemboss.jpg" alt=''></td>
+  <td>Emboss alt.<br><code>?w=300&amp;convolve=emboss-alt</code><br><img src="../image/example/kodim15__w300-save-asjpg--convolveemboss-alt.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Edge.<br><code>?w=300&amp;convolve=edge</code><br><img src="../image/example/kodim15__w300-save-asjpg-convolveedge.jpg" alt=''></td>
+  <td>Edge alt.<br><code>?w=300&amp;convolve=edge-alt</code><br><img src="../image/example/kodim15__w300-save-asjpg-convolveedge-alt.jpg" alt=''></td>
+</tr>
+<tr>
+  <td>Draw.<br><code>?w=300&amp;convolve=draw</code><br><img src="../image/example/kodim15__w300-save-asjpg--convolvedraw.jpg" alt=''></td>
+  <td>Combine several filters.<br><code>&amp;convolve=draw:edge-alt:emboss-alt:motion</code><br><img src="../image/example/kodim15__w300-save-asjpg-convolvedraw_edge-alt_emboss-alt_motion.jpg" alt=''></td>
+</tr>
+</tbody>
+</table>
+
+<p>If you have some special filter that you use a lot, then create a constant for it in <code>img_config.php</code>. One place to change it, for all images on your website.</p>
+
+<h2 id="convolution"><a class="header-anchor" href="filters.html#convolution">#</a>Configuration of convolution expressions</h2>
+
+<p>CImage contains a set of convolution expressions. Here is the list.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Custom convolution expressions, matrix 3x3, divisor and offset. 
+ */</span>
+<span class="hljs-keyword">private</span> $convolves = <span class="hljs-keyword">array</span>(
+    <span class="hljs-string">'lighten'</span>       =&gt; <span class="hljs-string">'0,0,0, 0,12,0, 0,0,0, 9, 0'</span>,
+    <span class="hljs-string">'darken'</span>        =&gt; <span class="hljs-string">'0,0,0, 0,6,0, 0,0,0, 9, 0'</span>,
+    <span class="hljs-string">'sharpen'</span>       =&gt; <span class="hljs-string">'-1,-1,-1, -1,16,-1, -1,-1,-1, 8, 0'</span>,
+    <span class="hljs-string">'sharpen-alt'</span>   =&gt; <span class="hljs-string">'0,-1,0, -1,5,-1, 0,-1,0, 1, 0'</span>,
+    <span class="hljs-string">'emboss'</span>        =&gt; <span class="hljs-string">'1,1,-1, 1,3,-1, 1,-1,-1, 3, 0'</span>,
+    <span class="hljs-string">'emboss-alt'</span>    =&gt; <span class="hljs-string">'-2,-1,0, -1,1,1, 0,1,2, 1, 0'</span>,
+    <span class="hljs-string">'blur'</span>          =&gt; <span class="hljs-string">'1,1,1, 1,15,1, 1,1,1, 23, 0'</span>,
+    <span class="hljs-string">'gblur'</span>         =&gt; <span class="hljs-string">'1,2,1, 2,4,2, 1,2,1, 16, 0'</span>,
+    <span class="hljs-string">'edge'</span>          =&gt; <span class="hljs-string">'-1,-1,-1, -1,8,-1, -1,-1,-1, 9, 0'</span>,
+    <span class="hljs-string">'edge-alt'</span>      =&gt; <span class="hljs-string">'0,1,0, 1,-4,1, 0,1,0, 1, 0'</span>,
+    <span class="hljs-string">'draw'</span>          =&gt; <span class="hljs-string">'0,-1,0, -1,5,-1, 0,-1,0, 0, 0'</span>,
+    <span class="hljs-string">'mean'</span>          =&gt; <span class="hljs-string">'1,1,1, 1,1,1, 1,1,1, 9, 0'</span>,
+    <span class="hljs-string">'motion'</span>        =&gt; <span class="hljs-string">'1,0,0, 0,1,0, 0,0,1, 3, 0'</span>,
+);
+</pre>
+
+<p>Each expression is an eleven float value string, separated by commas. The string is converted like this, into a matrix, divisor and offset.</p>
+
+<pre class="hljs">    <span class="hljs-comment">// As defined</span>
+    <span class="hljs-string">'sharpen'</span>  =&gt; <span class="hljs-string">'-1,-1,-1, -1,16,-1, -1,-1,-1, 8, 0'</span>,
+
+    <span class="hljs-comment">// Converted to ([] is short syntax for array())</span>
+    $matrix = [
+        [<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>],
+        [<span class="hljs-number">-1</span>, <span class="hljs-number">16</span>, <span class="hljs-number">-1</span>],
+        [<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>],
+    ];
+
+    $divisor = <span class="hljs-number">8</span>;
+    $offset  = <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">// Called by this</span>
+    $img = imageconvolution($img, $matrix, $divisor, $offset)
+</pre>
+
+<p>So, above expressions are defined in CImage. You can define your own in <code>img_config.php</code>. The default config-file contains an example on how to do it. They are outcommented by default since they are only there as an example.</p>
+
+<pre class="hljs"><span class="hljs-comment">/**
+ * Create custom convolution expressions, matrix 3x3, divisor and 
+ * offset.
+ */</span>
+<span class="hljs-string">'convolution_constant'</span> =&gt; <span class="hljs-keyword">array</span>(
+    <span class="hljs-comment">//'sharpen'       =&gt; '-1,-1,-1, -1,16,-1, -1,-1,-1, 8, 0',</span>
+    <span class="hljs-comment">//'sharpen-alt'   =&gt; '0,-1,0, -1,5,-1, 0,-1,0, 1, 0',</span>
+),
+</pre>
+
+<p>The convolution expressions defined in <code>img_config.php</code> will add to, or overwrite, those defined in CImage. Any convolution constant can then be used, no matter where its defined.</p>
+</article>
+<div class="next-previous">
+        <div class="next"><a href="gdfilter.html">Filters and effects from PHP GD</a> »</div>
+    
+        <div class="previous">« <a href="scale-before-processing.html">Scale before processing</a></div>
+    </div>
+            </main>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

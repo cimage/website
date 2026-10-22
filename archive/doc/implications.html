@@ -1,0 +1,368 @@
+<!doctype html>
+<html class="cimage" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Implications and considerations | CImage and img.php</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../img/favicon/favicon_128x128.png">
+    
+        <link rel="stylesheet" type="text/css" href="../css/style.min__2016-11-20.css">
+    
+    
+</head>
+
+<body class="route-doc-implications">
+
+<!-- wrapper around all items on page -->
+<div class="wrap-all">
+
+
+
+<!-- siteheader -->
+<div class="outer-wrap outer-wrap-header">
+    <div class="inner-wrap inner-wrap-header">
+        <div class="row">
+            <header class="site-header" role="banner">
+                <img class="logo-1" src="../img/favicon/favicon_128x128.png" alt="Logo">
+
+<span class="site-logo-text" >
+    <a href="../index.html">
+                <span class="site-logo-text-icon" >
+            <img src="../image/favicon/favicon_40x40.png" alt="Small logo">
+        </span>
+                CImage    </a>
+</span>
+
+<nav class="navbar2" role="navigation">
+    <div class="rm-navbar-top rm-navbar">
+
+<!--
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="#"><i class="fa fa-bars fa-2x"></i></a></li>
+        </ul>
+    </div>
+-->
+
+    
+
+<ul class="rm-default rm-desktop">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</nav>
+
+
+<div class="profile">
+    <!-- menu wrapper -->
+<div class="rm-navbar-max rm-navbar rm-max rm-swipe-right">
+
+    <!-- memu click button -->
+    <div class="rm-small-wrapper">
+        <ul class="rm-small">
+            <li><a id="rm-menu-button" class="rm-button" href="implications.html#">
+                <i class="fas fa-bars rm-button-face-1"></i>
+                <i class="fas fa-times rm-button-face-2"></i>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- main menu -->
+    
+
+<ul id="rm-menu" class="rm-default rm-mobile">
+<li><a href='../doc.html' title='Documentation on CImage and img.php'>Docs</a></li>
+
+<li><a href='../blog.html' title='Developer blog'>Blog</a></li>
+
+<li><a href='https://github.com/mosbth/cimage' title='GitHub repo for CImage'>GitHub</a></li>
+</ul>
+
+
+</div>
+</div>
+            </header>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- navbar -->
+
+
+
+<!-- flash -->
+
+
+
+<!-- breadcrumb -->
+<div class="outer-wrap outer-wrap-breadcrumb">
+    <div class="inner-wrap inner-wrap-breadcrumb">
+        <div class="row">
+            <div class="breadcrumb-wrap">
+                <nav class="breadcrumb-list" role="navigation">
+                    <ul>
+
+        <li><a href="../doc.html">CImage Manual</a></li>
+        <li><a href="implications.html">Implications and considerations</a></li>
+    
+</ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- columns-above -->
+
+
+
+<!-- main -->
+<div class="outer-wrap outer-wrap-main">
+    <div class="inner-wrap inner-wrap-main">
+        <div class="row">
+
+
+                        <div class="sidebar sidebar-left has-sidebar-left has-sidebar" role="complementary">
+                <div class="block toc">
+
+    <h4>CImage Manual</h4>
+    
+    <ul class="toc">
+
+        <li class="level-0"><a href="../doc.html">Welcome</a></li><li class="section-header">Get going</li><li class="level-0"><a href="introduction.html">Introduction</a></li><li class="level-1"><a href="requirements.html">Requirements</a></li><li class="level-2"><a href="download-and-install.html">Download &amp; Install</a></li><li class="level-2"><a href="configure.html">Basic configuration</a></li><li class="level-2"><a href="check-environment.html">Check environment</a></li><li class="level-1"><a href="get-going-quickly.html">Get going quickly</a></li><li class="level-1"><a href="use-case.html">Use case</a></li><li class="section-header">Features and Options</li><li class="level-0"><a href="features-and-options.html">Options</a></li><li class="level-2"><a href="select-the-source.html">Select the source</a></li><li class="level-2"><a href="resize.html">Resize strategies</a></li><li class="level-2"><a href="working-with-size.html">Working with sizes</a></li><li class="level-1"><a href="crop-part-of-image.html">Crop parts of image</a></li><li class="level-2"><a href="scale-before-processing.html">Scale before processing</a></li><li class="level-2"><a href="filters.html">Filters and convolution</a></li><li class="level-2"><a href="gdfilter.html">Filters and effects from PHP GD</a></li><li class="level-2"><a href="shortcut.html">Create and use shortcuts</a></li><li class="level-1"><a href="rotate.html">Rotate images</a></li><li class="level-2"><a href="quality-filesize.html">Quality and file size</a></li><li class="level-1"><a href="jpeg-quality-settings.html">JPEG quality settings</a></li><li class="level-2"><a href="png-compression-settings.html">PNG compression levels</a></li><li class="level-1"><a href="post-processing.html">Post-processing with external tools</a></li><li class="level-1"><a href="ascii-art.html">ASCII art</a></li><li class="level-1"><a href="convert-to-srgb.html">Convert to sRGB color space</a></li><li class="level-1"><a href="troubleshoot.html">Troubleshoot image processing</a></li><li class="level-1"><a href="config-file.html">The configuration file</a></li><li class="section-header">Nice to know</li><li class="level-0"><a href="friendly-urls.html">Friendly urls through .htaccess</a></li><li class="level-0 selected"><a href="implications.html">Implications and considerations</a></li><li class="level-0"><a href="cimage-api.html">How it all works</a></li><li class="level-0"><a href="community.html">Community and issues</a></li><li class="level-0"><a href="revision.html">Revision</a></li>
+    </ul>
+
+</div>
+            </div>
+            
+                        <main class="main has-sidebar-left has-sidebar" role="main">
+                <div class="next-previous">
+        <div class="next"><a href="cimage-api.html">Next</a> »</div>
+    
+        <div class="previous">« <a href="friendly-urls.html">Previous</a></div>
+    </div>
+<article class="article">
+<h1>Implications and considerations</h1>
+
+<p>Here are some general thoughts when applying CImage on a live system.</p>
+
+<h2 id="mode"><a class="header-anchor" href="implications.html#mode">#</a>Select the proper mode</h2>
+
+<p>Select the proper mode by setting it to &#8220;strict&#8221; or &#8220;production&#8221; to prevent outsiders from getting information about your system. Use only &#8220;development&#8221; for internal use since its quite verbose in its nature of error reporting.</p>
+
+<h2 id="outside"><a class="header-anchor" href="implications.html#outside">#</a>Put the installation directory outside web root</h2>
+
+<p>Edit the config file to put the installation directory &#8211; and the cache directory &#8211; outside of the web root. This is best practice. The only thing needed in the web root is <code>img.php</code> and <code>img_config.php</code> (if used). These can be placed, for example, in <code>/img/img.php</code>, <code>/img.php</code> or in a directory <code>/cimage/img.php</code>.</p>
+
+<p>Use <a href="friendly-urls.html">friendly urls</a> to point out your script.</p>
+
+<h2 id="moncache"><a class="header-anchor" href="implications.html#moncache">#</a>Monitor cache size</h2>
+
+<p>There is a utility <code>bin/cache.bash</code> included to monitor the size of the cache-directory. It generates an output like this.</p>
+
+<pre class="hljs">$ ./cache.bash
+Usage: ./cache.bash [cache-dir]   
+
+$ ./cache.bash cache                         
+<span class="hljs-comment"># Size</span>
+Total size:       316M
+Number of files:  6437
+Number of <span class="hljs-built_in">dirs</span>:   2
+
+<span class="hljs-comment"># Top-5 largest files/dirs:</span>
+11136   cimage//fasttrack
+4440    cimage//oopython-bok_python3-object-oriented-programming.png_2000_2588_q85_co-1
+4280    cimage//oopython-bok_python3-object-oriented-programming.png_2000_2588_q85_co-1.png
+4004    cimage//vimmel_pt91-skolfoto.jpg_3880_2801_q85_co-1
+3888    cimage//vimmel_pi92-skolfoto.jpg_3855_2704_q85_co-1
+
+<span class="hljs-comment"># Last-5 created files:</span>
+2016-11-21 06:00 cimage/oophp-kmom01_image16.png_695_562_q85_co-1.png
+2016-11-21 06:00 cimage/oophp-kmom01_image16.png_695_562_q85_co-1
+2016-11-21 06:00 cimage/fasttrack/4430da4c8fe3c38cc472dc6ad017415a
+2016-11-20 02:34 cimage/tiles-floor_grass_e.png_32_32_q85_co-1.png
+2016-11-20 02:34 cimage/tiles-floor_grass_e.png_32_32_q85_co-1
+
+<span class="hljs-comment"># Last-5 accessed files:</span>
+2016-11-21 09:30 snapht15_webgl-sandbox2-point.png_958_821_q85_co-1
+2016-11-21 09:30 htmlphp-kmom04_image10.png_630_375_q85_co-1
+2016-11-21 09:30 htmlphp-kmom04_image09.png_630_539_q85_co-1
+2016-11-21 09:30 htmlphp-kmom04_image08.png_630_539_q85_co-1
+2016-11-21 09:30 htmlphp-kmom04_image07.png_630_550_q85_co-1
+
+<span class="hljs-comment"># 5 Oldest files:</span>
+2016-08-08 11:52 snapvt16_kutv-vt16.png_134_108_q85_co-1.png
+2016-08-08 11:52 tema-trad_blad_40x38.png_40_38_q85_co-1.png
+2016-08-08 11:53 snapht15_google-chrome-postman.png_630_453_q85_co-1.png
+2016-08-08 12:36 snapht14_python-mos-me-page.png_630_569_q85_co-1.png
+2016-08-08 13:01 snapht15_js-boulder-dash.png_190_107_o553-411-231-164_q85_co-1.png
+
+<span class="hljs-comment"># Files not accessed within the last 30 days</span>
+Number of files: 2191
+Total file size: 134276
+</pre>
+
+<p>Use it as a base if you feel the need to monitor the size of the cache-directory. Perhaps modify the script to your needs and execute it regularly using crontab.</p>
+
+<h2 id="readonlycache"><a class="header-anchor" href="implications.html#readonlycache">#</a>Read-only cache</h2>
+
+<p>The cache directory need to be writable for <code>img.php</code> to create new files. But its possible to first create all cache-files and then set the directory to be read-only. This will give you a way of preventing <code>img.php</code> from creating new cache files. It will continue to work for all images having a cached version, but will fail if someone tries to create a new, not previously cached, version of the image.</p>
+
+<h2 id="remote"><a class="header-anchor" href="implications.html#remote">#</a>Allowing remote download of images</h2>
+
+<p>You can allow <code>img.php</code> to download remote images. That can be enabled in the config-file. However, before doing so, consider the implications on allowing anyone to download a file, hopefully an image, to your server and then the possibility to access it through your web server.</p>
+
+<p>That sounds scary. It should.</p>
+
+<p>For my own sake I will use it like this.</p>
+
+<ul>
+<li>Create a special version of <code>img.php</code> that has remote download allowed, hide it from public usage.</li>
+<li>Always use a password.</li>
+<li>Download and process the image and save it as an <code>alias</code>.</li>
+<li>Integrate the image into my web page and use the image in the alias directory.</li>
+</ul>
+
+<p>This is an easy way to quickly download a remote image, process and share it.</p>
+
+<p>So, its a scary feature and I might regret I did put it in. Still, its disabled by default and you enable it on your own risk. I have tried to make it as secure as I can, but I might have missed something. I will run it on my own system so I guess I&#8217;ll find out how secure it is.</p>
+</article>
+<div class="next-previous">
+        <div class="next"><a href="cimage-api.html">How it all works</a> »</div>
+    
+        <div class="previous">« <a href="friendly-urls.html">Friendly urls through .htaccess</a></div>
+    </div>
+            </main>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- after-main -->
+
+
+
+<!-- columns-below -->
+
+
+
+<!-- sitefooter -->
+<div class="outer-wrap outer-wrap-footer" role="contentinfo">
+    <div class="inner-wrap inner-wrap-footer">
+        <div class="row">
+            <div class="footer">
+                <div class="columns footer-column-wrapper">
+
+
+
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-1 block">
+
+    
+            <h4>CImage &amp; img.php</h4>
+
+<p>This is free and open source software for serverside resize, crop and process of images using PHP GD and utilizing caching on both server and client.</p>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-2 block">
+
+    
+            <h4>Download</h4>
+
+<ul>
+<li><a href="https://github.com/mosbth/cimage">GitHub</a></li>
+<li><a href="https://packagist.org/packages/mos/cimage">Packagist</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+    <div class="column footer-column">
+
+        <div class="footer-column-x footer-column-3 block">
+
+    
+            <h4>Troubleshoot</h4>
+
+<ul>
+<li><a href="https://gitter.im/mosbth/cimage">Gitter Chat</a></li>
+<li><a href="https://github.com/mosbth/cimage/issues">GitHub Issues</a></li>
+</ul>
+    
+    
+    
+</div>
+
+    </div>
+
+</div>
+<div class="block site-footer">
+
+    
+            <p>Copyright (c) 2012-2021&#160;<a href="https://mikaelroos.se">Mikael Roos</a></p>
+
+<ul>
+<li><a href="../license.html">Licenses and terms</a></li>
+<li><a href="../cookies.html">Cookies</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+    
+    
+    
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div> <!-- end of wrapper -->
+
+
+
+<!-- render javascripts -->
+<script async src="../js/theme/image-overlay__2016-11-20.js"></script>
+<script async src="../js/theme/responsive-menu.min__2016-11-20.js"></script>
+
+
+
+<!-- useful for inline javascripts such as google analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75526006-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
